@@ -2,7 +2,7 @@
   <div class="img{% if section.settings.image == blank %} noimg{% endif %}">
     <div class="imgwrap">
       {%- if section.settings.image != blank -%}
-        {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.heading | escape, widths: '600,900,1400' }}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.heading, widths: '600,900,1400' }}
       {%- endif -%}
     </div>
   </div>

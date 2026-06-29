@@ -4,7 +4,7 @@
   <div class="gallery">
     <div class="imgwrap main-image">
       {%- if product.featured_media -%}
-        {{ product.featured_media | image_url: width: 1200 | image_tag: id: 'MainImage', loading: 'eager', alt: product.title | escape, widths: '500,800,1200' }}
+        {{ product.featured_media | image_url: width: 1200 | image_tag: id: 'MainImage', loading: 'eager', alt: product.title, widths: '500,800,1200' }}
       {%- else -%}
         {{ 'product-1' | placeholder_svg_tag: 'media' }}
       {%- endif -%}

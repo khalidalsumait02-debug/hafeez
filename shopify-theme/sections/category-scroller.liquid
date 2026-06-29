@@ -27,7 +27,7 @@
       <a href="{{ b_url | default: '#' }}" class="cat{% if b_image == blank %} noimg{% endif %}" {{ block.shopify_attributes }}>
         <div class="imgwrap">
           {%- if b_image != blank -%}
-            {{ b_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: b_label | escape, widths: '300,500,700' }}
+            {{ b_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: b_label, widths: '300,500,700' }}
           {%- endif -%}
         </div>
         <span class="lab">{{ b_label }}</span>

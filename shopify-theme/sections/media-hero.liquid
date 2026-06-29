@@ -6,7 +6,7 @@
         <source src="{{ section.settings.video }}" type="video/mp4">
       </video>
     {%- elsif section.settings.image != blank -%}
-      <div class="imgwrap">{{ section.settings.image | image_url: width: 2200 | image_tag: class: 'media', loading: 'eager', fetchpriority: 'high', alt: section.settings.heading | escape, widths: '750,1100,1600,2200' }}</div>
+      <div class="imgwrap">{{ section.settings.image | image_url: width: 2200 | image_tag: class: 'media', loading: 'eager', fetchpriority: 'high', alt: section.settings.heading, widths: '750,1100,1600,2200' }}</div>
     {%- endif -%}
   </div>
   <div class="in">

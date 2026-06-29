@@ -3,7 +3,7 @@
     <div class="blk{% if block.settings.image == blank %} noimg{% endif %}" {{ block.shopify_attributes }}>
       <div class="bg">
         {%- if block.settings.image != blank -%}
-          <div class="imgwrap">{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: block.settings.heading | escape, widths: '600,900,1400' }}</div>
+          <div class="imgwrap">{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: block.settings.heading, widths: '600,900,1400' }}</div>
         {%- endif -%}
       </div>
       <div class="in">

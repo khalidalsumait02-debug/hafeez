@@ -33,7 +33,7 @@
 
     <a href="{{ product.url }}" class="imgwrap" aria-label="{{ product.title | escape }}">
       {%- if img -%}
-        {{ img | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title | escape, widths: '300,500,800' }}
+        {{ img | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title, widths: '300,500,800' }}
       {%- else -%}
         {{ 'product-1' | placeholder_svg_tag: 'media' }}
       {%- endif -%}

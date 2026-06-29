@@ -2,7 +2,7 @@
   <div class="media-wrap">
     <div class="imgwrap">
       {%- if section.settings.image != blank -%}
-        {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: section.settings.heading | escape, widths: '750,1100,1600' }}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: section.settings.heading, widths: '750,1100,1600' }}
       {%- endif -%}
     </div>
   </div>

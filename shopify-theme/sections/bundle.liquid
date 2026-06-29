@@ -3,9 +3,9 @@
     <div class="im">
       <div class="imgwrap">
         {%- if section.settings.product != blank and section.settings.product.featured_media -%}
-          {{ section.settings.product.featured_media | image_url: width: 1500 | image_tag: loading: 'lazy', alt: section.settings.heading | escape, widths: '600,1000,1500' }}
+          {{ section.settings.product.featured_media | image_url: width: 1500 | image_tag: loading: 'lazy', alt: section.settings.heading, widths: '600,1000,1500' }}
         {%- elsif section.settings.image != blank -%}
-          {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', alt: section.settings.heading | escape, widths: '600,1000,1500' }}
+          {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', alt: section.settings.heading, widths: '600,1000,1500' }}
         {%- endif -%}
       </div>
     </div>

@@ -13,7 +13,7 @@
       -%}
       {%- if block.settings.link != blank -%}<a href="{{ block.settings.link }}" class="lb{{ cls }}" {{ block.shopify_attributes }}>{%- else -%}<div class="lb{{ cls }}" {{ block.shopify_attributes }}>{%- endif -%}
         <div class="imgwrap">
-          {%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: block.settings.caption | escape, widths: '500,900,1400' }}{%- endif -%}
+          {%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: block.settings.caption, widths: '500,900,1400' }}{%- endif -%}
         </div>
         {%- if block.settings.caption != blank -%}<span class="cap">{{ block.settings.caption }}</span>{%- endif -%}
       {%- if block.settings.link != blank -%}</a>{%- else -%}</div>{%- endif -%}
