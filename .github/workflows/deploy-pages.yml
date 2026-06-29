@@ -1,8 +1,6 @@
 name: Deploy Hafeez site to GitHub Pages
 
 on:
-  push:
-    branches: ["claude/hafeez-company-overview-57949s"]
   workflow_dispatch:
 
 permissions:
