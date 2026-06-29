@@ -1,0 +1,362 @@
+# Image Asset Manifest — Hafeez site
+
+Durable record of every externally-hosted image/video referenced by the site, so a slot can be
+re-created or re-sourced even if the original URL expires. Generated from the page markup.
+**Bucket C (Shopify CDN packshots) is stable; Buckets A & B should be downloaded and re-hosted
+before production.**
+
+Re-host workflow: download → drop in `assets/img/` → commit → repoint each `src` (and any
+`onerror` fallback) to the local path.
+
+
+## Bucket A — Higgsfield AI images (HIGH RISK — personal CloudFront, can expire)
+
+_9 unique assets_
+
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260515_133322_41af49c0-1285-4168-87d2-4ee89f79558a.png`
+  - role: (used as fallback for) Harley-Davidson riders at Sturgis
+  - used on: harley-davidson.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260515_133452_32c1846b-bad5-4948-92fa-f8e2bbcd59b1.png`
+  - role: Summer and lifestyle
+  - used on: index.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260515_133511_c14d77a4-f909-47c9-94d1-9de5a0a97619.png`
+  - role: Lift Down caps
+  - used on: index.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083621_2e500c90-e3f3-40db-af98-a0edecc0130b.png`
+  - role: (used as fallback for) Harley-Davidson leather riding jacket / (used as fallback for) Harley-Davidson riders with American flag
+  - used on: harley-davidson.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_100207_05bbb6b8-edbc-4a04-8b83-9ce2c249ab29.png`
+  - role: Four men playing PaddleSmash at a Kuwait pool
+  - used on: index.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_103709_b705ce1f-be53-4aec-8d4c-33e165aa7f01.png`
+  - role: Friends at a Kuwait beach with PaddleSmash and summer gear / New In / New in
+  - used on: index.html, new-in.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Image1.jpg?v=1739702944`
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_170059_020941b4-e659-4677-b55d-bdba77fd25fd.png`
+  - role: Poolside kids summer items by a turquoise pool
+  - used on: vacay.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_170744_1c3b1875-f357-4c52-93ba-e330fb05eb4a.png`
+  - role: Man relaxing on an inflatable pool lounge chair on a Gulf summer day
+  - used on: vacay.html
+- `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_170746_0253a582-9e3d-4fc1-bb97-42b11e914887.png`
+  - role: Man on an inflatable hammock pool float
+  - used on: vacay.html
+
+
+## Bucket B — Brand-site hotlinks (re-host before production)
+
+_29 unique assets_
+
+- `https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_AZTEC_BROWN_STRIPES_MOOD.jpg?v=1777979305&width=1440`
+  - role: La Paz Aztec Brown Stripes look
+  - used on: la-paz.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_GUERREIRO_BLACK_STRIPES_1.jpg?v=1739702983`
+- `https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_WIND_BLUE_MOOD.jpg?v=1777978182&width=1440`
+  - role: La Paz Roque Wind Blue look
+  - used on: la-paz.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_BLUE_LOGO_1.jpg?v=1739702989`
+- `https://lapaz.pt/cdn/shop/files/R0001202.jpg?v=1771423147&width=2000`
+  - role: La Paz SS26 campaign
+  - used on: la-paz.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_BOAT_ECRU_1.jpg?v=1739702987`
+- `https://lapaz.pt/cdn/shop/files/R0002293.jpg?v=1780478878&width=2400`
+  - role: La Paz Spring/Summer on the Atlantic coast
+  - used on: la-paz.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_PALM_BLUE_2.jpg?v=1739702988`
+- `https://liftdown.com/cdn/shop/files/DSC08690_a5421382-cb65-41ff-be32-08f9d7b7819a.png?v=1777167079&width=1800`
+  - role: Lift Down Wool Cap
+  - used on: lift-down.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Woolcap-Black-Hero.png?v=1739703101`
+- `https://liftdown.com/cdn/shop/files/DSC08837.jpg?v=1763244413`
+  - role: Lift Down cap worn on a sunny day out
+  - used on: lift-down.html
+- `https://liftdown.com/cdn/shop/files/Homepage_Desktop_3_dfe806cd-915b-4a6c-9cb6-1577252e0395.png?v=1771868664&width=2000`
+  - role: Lift Down cap worn outdoors / Lift Down caps lifestyle
+  - used on: lift-down.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/ClassicCapAmberOrangeHero-0072.png?v=1739703292`
+- `https://liftdown.com/cdn/shop/files/LDH01255_2.png?v=1777166927&width=1800`
+  - role: Lift Down Classic Cap
+  - used on: lift-down.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/ClassicCapAmberOrangeHero-0072.png?v=1739703292`
+- `https://paddlesmash.com/cdn/shop/files/Main.png?v=1732387387&width=1500`
+  - role: PaddleSmash Complete Set
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/files/backyard.jpg?v=1703010675&width=1400`
+  - role: PaddleSmash in the backyard
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/files/beach-set.jpg?v=1702937589&width=1400`
+  - role: Friends playing PaddleSmash on a Kuwait beach
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/files/beach.jpg?v=1703010675&width=1400`
+  - role: PaddleSmash on the beach
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/files/lake.jpg?v=1703010675&width=1400`
+  - role: PaddleSmash by the lake
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/files/preview_images/9ae25d33104940a88e3fd3a721b72821.thumbnail.0000000000_small.jpg?v=1778277928`
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/products/008A7899.jpg?v=1716926771&width=1400`
+  - role: PaddleSmash gameplay
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/products/008A7980.jpg?v=1716926771&width=1400`
+  - role: PaddleSmash rally in action
+  - used on: paddlesmash.html
+- `https://paddlesmash.com/cdn/shop/videos/c/vp/9ae25d33104940a88e3fd3a721b72821/9ae25d33104940a88e3fd3a721b72821.SD-480p-1.2Mbps-83706708.mp4`
+  - used on: paddlesmash.html
+- `https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/1t3jRLbWOc4W0ly0T3RhHU/eeebf26c069f72e9d95128d65e254810/mens-racing-replica-jacket-ls.jpg`
+  - role: Harley-Davidson leather riding jacket / Men's apparel
+  - used on: harley-davidson.html
+  - fallback already in code: `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083621_2e500c90-e3f3-40db-af98-a0edecc0130b.png`
+- `https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/3pnFzSLQhDqpjTa1Mqpo6s/0f02474d4bf7c06dc3571528decf5c10/womens-blue-tie-front-top-ls.jpg`
+  - role: Women's apparel
+  - used on: harley-davidson.html
+- `https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/3qpq9ssmY1KFYhodhpw6kB/c2a6c867b2ffe6b5229ecce8b69d40c6/riders-near-motorcycles-american-flag-shd.jpg`
+  - role: Harley-Davidson riders with American flag
+  - used on: harley-davidson.html
+  - fallback already in code: `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083621_2e500c90-e3f3-40db-af98-a0edecc0130b.png`
+- `https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/5qOcfOjRQIpPKpKPb34ViA/c2fd5ab23ed79fbde66a6630f85718d9/p-a-travel-bag-ls.jpg`
+  - role: Accessories and collectables
+  - used on: harley-davidson.html
+- `https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/7t89CaLzIS4EvGRSxOYNl4/6a16767f45f7d67cc7c07285c0088405/3-riders-smiling-in-front-of-sturgis-sign-ls.jpg`
+  - role: Harley-Davidson riders at Sturgis
+  - used on: harley-davidson.html
+  - fallback already in code: `https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260515_133322_41af49c0-1285-4168-87d2-4ee89f79558a.png`
+- `https://www.sunnylife.com/cdn/shop/files/010626_LandingPage_Beach_poolside_test_2a8cd3b3-ec45-481c-9419-baeaef9b79ae.jpg?v=1780298414&width=1800`
+  - role: SunnyLife beach and poolside lifestyle
+  - used on: sunnylife.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41LXFSUN_L_5.jpg?v=1739703008`
+- `https://www.sunnylife.com/cdn/shop/files/010626_LandingPage_kids_sunshine.jpg?v=1780298415&width=1800`
+  - role: SunnyLife kids and baby / SunnyLife kids summer essentials
+  - used on: sunnylife.html, vacay.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SCMSVSTM_L_2.webp?v=1739703001`
+- `https://www.sunnylife.com/cdn/shop/files/S51BCMAS_L_3.jpg?v=1768528102&width=2048`
+  - role: SunnyLife beach cabana on the sand
+  - used on: sunnylife.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41LXFSUN_L_5.jpg?v=1739703008`
+- `https://www.sunnylife.com/cdn/shop/files/S51DHNAV_L_12_61f062b9-fc79-44a1-85be-a34ddcc33185.jpg?v=1759901196&width=2048`
+  - role: SunnyLife twin hammock between palms
+  - used on: sunnylife.html
+- `https://www.sunnylife.com/cdn/shop/files/S61LBUSS_L_2A.jpg?v=1768282221&width=2048`
+  - role: SunnyLife luxe beach umbrella
+  - used on: sunnylife.html
+- `https://www.sunnylife.com/cdn/shop/files/S61PPSEA_L_5-retouched.jpg?v=1775103856&width=2048`
+  - role: SunnyLife party pad float
+  - used on: sunnylife.html
+- `https://www.sunnylife.com/cdn/shop/files/S61TPRBL_L_1--retouched-2048-x-2048.jpg?v=1773121767&width=2048`
+  - role: SunnyLife tube pool ring
+  - used on: sunnylife.html
+
+
+## Bucket C — Shopify CDN product packshots (stable — record only)
+
+_69 unique assets_
+
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/collections/Hafeez_Store_Photo.jpg?v=1699860086`
+  - role: Hafeez booth inside Harley-Davidson Kuwait / Hafeez store inside Harley-Davidson Kuwait
+  - used on: about.html, harley-davidson.html, index.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/1024x1024_2_d217da75-deb5-4dc4-8867-e10844208c54.jpg?v=1739703001`
+  - role: Salty the Shark Swim Vest
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/96245-24VWF.jpg?v=1760945424`
+  - role: Women
+  - used on: index.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/96782-25VM_F.webp?v=1765189617`
+  - role: H-D Bar &amp; Shield Tee / Men
+  - used on: index.html, new-in.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/97109-25vm.jpg?v=1739702899`
+  - role: Gifts and collectables / Willie G Skull Leather Riding Gloves / Willie G Skull Riding Gloves
+  - used on: harley-davidson.html, index.html, new-in.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/97749-25VM_F.webp?v=1758791985`
+  - role: Headwear
+  - used on: harley-davidson.html, index.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/B32022.10.31VACAYSWIMWEAR_178_3000x_5430bcc4-96d7-4050-8078-3379379bf6da.jpg?v=1739703245`
+  - role: Hotel Vacay Cap
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/B6-2023.02.21-VACAY-SWIMWEAR_264_71cda582-8a28-4fca-9462-0bd134e75737.jpg?v=1739703241`
+  - role: Terry Bucket Hat
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/BlackBeanieOverheadLooseKnit-1918_58c504cb-ce93-4604-b4bf-ff91e1fe2992.jpg?v=1739703169`
+  - role: Knitted Beanie / Lift Down Loose-Knit Beanie
+  - used on: lift-down.html, sale.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Bucket-darkbeige-0015.jpg?v=1739703176`
+  - role: Bucket Hat / Lift Down Bucket Hat
+  - used on: lift-down.html, new-in.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/DYKOIFIWG_pack_1-4.jpg?v=1739703021`
+  - role: Accessories / DOIY / DOIY Koifish Stackable Glass
+  - used on: index.html, new-in.html, sale.html, summer.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/IMG-20240513-WA0043_19fc12e7-587b-4db5-b134-2e35dc7380ad.jpg?v=1739702971`
+  - role: La Paz SANTOS Hat
+  - used on: index.html, sale.html, summer.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Image1.jpg?v=1739702944`
+  - role: PaddleSmash Complete Set
+  - used on: index.html, new-in.html, paddlesmash.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_BLUE_LOGO_1.jpg?v=1739702989`
+  - role: DANTAS Blue Ecru Logo Tee / La Paz / La Paz Dantas Camp Shirt
+  - used on: la-paz.html, new-in.html, summer.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_BOAT_ECRU_1.jpg?v=1739702987`
+  - role: DANTAS Boat Ecru Tee
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_PALM_BLUE_2.jpg?v=1739702988`
+  - role: DANTAS Palm Blue Tee
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_SOUL_SEAMOSS_1.jpg?v=1739702989`
+  - role: DANTAS Soul Sea Moss Tee
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_GUEDES_BRUSH_GREEN_BAY_1.jpg?v=1739702979`
+  - role: GUEDES Brush Green Bay Swim / La Paz Guedes Shirt
+  - used on: la-paz.html, new-in.html, summer.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_GUERREIRO_BLACK_STRIPES_1.jpg?v=1739702983`
+  - role: GUERREIRO Black Stripes Tee
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_LEMOS_DARK_NAVY_LINEN_1.jpg?v=1739702980`
+  - role: LEMOS Dark Navy Linen Pants / La Paz Lemos Linen Shirt
+  - used on: la-paz.html, sale.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_MORAIS_ACID_STRIPES_SEAMOSS_1.jpg?v=1739702977`
+  - role: MORAIS Acid Stripes Sea Moss Swim
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_PESTANA_SAND_LINEN_1.jpg?v=1739702979`
+  - role: PESTANA Sand Linen Shorts
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_TELES_GREEN_BAY_1.jpg?v=1739702981`
+  - role: TELES Green Bay Shirt
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_VIEIRA_ECRU_1.jpg?v=1739702982`
+  - role: VIEIRA Natural Collarless Shirt
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S11DECNB_S10PTOXW_S10LCBNB.jpg?v=1739703011`
+  - role: The Lounger Nouveau Bleu
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S25LTBKX_1.jpg?v=1739703006`
+  - role: Mini Lucite Backgammon
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S2HO3DMO_L1.jpg?v=1739702998`
+  - role: Beach Hooded Towel Monster
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S2ISOBCP_1.jpg?v=1739703009`
+  - role: Beach Sounds Speaker
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S2VGHOCB_5d117d15-5ec3-4fdb-8762-85f01d202fc9_1200x--1.webp?v=1739703000`
+  - role: Beach Games Hooded Towel
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S2VHOMBL_L4.jpg?v=1739702999`
+  - role: Terry Beach Hooded Towel
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S3VBHTST_L1.jpg?v=1739702999`
+  - role: Beach Hooded Towel Shark Tribe
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41KTWLD_L_4.webp?v=1739702996`
+  - role: Into the Wild Hooded Towel
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41LXFSUN_L_5.jpg?v=1739703008`
+  - role: Luxe Lie-On Float / Poolside summer lifestyle / SunnyLife / SunnyLife Luxe Lie-On Float
+  - used on: new-in.html, sale.html, summer.html, sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41TBMUL_L_3.jpg?v=1739703002`
+  - role: Poolside Tall Tumbler Set
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41TLPSL_IA.jpg?v=1739703011`
+  - role: Terry Travel Lounger
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SCLCHCHE_4.jpg?v=1739703005`
+  - role: Ombre Lucite Chess & Checkers
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SCMSVSTM_L_2.webp?v=1739703001`
+  - role: Melody the Mermaid Swim Vest
+  - used on: sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SunnyLife-Cork-Roll-Up-Game-Majorelle-3.jpg?v=1739703003`
+  - role: Cork Roll-Up Game / SunnyLife Cork Roll-Up Game
+  - used on: new-in.html, summer.html, sunnylife.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Untitleddesign_16.jpg?v=1739702984`
+  - role: FATIA Green Bay Oversized Tee
+  - used on: la-paz.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay5290_7a0665c5-7e1f-412b-a441-fe2cb6527453.jpg?v=1739703254`
+  - role: Terry Polo
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay5514_5eeb426c-91b9-46de-a705-8072b88fe003.jpg?v=1739703252`
+  - role: Terry Shorts
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay5965_2e4dc8f9-3080-4674-8314-9e92b5efc123.jpg?v=1739703250`
+  - role: Hotel Vacay Tee
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/VacayApril2020-103.jpg?v=1739703261`
+  - role: Capri Swim Short / Vacay Swim Shorts
+  - used on: new-in.html, summer.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/VacayApril2020-115.jpg?v=1739703259`
+  - role: Miami Swim Short / Vacay / Vacay Swim Shorts
+  - used on: sale.html, summer.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/VacayJuly210007.jpg?v=1739703257`
+  - role: Linen Shorts
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3065_e6e1d5b0-4c29-4063-9f63-6dcd3ad809f3.jpg?v=1739703265`
+  - role: Lyon Swim Short / Sale
+  - used on: sale.html, vacay.html
+  - fallback already in code: `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3300_ba11d5c6-7652-4307-8640-d71017f71802.jpg?v=1739703248`
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3122_69838eba-03a0-48cb-9a05-b07b9b296999.jpg?v=1739703267`
+  - role: Como Swim Short
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3300_ba11d5c6-7652-4307-8640-d71017f71802.jpg?v=1739703248`
+  - role: Frequent Flyer Tee / Sale / Vacay Frequent Flyer Tee
+  - used on: index.html, new-in.html, sale.html, summer.html, vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3652_b42382b2-2c57-42f6-b32d-8f34731bdeaf.jpg?v=1739703256`
+  - role: Linen Shirt
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_May_97231.jpg?v=1739703262`
+  - role: Korcula Swim Short
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vaycay_Nov_40186less.jpg?v=1739703264`
+  - role: Cancun Swim Short
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Woolcap-Black-Hero.png?v=1739703101`
+  - role: Lift Down Wool Cap / Wool Cap
+  - used on: index.html, lift-down.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/lift-down-cruise-cap-tarmac-754803.webp?v=1751451476`
+  - role: Cruise Cap / Lift Down Cruise Cap
+  - used on: lift-down.html, new-in.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/paddlesmash_balls_lifestyle_small_62a4e213-72d7-4e8e-a1dc-66288fb8730e.png?v=1739702895`
+  - role: PaddleSmash Balls 2-Pack
+  - used on: paddlesmash.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/paddlesmash_insert_2pack.png?v=1739702894`
+  - role: Pole Insert Replacement
+  - used on: paddlesmash.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/paddlesmash_paddle_lifestyle_small_74e43f55-d1bd-492b-abea-6da77214bfb1.png?v=1739702896`
+  - role: PaddleSmash Paddle
+  - used on: index.html, paddlesmash.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/files/vacay_feb_92451_c8e22a99-f214-4eca-92b6-158ab2f0b77b.jpg?v=1739703268`
+  - role: Phoenix Swim Short
+  - used on: vacay.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/296192db267d10a4fbcb8144b7aa59f464242799.jpg?v=1739703594`
+  - role: Leather and jackets / Men's Timeless Leather Jacket
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/299ea58ad2a47c99264dd9c9d2ed22541734c9be.jpg?v=1739703551`
+  - role: Men's Maverick Leather Biker Jacket
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/4d7ad408168e1126e306961c7a7297c372f3ad5e.jpg?v=1739703520`
+  - role: Men's Enodia Leather Riding Jacket
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/5b145b3320c5faade4d0bf5b8ec82be0cf0dd3c7.jpg?v=1739703602`
+  - role: Men's Staple 1/4 Zip Pullover
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/98163-21VM.jpg?v=1739703549`
+  - role: Men's Idyll Windproof Soft Shell Jacket
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/99084-20VM.jpg?v=1739703566`
+  - role: Men's Copperblock Hoodie
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/BreezeGrayHero-4048.jpg?v=1739703289`
+  - role: Breeze Cap
+  - used on: lift-down.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/ClassicCapAmberOrangeHero-0072.png?v=1739703292`
+  - role: Classic Cap / Lift Down Classic Cap
+  - used on: index.html, lift-down.html, sale.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/ForestGreenBeanieOverhead-1931.jpg?v=1739703286`
+  - role: Ultrasoft Beanie
+  - used on: lift-down.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/WhatsAppImage2023-04-20at2.17.03PM.jpg?v=1739703285`
+  - role: Classic Cap bundle
+  - used on: lift-down.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/e9a2eef18f5abcbe3ab7ac5b30f8fc52d9dd719f.jpg?v=1739703563`
+  - role: Men's Transcendent Corduroy Jacket
+  - used on: harley-davidson.html
+- `https://cdn.shopify.com/s/files/1/0735/5315/0234/products/vacay_feb_92423.jpg?v=1739703269`
+  - role: Doha Swim Short
+  - used on: vacay.html
+
