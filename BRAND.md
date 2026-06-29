@@ -69,13 +69,22 @@ store. Confirmed issues:
   site needs to look good and convert on its own.
 - Confirmed: business summary above is accurate. Target customer not yet defined.
 
-### Open decisions before any build
-1. Target platform/stack for the new owned site (custom build vs. hosted).
-2. Where the product data + images come from at launch (reuse the 691 live
-   Shopify products via export/API, or curate a subset).
-3. Define the target customer (riders / gifters / summer-beach / tourists).
-4. What "import the design in" means in practice (Figma → code, or a theme/
-   page-builder the new platform supports).
+### DECISION — platform (confirmed by owner)
+- **Keep Shopify as the backend/engine** (owner is fine with Shopify). Reasons it
+  fits: keeps checkout, KNET/local payments, the 691 live products, inventory,
+  and the physical-booth POS all working — nothing to rebuild.
+- **Deliver a brand-new custom website on top of it** — i.e. a new custom Shopify
+  theme/storefront replacing the current bad one.
+- Owner does NOT want to build/migrate manually — the new design is created and
+  applied for them.
+- "Move off Shopify" really meant "replace the terrible current website," not
+  drop the Shopify backend.
+
+### Still open before build starts
+1. Where product images/content come from for the redesigned pages (reuse
+   existing Shopify media vs. new shots).
+2. Define the target customer (riders / gifters / summer-beach / tourists).
+3. Sign-off on a homepage design concept before full build.
 
 ## Positioning notes
 
