@@ -49,11 +49,33 @@
 - Price range observed: ~KWD 3 (bottle opener, decals) up to ~KWD 248
   (leather jackets). Mid-range clothing KWD 15–75; leather KWD 99–175+.
 
-### Diagnosis of "the website doesn't work"
-The catalog IS live (~691 products published), so the problem is most likely
-NOT an empty store. Likely culprits to confirm: theme/experience quality,
-performance, broken navigation, the messy collection structure, and ~half the
-catalog stuck in draft. This shapes what the new site must fix.
+### Diagnosis of "the website doesn't work" (confirmed by owner)
+The catalog IS live (~691 products published), so the problem is NOT an empty
+store. Confirmed issues:
+- Layout and images are unoptimized and don't look good.
+- Navigation is broken.
+- No real landing pages.
+- Overall: needs a full redesign.
+
+## Redesign brief (owner direction)
+
+- **Goal:** move off Shopify onto a new, owned website.
+- **Approach owner prefers:** create a NEW design first, then import/implement it
+  (design-first, not tweak-the-existing-theme).
+- Must keep the existing **Hafeez branding** (logo set + palette above).
+- Must fix: visual quality, image optimization, navigation, and add proper
+  landing pages.
+- Constraint from owner: **low maintenance** — little time for ads/social, so the
+  site needs to look good and convert on its own.
+- Confirmed: business summary above is accurate. Target customer not yet defined.
+
+### Open decisions before any build
+1. Target platform/stack for the new owned site (custom build vs. hosted).
+2. Where the product data + images come from at launch (reuse the 691 live
+   Shopify products via export/API, or curate a subset).
+3. Define the target customer (riders / gifters / summer-beach / tourists).
+4. What "import the design in" means in practice (Figma → code, or a theme/
+   page-builder the new platform supports).
 
 ## Positioning notes
 
