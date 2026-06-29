@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hafeez</title>
+<!--
+  HAFEEZ homepage — v3, structured after Nike.com's layout playbook
+  (full-bleed hero, category rail, stacked full-width feature modules,
+  product carousel, two-up blocks, big footer). Bright/white, bold type.
+  Original design + code; NO Nike images or assets. Imagery = Hafeez's own
+  licensed product/brand photos (Shopify) + AI-generated H-D campaign shots.
+  Real Hafeez logo kept. Static concept (no live cart).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --green:#26d07c; --green-d:#005844; --yellow:#fff19f; --mint:#b5e3d8;
+    --orange:#ff6900; --ink:#0a0c0b; --grey:#707070; --line:#e3e1da; --bg:#fff; --bg2:#f5f4ef;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1600px;margin:0 auto;padding:0 42px}
+  .disp{font-family:"Archivo",sans-serif;font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.02em}
+  .kick{font-family:"Inter";font-weight:700;font-size:15px;letter-spacing:0;color:var(--ink)}
+
+  /* nike-style pill buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-family:"Inter";font-weight:600;font-size:15px;padding:13px 24px;background:var(--ink);color:#fff;border:1.5px solid var(--ink);border-radius:30px;transition:.2s;cursor:pointer}
+  .btn:hover{background:#2b2b2b;border-color:#2b2b2b}
+  .btn--w{background:#fff;color:var(--ink);border-color:#fff}
+  .btn--w:hover{background:#e9e9e9;border-color:#e9e9e9}
+  .btn--o{background:transparent;color:var(--ink);border-color:rgba(0,0,0,.25)}
+  .btn--o:hover{border-color:var(--ink)}
+
+  /* utility + header */
+  .util{background:var(--bg2);font-size:12px}
+  .util .wrap{display:flex;justify-content:flex-end;gap:20px;align-items:center;height:34px;font-weight:500;color:#3a3a3a}
+  .util a:hover{color:#000}
+  .util b{color:var(--green-d)}
+  header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{height:40px;width:auto}
+  .brand .wm{font-family:"Archivo";font-weight:900;font-size:21px;text-transform:uppercase;letter-spacing:.03em}
+  .menu{display:flex;gap:30px}
+  .menu a{font-family:"Inter";font-weight:600;font-size:16px;padding:8px 0;position:relative}
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--ink);transition:.2s}
+  .menu a:hover::after{width:100%}
+  .menu a.sale{color:var(--orange)}
+  .icons{display:flex;gap:16px;align-items:center}
+  .icons input{background:var(--bg2);border:none;border-radius:24px;padding:10px 16px;font:inherit;font-size:14px;width:170px;outline:none}
+  .icons button{background:none;border:none;cursor:pointer;font:inherit;font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px}
+  .cc{background:var(--green);color:var(--ink);border-radius:50%;width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+  .burger{display:none}
+
+  /* hero */
+  .hero{position:relative;height:90vh;min-height:600px;overflow:hidden;background:#111}
+  .hero .bg{position:absolute;inset:0}
+  .hero.noimg .bg{background:radial-gradient(120% 130% at 75% 25%,var(--green-d),#0a0c0b 65%)}
+  .hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 45%)}
+  .hero .in{position:absolute;left:0;right:0;bottom:54px;z-index:2;text-align:center;color:#fff;padding:0 20px}
+  .hero .kick{color:#fff;margin-bottom:14px}
+  .hero h1{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(46px,8vw,110px);line-height:.86;letter-spacing:-.03em;margin-bottom:24px}
+  .hero .cta{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+  /* category rail */
+  .rail{padding:34px 0 6px}
+  .rail h2{font-family:"Archivo";font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:18px}
+  .rail .scroller{display:flex;gap:14px;overflow-x:auto;padding-bottom:14px;scrollbar-width:thin}
+  .rail .cat{position:relative;flex:0 0 300px;height:380px;overflow:hidden;background:var(--bg2)}
+  .rail .cat img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rail .cat:hover img{transform:scale(1.06)}
+  .rail .cat .lab{position:absolute;left:22px;bottom:20px;z-index:2;color:#fff;font-family:"Archivo";font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:-.01em;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+  .rail .cat::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.45),transparent 55%)}
+  .rail .cat.noimg{background:linear-gradient(150deg,var(--green),var(--green-d))}
+
+  /* full-bleed feature */
+  .feat{position:relative;height:84vh;min-height:560px;overflow:hidden;background:#111;margin-top:30px}
+  .feat .bg{position:absolute;inset:0}
+  .feat .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent 50%)}
+  .feat.noimg .bg{background:linear-gradient(150deg,#1a201c,#0a0c0b)}
+  .feat .in{position:absolute;left:0;right:0;bottom:60px;z-index:2;text-align:center;color:#fff;padding:0 20px}
+  .feat .kick{color:#fff;margin-bottom:12px}
+  .feat h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(38px,6vw,90px);line-height:.88;letter-spacing:-.03em;margin-bottom:14px}
+  .feat p{max-width:54ch;margin:0 auto 22px;font-size:17px;color:rgba(255,255,255,.9)}
+
+  /* product carousel */
+  .prods{padding:64px 0}
+  .prods .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
+  .prods h2{font-family:"Archivo";font-weight:800;font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.01em}
+  .prods .top a{font-weight:600;font-size:15px;border-bottom:2px solid var(--ink);padding-bottom:3px}
+  .pscroll{display:flex;gap:18px;overflow-x:auto;padding-bottom:12px;scrollbar-width:thin}
+  .card{flex:0 0 360px}
+  .card .im{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bg2)}
+  .card .im img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .im img{transform:scale(1.05)}
+  .card .tag{position:absolute;top:16px;left:16px;background:#fff;color:var(--ink);font-weight:700;font-size:12px;padding:5px 10px;z-index:2}
+  .card .tag.v{background:var(--orange);color:#fff}
+  .card h4{font-weight:600;font-size:16px;margin:14px 0 3px}
+  .card .cat{color:var(--grey);font-size:15px}
+  .card .pr{font-weight:600;font-size:16px;margin-top:9px}
+
+  /* two-up */
+  .twoup{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .blk{position:relative;height:78vh;min-height:520px;overflow:hidden;background:#111}
+  .blk .bg{position:absolute;inset:0}
+  .blk img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .blk:hover img{transform:scale(1.05)}
+  .blk .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent 55%)}
+  .blk.noimg .bg{background:linear-gradient(150deg,var(--orange),#7a3300)}
+  .blk.sum.noimg .bg{background:linear-gradient(150deg,var(--mint),var(--green))}
+  .blk .in{position:absolute;left:0;right:0;bottom:48px;z-index:2;text-align:center;color:#fff;padding:0 24px}
+  .blk h3{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(30px,4vw,56px);line-height:.9;letter-spacing:-.02em;margin-bottom:16px}
+
+  /* shop by brand */
+  .brands{padding:74px 0;background:var(--bg2)}
+  .brands h2{font-family:"Archivo";font-weight:800;font-size:clamp(24px,3vw,34px);text-transform:uppercase;text-align:center;margin-bottom:30px}
+  .brow{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .brow a{background:#fff;border:1px solid var(--line);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:22px;font-family:"Archivo";font-weight:800;font-size:18px;text-transform:uppercase;color:var(--ink);transition:.2s;text-align:center}
+  .brow a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* newsletter */
+  .news{background:var(--ink);color:#fff;text-align:center;padding:84px 0}
+  .news h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(30px,4.5vw,58px);line-height:.92;letter-spacing:-.02em}
+  .news p{color:rgba(255,255,255,.7);margin:16px auto 28px;max-width:44ch}
+  .news form{display:flex;max-width:500px;margin:0 auto;gap:10px}
+  .news input{flex:1;background:#fff;border:none;border-radius:30px;padding:16px 22px;font:inherit;font-size:15px;outline:none}
+  .news .btn{background:var(--green);border-color:var(--green);color:var(--ink)}
+  .news .btn:hover{background:#1fb86c;border-color:#1fb86c}
+
+  /* footer */
+  footer{background:#fff;border-top:1px solid var(--line);padding-top:60px}
+  .fmain{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:36px;padding-bottom:46px}
+  .fbrand img{height:46px;margin-bottom:16px}
+  .fbrand p{color:var(--grey);max-width:34ch;font-size:14px}
+  .fcol h5{font-family:"Archivo";font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px}
+  .fcol a{display:block;color:var(--grey);font-size:14px;margin-bottom:11px}
+  .fcol a:hover{color:var(--ink)}
+  .fbot{border-top:1px solid var(--line);padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .fbot .cr{font-size:13px;color:var(--grey)}
+  .pays{display:flex;gap:8px}
+  .pays span{font-family:"Archivo";font-weight:700;font-size:10px;border:1px solid var(--line);padding:6px 9px;color:#555}
+  .imgwrap{position:absolute;inset:0}
+
+  @media(max-width:1080px){
+    .menu,.icons input{display:none}.burger{display:flex}
+    .twoup{grid-template-columns:1fr}
+    .brow{grid-template-columns:repeat(3,1fr)}
+    .fmain{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:760px){
+    .wrap{padding:0 20px}
+    .rail .cat{flex-basis:230px;height:300px}
+    .card{flex-basis:260px}
+    .brow{grid-template-columns:repeat(2,1fr)}
+    .fmain{grid-template-columns:1fr}
+    .news form{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<div class="util"><div class="wrap">
+  <a href="#">Find our booth</a><span>·</span><a href="#">Help</a><span>·</span><a href="#"><b>EN</b> / ع</a>
+</div></div>
+
+<header><div class="wrap nav">
+  <a href="#" class="brand"><img src="assets/hafeez-logo-green.png" alt="Hafeez" onerror="this.style.display='none'"/><span class="wm">Hafeez</span></a>
+  <nav class="menu">
+    <a href="#">Harley-Davidson</a><a href="#">PaddleSmash</a><a href="#">Summer &amp; Lifestyle</a><a href="#">Headwear</a><a href="#" class="sale">Sale</a>
+  </nav>
+  <div class="icons">
+    <input placeholder="Search"/><button>Account</button><button>Bag <span class="cc">2</span></button><button class="burger">☰</button>
+  </div>
+</div></header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="bg"><div class="imgwrap"><img alt="Harley-Davidson rider" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083611_40ccabb9-5744-404c-b90c-f25650dab492.png" onerror="document.getElementById('hero').classList.add('noimg');this.style.display='none'"/></div></div>
+  <div class="in">
+    <div class="kick">Official Harley-Davidson® · Kuwait</div>
+    <h1>Own every mile</h1>
+    <div class="cta">
+      <a href="#" class="btn btn--w">Shop Harley-Davidson</a>
+      <a href="#" class="btn btn--o" style="color:#fff;border-color:rgba(255,255,255,.55)">Explore PaddleSmash</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY RAIL -->
+<section class="rail wrap">
+  <h2>Shop by category</h2>
+  <div class="scroller">
+    <a href="#" class="cat" id="c1"><div class="imgwrap"><img alt="Men" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/96782-25VM_F.webp?v=1765189617" onerror="document.getElementById('c1').classList.add('noimg');this.style.display='none'"/></div><span class="lab">Men</span></a>
+    <a href="#" class="cat" id="c2"><div class="imgwrap"><img alt="Women" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/96245-24VWF.jpg?v=1760945424" onerror="document.getElementById('c2').classList.add('noimg');this.style.display='none'"/></div><span class="lab">Women</span></a>
+    <a href="#" class="cat" id="c3"><div class="imgwrap"><img alt="Headwear" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/97749-25VM_F.webp?v=1758791985" onerror="document.getElementById('c3').classList.add('noimg');this.style.display='none'"/></div><span class="lab">Headwear</span></a>
+    <a href="#" class="cat" id="c4"><div class="imgwrap"><img alt="Leather" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/97109-25vm.jpg?v=1739702899" onerror="document.getElementById('c4').classList.add('noimg');this.style.display='none'"/></div><span class="lab">Leather &amp; Gloves</span></a>
+    <a href="#" class="cat" id="c5"><div class="imgwrap"><img alt="PaddleSmash" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083615_eab862ff-8793-49f4-a842-6f4f9be936a2.png" onerror="document.getElementById('c5').classList.add('noimg');this.style.display='none'"/></div><span class="lab">PaddleSmash</span></a>
+    <a href="#" class="cat" id="c6"><div class="imgwrap"><img alt="Summer" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083618_62084e73-5e23-4415-a401-1f4abeff37fb.png" onerror="document.getElementById('c6').classList.add('noimg');this.style.display='none'"/></div><span class="lab">Summer</span></a>
+  </div>
+</section>
+
+<!-- FEATURE: HARLEY -->
+<section class="feat" id="feat1">
+  <div class="bg"><div class="imgwrap"><img alt="Harley-Davidson leather" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083621_2e500c90-e3f3-40db-af98-a0edecc0130b.png" onerror="document.getElementById('feat1').classList.add('noimg');this.style.display='none'"/></div></div>
+  <div class="in">
+    <div class="kick">The Originals</div>
+    <h2>The real thing</h2>
+    <p>Over 1,200 styles of genuine, officially licensed Harley-Davidson® gear — sourced through our booth inside H-D Kuwait.</p>
+    <a href="#" class="btn btn--w">Shop Harley-Davidson</a>
+  </div>
+</section>
+
+<!-- PRODUCT CAROUSEL -->
+<section class="prods wrap">
+  <div class="top"><h2>Best sellers</h2><a href="#">Shop all</a></div>
+  <div class="pscroll">
+    <a href="#" class="card" id="p1"><div class="im"><span class="tag">New</span><div class="imgwrap"><img alt="Bar Font Colorblock Pullover Hoodie" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/96714-25VM_F.jpg?v=1770106450" onerror="document.getElementById('p1').classList.add('noimg');this.style.display='none'"/></div></div><h4>Bar Font Colorblock Pullover Hoodie</h4><div class="cat">Harley-Davidson®</div><div class="pr">38.000 KWD</div></a>
+    <a href="#" class="card" id="p2"><div class="im"><span class="tag">Headwear</span><div class="imgwrap"><img alt="Live By It Switchback Cap Green" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/97749-25VM_F.webp?v=1758791985" onerror="document.getElementById('p2').classList.add('noimg');this.style.display='none'"/></div></div><h4>Live By It Switchback Cap — Green</h4><div class="cat">Harley-Davidson®</div><div class="pr">20.000 KWD</div></a>
+    <a href="#" class="card" id="p3"><div class="im"><span class="tag">Icon</span><div class="imgwrap"><img alt="Willie G Skull Leather Riding Gloves" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/97109-25vm.jpg?v=1739702899" onerror="document.getElementById('p3').classList.add('noimg');this.style.display='none'"/></div></div><h4>Willie G Skull Leather Riding Gloves</h4><div class="cat">Men · Leather</div><div class="pr">48.000 KWD</div></a>
+    <a href="#" class="card" id="p4"><div class="im"><span class="tag v">Viral</span><div class="imgwrap"><img alt="PaddleSmash Complete Set" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Image1.jpg?v=1739702944" onerror="document.getElementById('p4').classList.add('noimg');this.style.display='none'"/></div></div><h4>PaddleSmash Complete Set</h4><div class="cat">PaddleSmash</div><div class="pr">68.000 KWD</div></a>
+    <a href="#" class="card" id="p5"><div class="im"><span class="tag">Crew</span><div class="imgwrap"><img alt="Lone Wolf Lowrider Crewneck" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/96782-25VM_F.webp?v=1765189617" onerror="document.getElementById('p5').classList.add('noimg');this.style.display='none'"/></div></div><h4>Men's Lone Wolf Lowrider Crewneck</h4><div class="cat">Harley-Davidson®</div><div class="pr">38.000 KWD</div></a>
+  </div>
+</section>
+
+<!-- TWO-UP -->
+<section class="twoup">
+  <div class="blk" id="b1"><div class="bg"><div class="imgwrap"><img alt="PaddleSmash" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083615_eab862ff-8793-49f4-a842-6f4f9be936a2.png" onerror="document.getElementById('b1').classList.add('noimg');this.style.display='none'"/></div></div><div class="in"><h3>Summer's<br/>favourite smash</h3><a href="#" class="btn btn--w">Shop PaddleSmash</a></div></div>
+  <div class="blk sum" id="b2"><div class="bg"><div class="imgwrap"><img alt="Summer & Lifestyle" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/collections/1-2_1_1802x_fcbd334b-4868-4b91-b7d9-78607a0158ce.webp?v=1686476323" onerror="document.getElementById('b2').classList.add('noimg');this.style.display='none'"/></div></div><div class="in"><h3>Built for<br/>Kuwait summers</h3><a href="#" class="btn btn--w">Shop Summer</a></div></div>
+</section>
+
+<!-- FEATURE: BOOTH -->
+<section class="feat" id="feat2" style="margin-top:0">
+  <div class="bg"><div class="imgwrap"><img alt="Hafeez store inside Harley-Davidson Kuwait" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/collections/Hafeez_Store_Photo.jpg?v=1699860086" onerror="document.getElementById('feat2').classList.add('noimg');this.style.display='none'"/></div></div>
+  <div class="in">
+    <div class="kick">Inside Harley-Davidson Kuwait</div>
+    <h2>The official home</h2>
+    <p>Hafeez is the official Harley-Davidson® merchandise reseller in Kuwait — a subsidiary of Harley-Davidson Kuwait. 100% authentic, online and in our showroom booth.</p>
+    <a href="#" class="btn btn--w">Visit our booth</a>
+  </div>
+</section>
+
+<!-- SHOP BY BRAND -->
+<section class="brands">
+  <div class="wrap">
+    <h2>Shop by brand</h2>
+    <div class="brow">
+      <a href="#">Harley-Davidson®</a><a href="#">PaddleSmash</a><a href="#">Lift Down</a><a href="#">La Paz</a><a href="#">Vacay</a><a href="#">SunnyLife</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news"><div class="wrap">
+  <h2>First to ride. First to know.</h2>
+  <p>New arrivals, restocks and members-only drops — straight to your inbox. Ships across the GCC.</p>
+  <form onsubmit="return false"><input type="email" placeholder="Your email address"/><button class="btn">Subscribe</button></form>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="fmain">
+    <div class="fbrand"><img src="assets/hafeez-logo-green.png" alt="Hafeez" onerror="this.style.display='none'"/><p>Kuwait's official Harley-Davidson® merchandise reseller — a subsidiary of Harley-Davidson Kuwait. Plus the lifestyle brands that define the season.</p></div>
+    <div class="fcol"><h5>Shop</h5><a href="#">Harley-Davidson</a><a href="#">PaddleSmash</a><a href="#">Summer &amp; Lifestyle</a><a href="#">Headwear</a><a href="#">Sale</a></div>
+    <div class="fcol"><h5>Support</h5><a href="#">GCC Shipping</a><a href="#">Returns</a><a href="#">Track Order</a><a href="#">Size Guides</a><a href="#">Contact</a></div>
+    <div class="fcol"><h5>Hafeez</h5><a href="#">Our Booth</a><a href="#">About</a><a href="#">Instagram</a><a href="#">العربية</a></div>
+  </div>
+  <div class="fbot"><div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div><div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div></div>
+</div></footer>
+
+</body>
+</html>
