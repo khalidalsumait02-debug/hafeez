@@ -1,0 +1,4 @@
+# Build artifacts
+# Theme zip is regenerated from shopify-theme/ on demand
+hafeez-shopify-theme.zip
+*.zip
