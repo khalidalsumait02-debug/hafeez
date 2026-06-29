@@ -86,7 +86,7 @@
     },
     "products": {
       "type": "featured-products",
-      "settings": { "heading": "Shop PaddleSmash", "layout": "grid", "product_limit": 4, "first_badge": "Best Seller", "link_label": "View all" }
+      "settings": { "heading": "Shop PaddleSmash", "collection": "paddlesmash", "layout": "grid", "product_limit": 4, "first_badge": "Best Seller", "link_label": "View all", "link_url": "shopify://collections/paddlesmash" }
     },
     "lookbook": {
       "type": "lookbook",

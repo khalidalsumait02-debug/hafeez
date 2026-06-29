@@ -7,7 +7,9 @@
         "heading": "The ride. The game. The summer.",
         "text": "Official Harley-Davidson® gear, the viral PaddleSmash game, and the brands that own Kuwait's summer — all in one place, shipped across the GCC.",
         "button1_label": "Shop new arrivals",
-        "button2_label": "Explore PaddleSmash"
+        "button1_url": "shopify://collections/new-arrivals",
+        "button2_label": "Explore PaddleSmash",
+        "button2_url": "shopify://collections/paddlesmash"
       }
     },
     "trust": {
@@ -23,21 +25,21 @@
     "twoup": {
       "type": "two-up",
       "blocks": {
-        "t1": { "type": "block", "settings": { "heading": "Lift Down. Made to wear daily", "button_label": "Shop Lift Down" } },
-        "t2": { "type": "block", "settings": { "heading": "Built for Kuwait summers", "button_label": "Shop Summer" } }
+        "t1": { "type": "block", "settings": { "heading": "Lift Down. Made to wear daily", "button_label": "Shop Lift Down", "button_url": "shopify://collections/lift-down" } },
+        "t2": { "type": "block", "settings": { "heading": "Built for Kuwait summers", "button_label": "Shop Summer", "button_url": "shopify://collections/vacay-swimwear" } }
       },
       "block_order": ["t1", "t2"]
     },
     "categories": {
       "type": "category-scroller",
-      "settings": { "heading": "Shop by category", "link_label": "View all" },
+      "settings": { "heading": "Shop by category", "link_label": "View all", "link_url": "shopify://collections" },
       "blocks": {
-        "c1": { "type": "category", "settings": { "label": "New In" } },
-        "c2": { "type": "category", "settings": { "label": "Men" } },
-        "c3": { "type": "category", "settings": { "label": "Women" } },
-        "c4": { "type": "category", "settings": { "label": "Headwear" } },
-        "c5": { "type": "category", "settings": { "label": "Accessories" } },
-        "c6": { "type": "category", "settings": { "label": "Sale" } }
+        "c1": { "type": "category", "settings": { "collection": "new-arrivals", "label": "New In" } },
+        "c2": { "type": "category", "settings": { "collection": "clothing", "label": "Clothing" } },
+        "c3": { "type": "category", "settings": { "collection": "hats", "label": "Headwear" } },
+        "c4": { "type": "category", "settings": { "collection": "sunglasses", "label": "Accessories" } },
+        "c5": { "type": "category", "settings": { "collection": "collectables", "label": "Collectables" } },
+        "c6": { "type": "category", "settings": { "collection": "discount-offer", "label": "Sale" } }
       },
       "block_order": ["c1", "c2", "c3", "c4", "c5", "c6"]
     },
@@ -50,6 +52,7 @@
         "heading": "Everyone's playing PaddleSmash",
         "text": "Part pickleball, part spikeball, all addictive — the game taking over Kuwait's chalets and beaches.",
         "button_label": "Shop PaddleSmash",
+        "button_url": "shopify://collections/paddlesmash",
         "button_style": ""
       },
       "blocks": {
@@ -63,10 +66,12 @@
       "type": "featured-products",
       "settings": {
         "heading": "Best sellers",
+        "collection": "frontpage",
         "product_limit": 8,
         "layout": "carousel",
         "first_badge": "Best Seller",
-        "link_label": "Shop all"
+        "link_label": "Shop all",
+        "link_url": "shopify://collections/frontpage"
       }
     },
     "booth": {
@@ -92,12 +97,12 @@
       "type": "brand-grid",
       "settings": { "heading": "Shop by brand" },
       "blocks": {
-        "br1": { "type": "brand", "settings": { "label": "PaddleSmash" } },
-        "br2": { "type": "brand", "settings": { "label": "Lift Down" } },
-        "br3": { "type": "brand", "settings": { "label": "Vacay" } },
-        "br4": { "type": "brand", "settings": { "label": "La Paz" } },
-        "br5": { "type": "brand", "settings": { "label": "SunnyLife" } },
-        "br6": { "type": "brand", "settings": { "label": "Harley-Davidson®" } }
+        "br1": { "type": "brand", "settings": { "collection": "paddlesmash", "label": "PaddleSmash" } },
+        "br2": { "type": "brand", "settings": { "collection": "lift-down", "label": "Lift Down" } },
+        "br3": { "type": "brand", "settings": { "collection": "vacay-swimwear", "label": "Vacay" } },
+        "br4": { "type": "brand", "settings": { "collection": "la-paz", "label": "La Paz" } },
+        "br5": { "type": "brand", "settings": { "collection": "sunnylife", "label": "SunnyLife" } },
+        "br6": { "type": "brand", "settings": { "collection": "harley-davidson", "label": "Harley-Davidson®" } }
       },
       "block_order": ["br1", "br2", "br3", "br4", "br5", "br6"]
     },
