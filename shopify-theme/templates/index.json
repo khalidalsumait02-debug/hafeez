@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Hafeez · Kuwait's lifestyle store",
+        "heading": "The ride. The game. The summer.",
+        "text": "Official Harley-Davidson® gear, the viral PaddleSmash game, and the brands that own Kuwait's summer — all in one place, shipped across the GCC.",
+        "button1_label": "Shop new arrivals",
+        "button2_label": "Explore PaddleSmash"
+      }
+    },
+    "trust": {
+      "type": "trust-bar",
+      "blocks": {
+        "b1": { "type": "item", "settings": { "icon": "shipping", "text": "<b>Free GCC shipping</b> over 25 KWD" } },
+        "b2": { "type": "item", "settings": { "icon": "shield", "text": "<b>100% authentic</b> · official H-D reseller" } },
+        "b3": { "type": "item", "settings": { "icon": "card", "text": "<b>KNET</b> & Apple Pay" } },
+        "b4": { "type": "item", "settings": { "icon": "returns", "text": "<b>Easy returns</b> across Kuwait" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"]
+    },
+    "twoup": {
+      "type": "two-up",
+      "blocks": {
+        "t1": { "type": "block", "settings": { "heading": "Lift Down. Made to wear daily", "button_label": "Shop Lift Down" } },
+        "t2": { "type": "block", "settings": { "heading": "Built for Kuwait summers", "button_label": "Shop Summer" } }
+      },
+      "block_order": ["t1", "t2"]
+    },
+    "categories": {
+      "type": "category-scroller",
+      "settings": { "heading": "Shop by category", "link_label": "View all" },
+      "blocks": {
+        "c1": { "type": "category", "settings": { "label": "New In" } },
+        "c2": { "type": "category", "settings": { "label": "Men" } },
+        "c3": { "type": "category", "settings": { "label": "Women" } },
+        "c4": { "type": "category", "settings": { "label": "Headwear" } },
+        "c5": { "type": "category", "settings": { "label": "Accessories" } },
+        "c6": { "type": "category", "settings": { "label": "Sale" } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4", "c5", "c6"]
+    },
+    "paddlesmash": {
+      "type": "split-feature",
+      "settings": {
+        "color_scheme": "green",
+        "flip": true,
+        "eyebrow": "The viral one",
+        "heading": "Everyone's playing PaddleSmash",
+        "text": "Part pickleball, part spikeball, all addictive — the game taking over Kuwait's chalets and beaches.",
+        "button_label": "Shop PaddleSmash",
+        "button_style": ""
+      },
+      "blocks": {
+        "s1": { "type": "stat", "settings": { "number": "2 min", "label": "To learn" } },
+        "s2": { "type": "stat", "settings": { "number": "2–4", "label": "Players" } },
+        "s3": { "type": "stat", "settings": { "number": "68 KWD", "label": "Complete set" } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "bestsellers": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Best sellers",
+        "product_limit": 8,
+        "layout": "carousel",
+        "first_badge": "Best Seller",
+        "link_label": "Shop all"
+      }
+    },
+    "booth": {
+      "type": "split-feature",
+      "settings": {
+        "color_scheme": "darkgreen",
+        "flip": false,
+        "eyebrow": "This is Hafeez",
+        "heading": "One store. Every brand you love.",
+        "text": "Kuwait's home for authentic Harley-Davidson® gear, the viral PaddleSmash game, and the lifestyle brands that own the summer — a subsidiary of Harley-Davidson Kuwait.",
+        "button_label": "Visit our booth",
+        "button_style": "btn--green",
+        "anchor": "booth"
+      },
+      "blocks": {
+        "p1": { "type": "point", "settings": { "text": "100% authentic, officially licensed merchandise." } },
+        "p2": { "type": "point", "settings": { "text": "Shop online, or visit our showroom booth." } },
+        "p3": { "type": "point", "settings": { "text": "Fast, tracked delivery across the GCC." } }
+      },
+      "block_order": ["p1", "p2", "p3"]
+    },
+    "brands": {
+      "type": "brand-grid",
+      "settings": { "heading": "Shop by brand" },
+      "blocks": {
+        "br1": { "type": "brand", "settings": { "label": "PaddleSmash" } },
+        "br2": { "type": "brand", "settings": { "label": "Lift Down" } },
+        "br3": { "type": "brand", "settings": { "label": "Vacay" } },
+        "br4": { "type": "brand", "settings": { "label": "La Paz" } },
+        "br5": { "type": "brand", "settings": { "label": "SunnyLife" } },
+        "br6": { "type": "brand", "settings": { "label": "Harley-Davidson®" } }
+      },
+      "block_order": ["br1", "br2", "br3", "br4", "br5", "br6"]
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": { "heading": "Loved across Kuwait" },
+      "blocks": {
+        "r1": { "type": "review", "settings": { "quote": "Got the PaddleSmash set for our chalet weekend — everyone was obsessed. Delivered next day.", "author": "Yousef · Kuwait City" } },
+        "r2": { "type": "review", "settings": { "quote": "Real Harley gear without flying abroad. The jacket quality is exactly what you'd expect from H-D.", "author": "Abdullah · Salmiya" } },
+        "r3": { "type": "review", "settings": { "quote": "Love the Vacay shorts and Lift Down caps. Fast shipping to the UAE too.", "author": "Sara · Dubai" } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "eyebrow": "Join the list",
+        "heading": "First to ride. First to know.",
+        "text": "New arrivals, restocks and members-only drops — straight to your inbox. Ships across the GCC."
+      }
+    }
+  },
+  "order": ["hero", "trust", "twoup", "categories", "paddlesmash", "bestsellers", "booth", "brands", "reviews", "newsletter"]
+}

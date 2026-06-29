@@ -1,0 +1,66 @@
+{%- liquid
+  assign menu = section.settings.menu
+-%}
+
+<header>
+  <div class="wrap nav">
+    <a href="{{ routes.root_url }}" class="brand" aria-label="{{ shop.name }} home">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo | image_url: width: 240 | image_tag: loading: 'eager', alt: shop.name }}
+      {%- else -%}
+        <img src="{{ 'hafeez-logo-green.png' | asset_url }}" alt="{{ shop.name }}" width="120" height="42">
+      {%- endif -%}
+    </a>
+
+    <nav class="menu" aria-label="Primary">
+      {%- for link in linklists[menu].links -%}
+        <a href="{{ link.url }}"
+          class="{% if link.title contains 'Sale' %}sale{% endif %}{% if link.active %} active{% endif %}">
+          {{- link.title -}}
+        </a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="icons">
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+        <span class="sr-only">{{ 'general.accessibility.search' | t }}</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+      </form>
+
+      <a class="icon-btn" href="{% if shop.customer_accounts_enabled %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" aria-label="{{ 'customer.account.title' | t }}">{{ 'customer.account.title' | t }}</a>
+
+      <a class="icon-btn" href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items">
+        Bag <span class="cc" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+
+      <button class="burger" aria-label="{{ 'general.accessibility.open_menu' | t }}" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+
+<nav class="mobilemenu" id="mobilemenu" aria-label="Mobile">
+  <button class="mm-close" aria-label="{{ 'general.accessibility.close_menu' | t }}">×</button>
+  <a href="{{ routes.root_url }}">Home</a>
+  {%- for link in linklists[menu].links -%}
+    <a href="{{ link.url }}" class="{% if link.title contains 'Sale' %}sale{% endif %}">{{ link.title }}</a>
+  {%- endfor -%}
+  <a href="{% if shop.customer_accounts_enabled %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">{{ 'customer.account.title' | t }}</a>
+  <a href="#">العربية</a>
+</nav>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

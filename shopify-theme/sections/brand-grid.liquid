@@ -1,0 +1,57 @@
+<section class="sec brands">
+  <div class="wrap">
+    <div class="head"><h2>{{ section.settings.heading }}</h2></div>
+    <div class="brow">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign b_url = block.settings.link
+          assign b_label = block.settings.label
+          if block.settings.collection != blank
+            assign col = collections[block.settings.collection]
+            if b_url == blank
+              assign b_url = col.url
+            endif
+            if b_label == blank
+              assign b_label = col.title
+            endif
+          endif
+        -%}
+        <a href="{{ b_url | default: '#' }}" {{ block.shopify_attributes }}>{{ b_label }}</a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shop by brand" }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "Brand",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection (optional)" },
+        { "type": "text", "id": "label", "label": "Label override" },
+        { "type": "url", "id": "link", "label": "Link override" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Brand grid",
+      "blocks": [
+        { "type": "brand", "settings": { "label": "PaddleSmash" } },
+        { "type": "brand", "settings": { "label": "Lift Down" } },
+        { "type": "brand", "settings": { "label": "Vacay" } },
+        { "type": "brand", "settings": { "label": "La Paz" } },
+        { "type": "brand", "settings": { "label": "SunnyLife" } },
+        { "type": "brand", "settings": { "label": "Harley-Davidson®" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

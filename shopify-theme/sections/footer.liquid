@@ -1,0 +1,98 @@
+<footer>
+  <div class="wrap">
+    <div class="fmain">
+      <div class="fbrand">
+        {%- if settings.logo != blank -%}
+          {{ settings.logo | image_url: width: 240 | image_tag: loading: 'lazy', alt: shop.name }}
+        {%- else -%}
+          <img src="{{ 'hafeez-logo-green.png' | asset_url }}" alt="{{ shop.name }}" width="120" height="46">
+        {%- endif -%}
+        <p>{{ section.settings.brand_text }}</p>
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'menu' -%}
+          <div class="fcol" {{ block.shopify_attributes }}>
+            <h4>{{ block.settings.heading }}</h4>
+            {%- for link in linklists[block.settings.menu].links -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="fbot">
+      <div class="cr">{{ section.settings.copyright }}</div>
+      <div class="legal">
+        {%- for link in linklists[section.settings.legal_menu].links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      </div>
+      <div class="pays">
+        {%- assign pays = section.settings.payment_labels | split: ',' -%}
+        {%- for p in pays -%}
+          <span>{{ p | strip }}</span>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "brand_text",
+      "label": "Brand description",
+      "default": "Kuwait's official Harley-Davidson® merchandise reseller — a subsidiary of Harley-Davidson Kuwait. Plus the lifestyle brands that define the season."
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright line",
+      "default": "© 2026 Hafeez International — Kuwait. All rights reserved."
+    },
+    {
+      "type": "link_list",
+      "id": "legal_menu",
+      "label": "Legal / policy menu",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "payment_labels",
+      "label": "Payment labels (comma separated)",
+      "default": "KNET, VISA, MASTERCARD, APPLE PAY"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Shop"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "menu", "settings": { "heading": "Shop" } },
+      { "type": "menu", "settings": { "heading": "Support" } },
+      { "type": "menu", "settings": { "heading": "Hafeez" } }
+    ]
+  }
+}
+{% endschema %}

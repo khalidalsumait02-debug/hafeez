@@ -1,0 +1,79 @@
+<div class="bcrumb wrap"><a href="{{ routes.root_url }}">Home</a> / {% if product.collections.first %}<a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a> / {% endif %}{{ product.title }}</div>
+
+<section class="pdp" id="ProductSection-{{ section.id }}" data-product>
+  <div class="gallery">
+    <div class="imgwrap main-image">
+      {%- if product.featured_media -%}
+        {{ product.featured_media | image_url: width: 1200 | image_tag: id: 'MainImage', loading: 'eager', alt: product.title | escape, widths: '500,800,1200' }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'media' }}
+      {%- endif -%}
+    </div>
+    {%- if product.media.size > 1 -%}
+      <div class="thumbs">
+        {%- for media in product.media -%}
+          <button type="button" class="imgwrap thumb" data-thumb data-full="{{ media | image_url: width: 1200 }}" aria-label="View image {{ forloop.index }}">
+            {{ media | image_url: width: 200 | image_tag: loading: 'lazy', alt: '' }}
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="info">
+    {%- if product.vendor != blank -%}<div class="vendor">{{ product.vendor }}</div>{%- endif -%}
+    <h1>{{ product.title }}</h1>
+
+    {%- assign current = product.selected_or_first_available_variant -%}
+    <div class="price" data-price>
+      {%- if current.compare_at_price > current.price -%}
+        <span class="was">{{ current.compare_at_price | money }}</span><span class="now">{{ current.price | money }}</span>
+      {%- else -%}
+        {{ current.price | money }}
+      {%- endif -%}
+    </div>
+
+    {%- form 'product', product, novalidate: 'novalidate' -%}
+      {%- unless product.has_only_default_variant -%}
+        <div class="opt">
+          <label for="VariantSelect-{{ section.id }}">Options</label>
+          <select id="VariantSelect-{{ section.id }}" name="id" data-variant-select>
+            {%- for variant in product.variants -%}
+              <option value="{{ variant.id }}"
+                {% if variant == current %}selected{% endif %}
+                {% unless variant.available %}disabled{% endunless %}
+                data-price="{% if variant.compare_at_price > variant.price %}<span class='was'>{{ variant.compare_at_price | money }}</span><span class='now'>{{ variant.price | money }}</span>{% else %}{{ variant.price | money }}{% endif %}">
+                {{ variant.title }}{% unless variant.available %} — {{ 'products.product.sold_out' | t }}{% endunless %}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+      {%- else -%}
+        <input type="hidden" name="id" value="{{ current.id }}">
+      {%- endunless -%}
+
+      <div class="qty-row">
+        <div class="qty">
+          <button type="button" data-qty-down aria-label="Decrease quantity">−</button>
+          <input type="number" name="quantity" value="1" min="1" aria-label="{{ 'products.product.quantity' | t }}">
+          <button type="button" data-qty-up aria-label="Increase quantity">+</button>
+        </div>
+        <button type="submit" name="add" class="btn btn--green" {% unless product.available %}disabled{% endunless %}>
+          {%- if product.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+        </button>
+      </div>
+    {%- endform -%}
+
+    {%- if product.description != blank -%}
+      <div class="desc rte">{{ product.description }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [],
+  "blocks": [{ "type": "@app" }]
+}
+{% endschema %}

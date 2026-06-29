@@ -1,0 +1,58 @@
+<div class="trust">
+  <div class="wrap">
+    {%- for block in section.blocks -%}
+      <div class="t" {{ block.shopify_attributes }}>
+        {%- case block.settings.icon -%}
+          {%- when 'shipping' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005844" stroke-width="2" aria-hidden="true"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          {%- when 'shield' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005844" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          {%- when 'card' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005844" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          {%- when 'returns' -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#005844" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 1 3 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+        {%- endcase -%}
+        <span>{{ block.settings.text }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust bar",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shipping", "label": "Shipping" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "card", "label": "Card" },
+            { "value": "returns", "label": "Returns" }
+          ],
+          "default": "shipping"
+        },
+        { "type": "inline_richtext", "id": "text", "label": "Text", "default": "<b>Free GCC shipping</b> over 25 KWD" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Trust bar",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "shipping", "text": "<b>Free GCC shipping</b> over 25 KWD" } },
+        { "type": "item", "settings": { "icon": "shield", "text": "<b>100% authentic</b> · official H-D reseller" } },
+        { "type": "item", "settings": { "icon": "card", "text": "<b>KNET</b> & Apple Pay" } },
+        { "type": "item", "settings": { "icon": "returns", "text": "<b>Easy returns</b> across Kuwait" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

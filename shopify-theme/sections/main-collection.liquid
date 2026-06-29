@@ -1,0 +1,61 @@
+<div class="pagehead">
+  <div class="wrap">
+    <div class="eyebrow">Collection</div>
+    <h1>{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <p>{{ collection.description | strip_html | truncatewords: 40 }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+<section class="sec wrap">
+  {%- if section.settings.show_sort -%}
+    <div class="head">
+      <form method="get" class="chips" id="sort-form">
+        {%- assign sort = collection.sort_by | default: collection.default_sort_by -%}
+        <label class="sr-only" for="SortBy">{{ 'products.facets.sort_by' | t }}</label>
+        <select name="sort_by" id="SortBy" class="chip" onchange="this.form.submit()">
+          {%- for option in collection.sort_options -%}
+            <option value="{{ option.value }}" {% if option.value == sort %}selected{% endif %}>{{ option.name }}</option>
+          {%- endfor -%}
+        </select>
+      </form>
+    </div>
+  {%- endif -%}
+
+  {%- paginate collection.products by section.settings.per_page -%}
+    {%- if collection.products.size > 0 -%}
+      <div class="pgrid">
+        {%- for product in collection.products -%}
+          {%- render 'product-card', product: product -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="pagination" role="navigation">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}">←</a>{%- endif -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}">{{ part.title }}</a>
+            {%- else -%}
+              <span class="current">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}">→</a>{%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- else -%}
+      <p class="empty">No products in this collection yet.</p>
+    {%- endif -%}
+  {%- endpaginate -%}
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    { "type": "range", "id": "per_page", "min": 8, "max": 48, "step": 4, "label": "Products per page", "default": 24 },
+    { "type": "checkbox", "id": "show_sort", "label": "Show sort dropdown", "default": true }
+  ]
+}
+{% endschema %}

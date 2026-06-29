@@ -1,0 +1,9 @@
+<div class="pagehead"><div class="wrap"><div class="eyebrow">Order</div><h1>{{ order.name }}</h1></div></div>
+<div class="legaldoc">
+  <p class="meta">Placed {{ order.created_at | date: '%B %e, %Y' }} · {{ order.financial_status_label }} · {{ order.fulfillment_status_label }}</p>
+  {%- for line in order.line_items -%}
+    <p>{{ line.quantity }} × {{ line.title }} — {{ line.final_line_price | money }}</p>
+  {%- endfor -%}
+  <h2>Total: {{ order.total_net_amount | money }}</h2>
+  <p><a href="{{ routes.account_url }}">← Back to account</a></p>
+</div>

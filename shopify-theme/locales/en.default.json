@@ -1,0 +1,71 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "search": "Search",
+      "close": "Close",
+      "open_menu": "Open menu",
+      "close_menu": "Close menu"
+    },
+    "search": {
+      "search": "Search",
+      "placeholder": "Search products"
+    },
+    "newsletter": {
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe",
+      "success": "Thanks for subscribing."
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you were looking for doesn't exist.",
+      "link": "Continue shopping"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "quick_add": "Quick add",
+      "on_sale": "Sale",
+      "from_price": "From {{ price }}",
+      "quantity": "Quantity",
+      "view_full_details": "View full details"
+    },
+    "facets": {
+      "sort_by": "Sort by",
+      "filter": "Filter",
+      "view_all": "View all"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your bag",
+      "empty": "Your bag is empty",
+      "continue_shopping": "Continue shopping",
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "remove": "Remove",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+      "update": "Update"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Account",
+      "login": "Log in",
+      "logout": "Log out"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Free express shipping across the GCC over 25 KWD",
+      "menu": "Menu"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="pagehead"><div class="wrap"><div class="eyebrow">Account</div><h1>My account</h1></div></div>
+<div class="legaldoc">
+  <p>Welcome back, {{ customer.first_name | default: customer.email }}. <a href="{{ routes.account_logout_url }}">Log out</a></p>
+  <h2>Order history</h2>
+  {%- paginate customer.orders by 20 -%}
+    {%- if customer.orders.size > 0 -%}
+      <ul>
+        {%- for order in customer.orders -%}
+          <li><a href="{{ order.customer_url }}">{{ order.name }}</a> — {{ order.created_at | date: '%b %e, %Y' }} — {{ order.total_net_amount | money }} — {{ order.financial_status_label }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>You haven't placed any orders yet.</p>
+    {%- endif -%}
+  {%- endpaginate -%}
+  <p><a href="{{ routes.account_addresses_url }}">Manage addresses</a></p>
+</div>

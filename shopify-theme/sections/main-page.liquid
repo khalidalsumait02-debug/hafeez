@@ -1,0 +1,23 @@
+<div class="pagehead">
+  <div class="wrap">
+    {%- if section.settings.eyebrow != blank -%}<div class="eyebrow">{{ section.settings.eyebrow }}</div>{%- endif -%}
+    <h1>{{ page.title }}</h1>
+  </div>
+</div>
+
+<div class="legaldoc rte">
+  {%- if section.settings.show_updated -%}
+    <div class="meta">Last updated {{ page.published_at | date: '%B %e, %Y' }}</div>
+  {%- endif -%}
+  {{ page.content }}
+</div>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "checkbox", "id": "show_updated", "label": "Show last updated date", "default": false }
+  ]
+}
+{% endschema %}

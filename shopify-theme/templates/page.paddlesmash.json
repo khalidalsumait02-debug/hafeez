@@ -1,0 +1,123 @@
+{
+  "sections": {
+    "hero": {
+      "type": "media-hero",
+      "settings": {
+        "badge": "In stock · Kuwait",
+        "eyebrow": "The viral one",
+        "heading": "Chalet season starts now.",
+        "text": "Part pickleball, part spikeball, all addictive. The 360° paddle game taking over Kuwait's chalets, beaches and backyards — now in stock at Hafeez.",
+        "button1_label": "Shop the set · 68 KWD",
+        "button1_url": "shopify://collections/paddlesmash",
+        "button2_label": "How to play",
+        "button2_url": "#how"
+      }
+    },
+    "creds": {
+      "type": "creds",
+      "settings": { "label": "As seen on" },
+      "blocks": {
+        "a": { "type": "item", "settings": { "text": "Shark Tank" } },
+        "b": { "type": "item", "settings": { "text": "The Today Show" } },
+        "c": { "type": "item", "settings": { "text": "Good Morning America" } },
+        "d": { "type": "item", "settings": { "text": "TikTok" } }
+      },
+      "block_order": ["a", "b", "c", "d"]
+    },
+    "marquee": {
+      "type": "marquee",
+      "blocks": {
+        "m1": { "type": "item", "settings": { "text": "Bump · Set · Smash" } },
+        "m2": { "type": "item", "settings": { "text": "The viral chalet game" } },
+        "m3": { "type": "item", "settings": { "text": "Pickleball meets spikeball" } },
+        "m4": { "type": "item", "settings": { "text": "2 minutes to learn" } },
+        "m5": { "type": "item", "settings": { "text": "In stock in Kuwait" } }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "m5"]
+    },
+    "bundle": {
+      "type": "bundle",
+      "settings": {
+        "eyebrow": "The Complete Set",
+        "heading": "Everything you need to rally",
+        "price_text": "68.000 KWD",
+        "text": "One box, two minutes of setup, and the whole chalet is hooked. Pickleball-style paddles, a 360° net base and the official PaddleSmash balls.",
+        "button_label": "Add the set",
+        "anchor": "shop"
+      },
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "360° net base + carry-case" } },
+        "i2": { "type": "item", "settings": { "text": "4 official paddles" } },
+        "i3": { "type": "item", "settings": { "text": "2 PaddleSmash balls" } },
+        "i4": { "type": "item", "settings": { "text": "2–4 players · ages 8+" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4"]
+    },
+    "steps": {
+      "type": "steps",
+      "settings": { "heading": "2 minutes to learn", "anchor": "how" },
+      "blocks": {
+        "s1": { "type": "step", "settings": { "heading": "Set up the net", "text": "Pop the 360° net base open and slot the poles in. No tools, no court — driveway, chalet or sand." } },
+        "s2": { "type": "step", "settings": { "heading": "Serve & rally", "text": "Grab a paddle and serve over the net. Bump, set and smash the ball around the 360° net to your opponents." } },
+        "s3": { "type": "step", "settings": { "heading": "Win the point", "text": "If they can't return it, you score. First to 11 takes it — then run it back, all summer long." } }
+      },
+      "block_order": ["s1", "s2", "s3"]
+    },
+    "showcase1": {
+      "type": "showcase",
+      "settings": {
+        "eyebrow": "Play anywhere",
+        "heading": "Beach. Chalet. Backyard.",
+        "text": "Its portability is the whole point — pack it in the car and turn any patch of sand or grass into the most competitive game of the day.",
+        "button_label": "Shop PaddleSmash",
+        "button_url": "shopify://collections/paddlesmash"
+      }
+    },
+    "showcase2": {
+      "type": "showcase",
+      "settings": {
+        "reverse": true,
+        "eyebrow": "Pickleball meets spikeball",
+        "heading": "Fast, social, endlessly replayable",
+        "text": "The best bits of pickleball and roundnet in one game everyone can pick up. Two-on-two or one-on-one, the rematches never stop.",
+        "button_label": "Shop the set",
+        "button_url": "shopify://collections/paddlesmash"
+      }
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": { "heading": "Shop PaddleSmash", "layout": "grid", "product_limit": 4, "first_badge": "Best Seller", "link_label": "View all" }
+    },
+    "lookbook": {
+      "type": "lookbook",
+      "settings": { "heading": "Made for the Gulf summer" },
+      "blocks": {
+        "l1": { "type": "tile", "settings": { "caption": "On the sand", "wide": true, "tall": true } },
+        "l2": { "type": "tile", "settings": { "caption": "In the backyard" } },
+        "l3": { "type": "tile", "settings": { "caption": "By the water" } },
+        "l4": { "type": "tile", "settings": { "caption": "Game on", "wide": true } }
+      },
+      "block_order": ["l1", "l2", "l3", "l4"]
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": { "heading": "The chalet favourite" },
+      "blocks": {
+        "r1": { "type": "review", "settings": { "quote": "Got the set for our chalet weekend — everyone was obsessed within minutes. Delivered next day in Kuwait City.", "author": "Yousef · Kuwait City" } },
+        "r2": { "type": "review", "settings": { "quote": "Like spikeball and pickleball had a baby. Packs into the boot and comes out at every beach day now.", "author": "Dana · Salmiya" } },
+        "r3": { "type": "review", "settings": { "quote": "Easy to learn, impossible to stop. The kids and the adults both fight over it. Worth every fils.", "author": "Abdullah · Hawally" } }
+      },
+      "block_order": ["r1", "r2", "r3"]
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {
+        "heading": "Don't be the only chalet without one",
+        "text": "The Complete Set ships across the GCC and packs down to travel. Get yours before the weekend.",
+        "button_label": "Shop the Complete Set",
+        "button_url": "shopify://collections/paddlesmash"
+      }
+    }
+  },
+  "order": ["hero", "creds", "marquee", "bundle", "steps", "showcase1", "showcase2", "products", "lookbook", "reviews", "cta"]
+}

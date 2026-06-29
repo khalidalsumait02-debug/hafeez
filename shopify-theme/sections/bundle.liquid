@@ -1,0 +1,73 @@
+<section class="sec wrap" {% if section.settings.anchor != blank %}id="{{ section.settings.anchor }}"{% endif %}>
+  <div class="bundle">
+    <div class="im">
+      <div class="imgwrap">
+        {%- if section.settings.product != blank and section.settings.product.featured_media -%}
+          {{ section.settings.product.featured_media | image_url: width: 1500 | image_tag: loading: 'lazy', alt: section.settings.heading | escape, widths: '600,1000,1500' }}
+        {%- elsif section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1500 | image_tag: loading: 'lazy', alt: section.settings.heading | escape, widths: '600,1000,1500' }}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="body">
+      {%- if section.settings.eyebrow != blank -%}<div class="eyebrow">{{ section.settings.eyebrow }}</div>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+
+      {%- assign bundle_product = section.settings.product -%}
+      <div class="price">
+        {%- if bundle_product != blank -%}{{ bundle_product.price | money }}{%- else -%}{{ section.settings.price_text }}{%- endif -%}
+      </div>
+
+      {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="inc">
+          {%- for block in section.blocks -%}<li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>{%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div>
+        {%- if bundle_product != blank and bundle_product.available -%}
+          {%- form 'product', bundle_product -%}
+            <input type="hidden" name="id" value="{{ bundle_product.selected_or_first_available_variant.id }}">
+            <button type="submit" name="add" class="btn btn--accent">{{ section.settings.button_label | default: 'Add the set' }}</button>
+          {%- endform -%}
+        {%- else -%}
+          <a href="{{ section.settings.button_url | default: '#' }}" class="btn btn--accent">{{ section.settings.button_label | default: 'Add the set' }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundle highlight",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product (auto price + add to cart)" },
+    { "type": "image_picker", "id": "image", "label": "Image (if no product)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Complete Set" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Everything you need to rally" },
+    { "type": "text", "id": "price_text", "label": "Price text (if no product)", "default": "68.000 KWD" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "One box, two minutes of setup, and the whole chalet is hooked." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Add the set" },
+    { "type": "url", "id": "button_url", "label": "Button URL (if no product)" },
+    { "type": "text", "id": "anchor", "label": "Anchor id (optional)" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Included item", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "360° net base + carry-case" } ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Bundle highlight",
+      "blocks": [
+        { "type": "item", "settings": { "text": "360° net base + carry-case" } },
+        { "type": "item", "settings": { "text": "4 official paddles" } },
+        { "type": "item", "settings": { "text": "2 PaddleSmash balls" } },
+        { "type": "item", "settings": { "text": "2–4 players · ages 8+" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

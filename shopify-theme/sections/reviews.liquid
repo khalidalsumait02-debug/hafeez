@@ -1,0 +1,48 @@
+<section class="sec reviews">
+  <div class="wrap">
+    <div class="head"><h2>{{ section.settings.heading }}</h2></div>
+    <div class="rgrid">
+      {%- for block in section.blocks -%}
+        <div class="rev" {{ block.shopify_attributes }}>
+          <div class="stars" aria-label="{{ block.settings.rating }} out of 5 stars">
+            {%- assign r = block.settings.rating | at_most: 5 -%}
+            {%- for i in (1..r) -%}★{%- endfor -%}
+          </div>
+          <p>{{ block.settings.quote }}</p>
+          <div class="who">{{ block.settings.author }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Loved across Kuwait" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "range", "id": "rating", "min": 1, "max": 5, "step": 1, "label": "Rating", "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Got the PaddleSmash set for our chalet weekend — everyone was obsessed. Delivered next day." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Yousef · Kuwait City" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        { "type": "review", "settings": { "quote": "Got the PaddleSmash set for our chalet weekend — everyone was obsessed. Delivered next day.", "author": "Yousef · Kuwait City" } },
+        { "type": "review", "settings": { "quote": "Real Harley gear without flying abroad. The jacket quality is exactly what you'd expect from H-D.", "author": "Abdullah · Salmiya" } },
+        { "type": "review", "settings": { "quote": "Love the Vacay shorts and Lift Down caps. Fast shipping to the UAE too.", "author": "Sara · Dubai" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

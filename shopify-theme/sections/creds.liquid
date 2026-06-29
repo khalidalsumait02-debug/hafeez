@@ -1,0 +1,34 @@
+<div class="creds">
+  <div class="wrap">
+    {%- if section.settings.label != blank -%}<span class="lbl">{{ section.settings.label }}</span>{%- endif -%}
+    {%- for block in section.blocks -%}
+      {%- unless forloop.first -%}<span class="item sep">/</span>{%- endunless -%}
+      <span class="item">{{ block.settings.text }}</span>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Credential strip",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "As seen on" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Item", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "Shark Tank" } ] }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Credential strip",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Shark Tank" } },
+        { "type": "item", "settings": { "text": "The Today Show" } },
+        { "type": "item", "settings": { "text": "Good Morning America" } },
+        { "type": "item", "settings": { "text": "CBS Mornings" } },
+        { "type": "item", "settings": { "text": "TikTok" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

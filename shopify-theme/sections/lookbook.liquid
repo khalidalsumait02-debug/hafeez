@@ -1,0 +1,56 @@
+<section class="sec wrap">
+  <div class="head"><h2>{{ section.settings.heading }}</h2></div>
+  <div class="lookbook">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign cls = ''
+        if block.settings.wide
+          assign cls = cls | append: ' wide'
+        endif
+        if block.settings.tall
+          assign cls = cls | append: ' tall'
+        endif
+      -%}
+      {%- if block.settings.link != blank -%}<a href="{{ block.settings.link }}" class="lb{{ cls }}" {{ block.shopify_attributes }}>{%- else -%}<div class="lb{{ cls }}" {{ block.shopify_attributes }}>{%- endif -%}
+        <div class="imgwrap">
+          {%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: block.settings.caption | escape, widths: '500,900,1400' }}{%- endif -%}
+        </div>
+        {%- if block.settings.caption != blank -%}<span class="cap">{{ block.settings.caption }}</span>{%- endif -%}
+      {%- if block.settings.link != blank -%}</a>{%- else -%}</div>{%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lookbook mosaic",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Made for the Gulf summer" }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "caption", "label": "Caption", "default": "On the sand" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "checkbox", "id": "wide", "label": "Wide (2 columns)", "default": false },
+        { "type": "checkbox", "id": "tall", "label": "Tall (2 rows)", "default": false }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Lookbook mosaic",
+      "blocks": [
+        { "type": "tile", "settings": { "caption": "On the sand", "wide": true, "tall": true } },
+        { "type": "tile", "settings": { "caption": "In the backyard" } },
+        { "type": "tile", "settings": { "caption": "By the water" } },
+        { "type": "tile", "settings": { "caption": "Game on", "wide": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

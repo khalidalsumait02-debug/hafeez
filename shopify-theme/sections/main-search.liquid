@@ -1,0 +1,40 @@
+<div class="pagehead">
+  <div class="wrap">
+    <div class="eyebrow">Search</div>
+    <h1>{% if search.performed %}{{ search.results_count }} results for "{{ search.terms | escape }}"{% else %}Search{% endif %}</h1>
+  </div>
+</div>
+
+<section class="sec wrap">
+  <form action="{{ routes.search_url }}" method="get" role="search" class="searchform">
+    <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.search' | t }}">
+    <button type="submit" class="btn btn--green">{{ 'general.search.search' | t }}</button>
+  </form>
+
+  {%- if search.performed -%}
+    {%- if search.results_count > 0 -%}
+      {%- paginate search.results by 24 -%}
+        <div class="pgrid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {%- render 'product-card', product: item -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          <nav class="pagination">
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>{%- else -%}<span class="current">{{ part.title }}</span>{%- endif -%}
+            {%- endfor -%}
+          </nav>
+        {%- endif -%}
+      {%- endpaginate -%}
+    {%- else -%}
+      <p class="empty">No results found. Try a different search.</p>
+    {%- endif -%}
+  {%- endif -%}
+</section>
+
+{% schema %}
+{ "name": "Search", "settings": [] }
+{% endschema %}

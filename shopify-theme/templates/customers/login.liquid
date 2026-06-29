@@ -1,0 +1,12 @@
+<div class="pagehead"><div class="wrap"><div class="eyebrow">Account</div><h1>Log in</h1></div></div>
+<div class="legaldoc">
+  {%- form 'customer_login' -%}
+    {{ form.errors | default_errors }}
+    <div class="opt"><label>Email</label><input type="email" name="customer[email]" required style="width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px"></div>
+    {%- if form.password_needed -%}
+      <div class="opt"><label>Password</label><input type="password" name="customer[password]" required style="width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px"></div>
+    {%- endif -%}
+    <button type="submit" class="btn btn--green">Log in</button>
+  {%- endform -%}
+  <p style="margin-top:18px">New here? <a href="{{ routes.account_register_url }}">Create an account</a></p>
+</div>

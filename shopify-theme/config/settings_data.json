@@ -1,0 +1,20 @@
+{
+  "current": {
+    "logo_height": 42,
+    "color_green": "#26d07c",
+    "color_green_dark": "#005844",
+    "color_ink": "#0a0c0b",
+    "color_accent": "#26d07c",
+    "color_accent_ink": "#0a0c0b",
+    "currency_code_enabled": true
+  },
+  "presets": {
+    "Hafeez": {
+      "color_green": "#26d07c",
+      "color_green_dark": "#005844",
+      "color_ink": "#0a0c0b",
+      "color_accent": "#26d07c",
+      "color_accent_ink": "#0a0c0b"
+    }
+  }
+}

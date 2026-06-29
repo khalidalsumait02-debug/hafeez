@@ -1,0 +1,20 @@
+<div class="pagehead">
+  <div class="wrap">
+    <div class="eyebrow">Collections</div>
+    <h1>Shop by collection</h1>
+  </div>
+</div>
+<section class="sec wrap">
+  <div class="scroller" style="flex-wrap:wrap">
+    {%- for collection in collections -%}
+      <a href="{{ collection.url }}" class="cat{% if collection.featured_image == blank %} noimg{% endif %}">
+        <div class="imgwrap">
+          {%- if collection.featured_image -%}
+            {{ collection.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: collection.title | escape }}
+          {%- endif -%}
+        </div>
+        <span class="lab">{{ collection.title }}</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>

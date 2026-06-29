@@ -1,0 +1,52 @@
+<div class="util">
+  <div class="wrap">
+    <div class="promo">{{ section.settings.promo_text }}</div>
+    <div class="u-right">
+      {%- if section.settings.link_text != blank -%}
+        <a href="{{ section.settings.link_url | default: '#' }}">{{ section.settings.link_text }}</a>
+      {%- endif -%}
+      {%- if section.settings.help_url != blank -%}
+        <a href="{{ section.settings.help_url }}">Help</a>
+      {%- endif -%}
+      {%- if section.settings.show_language -%}
+        <a href="#" class="lang"><b>EN</b> / ع</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "promo_text",
+      "label": "Promo text",
+      "default": "<p>Free express shipping across the GCC over 25 KWD</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Right link text",
+      "default": "Find our booth"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Right link URL"
+    },
+    {
+      "type": "url",
+      "id": "help_url",
+      "label": "Help URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_language",
+      "label": "Show EN / ع toggle",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

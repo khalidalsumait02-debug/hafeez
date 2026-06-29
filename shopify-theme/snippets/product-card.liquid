@@ -1,0 +1,81 @@
+{%- comment -%}
+  Renders a product card matching the Hafeez .card design.
+  Accepts:
+    product (required) - a product object
+    badge   (optional) - text for the corner tag (e.g. "Best Seller", "New")
+{%- endcomment -%}
+
+{%- liquid
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+
+  assign img = product.featured_media
+  assign img_alt = product.media[1]
+
+  assign color_option = null
+  for opt in product.options_with_values
+    assign dn = opt.name | downcase
+    if dn contains 'color' or dn contains 'colour'
+      assign color_option = opt
+    endif
+  endfor
+-%}
+
+<div class="card">
+  <div class="im">
+    {%- if on_sale -%}
+      <span class="tag sale">{{ 'products.product.on_sale' | t }}</span>
+    {%- elsif badge != blank -%}
+      <span class="tag new">{{ badge }}</span>
+    {%- endif -%}
+
+    <a href="{{ product.url }}" class="imgwrap" aria-label="{{ product.title | escape }}">
+      {%- if img -%}
+        {{ img | image_url: width: 800 | image_tag: loading: 'lazy', alt: product.title | escape, widths: '300,500,800' }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'media' }}
+      {%- endif -%}
+      {%- if img_alt -%}
+        {{ img_alt | image_url: width: 800 | image_tag: class: 'alt', loading: 'lazy', alt: '' }}
+      {%- endif -%}
+    </a>
+
+    {%- if product.available -%}
+      {%- if product.variants.size == 1 -%}
+        {%- form 'product', product, class: 'quick-add-form' -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" class="add" name="add">{{ 'products.product.quick_add' | t }}</button>
+        {%- endform -%}
+      {%- else -%}
+        <a href="{{ product.url }}" class="add">{{ 'products.product.quick_add' | t }}</a>
+      {%- endif -%}
+    {%- else -%}
+      <span class="add">{{ 'products.product.sold_out' | t }}</span>
+    {%- endif -%}
+  </div>
+
+  <a href="{{ product.url }}"><h3>{{ product.title }}</h3></a>
+
+  {%- if product.vendor != blank -%}
+    <div class="meta">{{ product.vendor }}</div>
+  {%- endif -%}
+
+  {%- if color_option -%}
+    <div class="swatches">
+      {%- for value in color_option.values limit: 5 -%}
+        <span class="sw" style="background:{{ value | downcase | replace: ' ', '' }}" title="{{ value | escape }}"></span>
+      {%- endfor -%}
+      {%- if color_option.values.size > 5 -%}
+        <span class="sw more">+{{ color_option.values.size | minus: 5 }}</span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if on_sale -%}
+    <div class="pr"><span class="was">{{ product.compare_at_price | money }}</span><span class="now">{{ product.price | money }}</span></div>
+  {%- else -%}
+    <div class="pr">{{ product.price | money }}</div>
+  {%- endif -%}
+</div>

@@ -1,0 +1,43 @@
+<section class="sec wrap" {% if section.settings.anchor != blank %}id="{{ section.settings.anchor }}"{% endif %}>
+  <div class="head"><h2>{{ section.settings.heading }}</h2></div>
+  <div class="steps">
+    {%- for block in section.blocks -%}
+      <div class="step" {{ block.shopify_attributes }}>
+        <div class="no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+        <h3>{{ block.settings.heading }}</h3>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How-to steps",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "2 minutes to learn" },
+    { "type": "text", "id": "anchor", "label": "Anchor id (optional)" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Set up the net" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Pop the 360° net base open and slot the poles in. No tools, no court." }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "How-to steps",
+      "blocks": [
+        { "type": "step", "settings": { "heading": "Set up the net", "text": "Pop the 360° net base open and slot the poles in. No tools, no court." } },
+        { "type": "step", "settings": { "heading": "Serve & rally", "text": "Grab a paddle and serve over the net. Bump, set and smash the ball around the 360° net." } },
+        { "type": "step", "settings": { "heading": "Win the point", "text": "If they can't return it, you score. First to 11 takes it." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

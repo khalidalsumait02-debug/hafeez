@@ -1,0 +1,18 @@
+<div class="pagehead"><div class="wrap"><div class="eyebrow">Account</div><h1>Addresses</h1></div></div>
+<div class="legaldoc">
+  <p><a href="{{ routes.account_url }}">← Back to account</a></p>
+  {%- for address in customer.addresses -%}
+    <div class="infocard" style="margin-bottom:14px">
+      {{ address | format_address }}
+      <p><a href="#" data-address-id="{{ address.id }}">Edit</a></p>
+    </div>
+  {%- endfor -%}
+  <h2>Add a new address</h2>
+  {%- form 'customer_address', customer.new_address -%}
+    {{ form.errors | default_errors }}
+    <div class="opt"><label>Address</label><input type="text" name="address[address1]" style="width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px"></div>
+    <div class="opt"><label>City</label><input type="text" name="address[city]" style="width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px"></div>
+    <div class="opt"><label>Country</label><input type="text" name="address[country]" value="Kuwait" style="width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px"></div>
+    <button type="submit" class="btn btn--green">Save address</button>
+  {%- endform -%}
+</div>

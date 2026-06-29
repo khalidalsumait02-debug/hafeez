@@ -1,0 +1,33 @@
+<section class="news">
+  <div class="wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+    {%- if section.settings.text != blank -%}
+      <p>{{ section.settings.text }}</p>
+    {%- endif -%}
+
+    {%- form 'customer', class: 'newsletter-form' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      {%- if form.posted_successfully? -%}
+        <p style="color:var(--green)">{{ 'general.newsletter.success' | t }}</p>
+      {%- else -%}
+        <input type="email" name="contact[email]" required placeholder="{{ 'general.newsletter.placeholder' | t }}" aria-label="Email address">
+        <button class="btn btn--green" type="submit">{{ 'general.newsletter.subscribe' | t }}</button>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Join the list" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "First to ride. First to know." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "New arrivals, restocks and members-only drops — straight to your inbox. Ships across the GCC." }
+  ],
+  "presets": [{ "name": "Newsletter" }]
+}
+{% endschema %}

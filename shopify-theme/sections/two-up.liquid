@@ -1,0 +1,45 @@
+<section class="twoup">
+  {%- for block in section.blocks -%}
+    <div class="blk{% if block.settings.image == blank %} noimg{% endif %}" {{ block.shopify_attributes }}>
+      <div class="bg">
+        {%- if block.settings.image != blank -%}
+          <div class="imgwrap">{{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: block.settings.heading | escape, widths: '600,900,1400' }}</div>
+        {%- endif -%}
+      </div>
+      <div class="in">
+        <h2>{{ block.settings.heading }}</h2>
+        {%- if block.settings.button_label != blank -%}
+          <a href="{{ block.settings.button_url | default: '#' }}" class="btn btn--w">{{ block.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "Two-up banners",
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Banner",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Made to wear daily" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now" },
+        { "type": "url", "id": "button_url", "label": "Button URL" }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Two-up banners",
+      "blocks": [
+        { "type": "block", "settings": { "heading": "Lift Down. Made to wear daily", "button_label": "Shop Lift Down" } },
+        { "type": "block", "settings": { "heading": "Built for Kuwait summers", "button_label": "Shop Summer" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,42 @@
+<div class="cartpage">
+  {%- if cart.item_count == 0 -%}
+    <div class="cartempty">
+      <h1>{{ 'cart.general.empty' | t }}</h1>
+      <a href="{{ routes.all_products_collection_url }}" class="btn btn--green">{{ 'cart.general.continue_shopping' | t }}</a>
+    </div>
+  {%- else -%}
+    <h1>{{ 'cart.general.title' | t }}</h1>
+    <form action="{{ routes.cart_url }}" method="post" novalidate>
+      {%- for item in cart.items -%}
+        <div class="cartrow">
+          <a href="{{ item.url }}" class="ci imgwrap">
+            {%- if item.image -%}{{ item.image | image_url: width: 200 | image_tag: loading: 'lazy', alt: item.title | escape }}{%- endif -%}
+          </a>
+          <div class="ct">
+            <h3><a href="{{ item.url }}">{{ item.product.title }}</a></h3>
+            {%- unless item.product.has_only_default_variant -%}<div class="m">{{ item.variant.title }}</div>{%- endunless -%}
+            {%- if item.product.vendor != blank -%}<div class="m">{{ item.product.vendor }}</div>{%- endif -%}
+            <a href="{{ item.url_to_remove }}">{{ 'cart.general.remove' | t }}</a>
+          </div>
+          <div class="qty">
+            <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" aria-label="Decrease">−</a>
+            <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity">
+            <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" aria-label="Increase">+</a>
+          </div>
+          <div class="pr">{{ item.final_line_price | money }}</div>
+        </div>
+      {%- endfor -%}
+
+      <div class="cartfoot">
+        <button type="submit" name="update" class="btn btn--w btn--out" style="color:var(--ink);border-color:var(--line)">{{ 'cart.general.update' | t }}</button>
+        <div class="sub">{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</div>
+        <button type="submit" name="checkout" class="btn btn--green">{{ 'cart.general.checkout' | t }}</button>
+      </div>
+      <p style="text-align:right;color:var(--grey);font-size:13px;margin-top:10px">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p>
+    </form>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{ "name": "Cart", "settings": [] }
+{% endschema %}

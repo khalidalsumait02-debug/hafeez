@@ -1,0 +1,42 @@
+<section class="mhero{% if section.settings.center %} center{% endif %}" id="hero-{{ section.id }}">
+  {%- if section.settings.badge != blank -%}<span class="badge">{{ section.settings.badge }}</span>{%- endif -%}
+  <div class="media-wrap">
+    {%- if section.settings.video != blank -%}
+      <video class="media" autoplay muted loop playsinline {% if section.settings.poster != blank %}poster="{{ section.settings.poster | image_url: width: 1600 }}"{% endif %}>
+        <source src="{{ section.settings.video }}" type="video/mp4">
+      </video>
+    {%- elsif section.settings.image != blank -%}
+      <div class="imgwrap">{{ section.settings.image | image_url: width: 2200 | image_tag: class: 'media', loading: 'eager', fetchpriority: 'high', alt: section.settings.heading | escape, widths: '750,1100,1600,2200' }}</div>
+    {%- endif -%}
+  </div>
+  <div class="in">
+    {%- if section.settings.eyebrow != blank -%}<div class="eyebrow">{{ section.settings.eyebrow }}</div>{%- endif -%}
+    <h1>{{ section.settings.heading }}</h1>
+    {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
+    <div class="cta">
+      {%- if section.settings.button1_label != blank -%}<a href="{{ section.settings.button1_url | default: '#' }}" class="btn btn--accent">{{ section.settings.button1_label }}</a>{%- endif -%}
+      {%- if section.settings.button2_label != blank -%}<a href="{{ section.settings.button2_url | default: '#' }}" class="btn btn--glass">{{ section.settings.button2_label }}</a>{%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Media hero",
+  "settings": [
+    { "type": "checkbox", "id": "center", "label": "Center content", "default": false },
+    { "type": "text", "id": "badge", "label": "Corner badge", "default": "In stock · Kuwait" },
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+    { "type": "text", "id": "video", "label": "Background video URL (mp4)" },
+    { "type": "image_picker", "id": "poster", "label": "Video poster" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The viral one" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Chalet season starts now." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Part pickleball, part spikeball, all addictive. The 360° paddle game taking over Kuwait." },
+    { "type": "text", "id": "button1_label", "label": "Button 1 label", "default": "Shop the set" },
+    { "type": "url", "id": "button1_url", "label": "Button 1 URL" },
+    { "type": "text", "id": "button2_label", "label": "Button 2 label", "default": "How to play" },
+    { "type": "url", "id": "button2_url", "label": "Button 2 URL" }
+  ],
+  "presets": [{ "name": "Media hero" }]
+}
+{% endschema %}
