@@ -17,6 +17,17 @@
   - PaddleSmash Complete Set — 68.000 — `Image1.jpg`
 - **Summer band:** Lift Down `ClassicCapAmberOrangeHero-0072.png`, La Paz `IMG-20240513-WA0043...jpg`
 
+## AI-generated imagery (Higgsfield / nano_banana_flash, 2k) — in v2 design
+Generated 2026-06-29 for the new "Cinematic Noir" homepage (index.html). Public
+CloudFront URLs (load in-browser; proxy blocks server-side download, so swap to
+Shopify-CDN-hosted copies when packaging the theme). ~1.5 credits each.
+- **Hero** rider/desert dusk — job 40ccabb9 — `.../hf_20260629_083611_40ccabb9-...png`
+- **H-D leather detail** (editorial + world tile) — job 2e500c90 — `...083621_2e500c90-...png`
+- **PaddleSmash action** (PS band) — job eab862ff — `...083615_eab862ff-...png`
+- **Summer flatlay** (summer world tile) — job 62084e73 — `...083618_62084e73-...png`
+Note: prior Higgsfield history was unrelated projects (TravelPal/JARVIS/etc.) —
+none reused. Logo kept: `mockups/assets/hafeez-logo-green.png`.
+
 ## Other usable assets found
 - Collection lifestyle images: Headwear (`pexels-rodnae-...`), Accessories
   (`pexels-francesco-...`), Lift Down (WhatsApp lifestyle).
