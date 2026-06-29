@@ -16,11 +16,44 @@
 
 ## What we sell
 
-- Harley-Davidson official merchandise
-- Hats / caps
+- Harley-Davidson official merchandise (the core of the catalog)
+- Hats / caps (Headwear)
 - **PaddleSmash** — a viral paddle game
-- Other summer-type items
-- Large number of SKUs / products (full catalog TBD)
+- Summer / lifestyle items from other brands: SunnyLife, Vacay Swimwear,
+  La Paz, DOIY, Lift Down, Monoak SA
+- Store legal name: **Hafeez International** · admin email: aziz@cmc.com.kw
+
+## Catalog snapshot (live Shopify, pulled 2026-06-29)
+
+- **1,421 total products** · 709 active · 711 draft · 1 archived
+- **~691 products active AND published to the Online Store** (these are live and
+  shoppable). So the site is NOT empty — roughly half the catalog is live, the
+  other half (~730) sits in draft / unpublished and is invisible.
+- Sales channels connected: Online Store, Point of Sale, Facebook & Instagram,
+  Google & YouTube (~706 products on each except Online Store at 691).
+- **28 collections**, but the collection structure is messy — lots of
+  app-generated / junk collections:
+  - Real/curated: Clothing (779), Headwear (173), Accessories & Collectables
+    (262), Gifts & Accessories (270), Collectables (107), Clearance (350),
+    Flash Sale! (229), H-D 120th Anniversary (71), PaddleSmash (5),
+    SunnyLife (29), Vacay Swimwear (19), La Paz (37), DOIY (7), EMS (32),
+    Harley-Davidson (1,250), Merchandise (629)
+  - Junk / app cruft to clean up: "AVADA - Best Sellers" (695),
+    "Recommended products (Seguno)" (695), "Ultimate Search - Do not delete"
+    (1,420), "Best Sellers" (1,139 — meaningless), "New Arrivals" (1,418),
+    duplicate "Lift Down" / "Lift Down Fall Collection", empty "Brands" (0).
+- Category mix (store-wide, by product_type):
+  - Men Clothing 414 · Women Clothing 115 · Headwear 151 · Accessories 141 ·
+    Bags 58 · Shoes 24 · PaddleSmash ~6 (plus Knives, Gloves, Belts, Promotions)
+- Vendor: almost everything tagged **Harley Davidson Kuwait**.
+- Price range observed: ~KWD 3 (bottle opener, decals) up to ~KWD 248
+  (leather jackets). Mid-range clothing KWD 15–75; leather KWD 99–175+.
+
+### Diagnosis of "the website doesn't work"
+The catalog IS live (~691 products published), so the problem is most likely
+NOT an empty store. Likely culprits to confirm: theme/experience quality,
+performance, broken navigation, the messy collection structure, and ~half the
+catalog stuck in draft. This shapes what the new site must fix.
 
 ## Positioning notes
 
