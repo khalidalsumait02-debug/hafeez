@@ -4,9 +4,47 @@ Read this first when resuming. It captures the current state, how things are
 wired, and what's left. Supporting context lives in `BRAND.md`, `DESIGN_PLAN.md`,
 `ASSETS.md`, and `AD_GALLERY.md`.
 
-## Branch
-- Current work branch: `claude/happy-cori-cox92c` (develop + push here only).
-- Earlier work was on `claude/hafeez-company-overview-57949s`.
+## Branch & deploy
+- **`main` is the source of truth and AUTO-DEPLOYS.** Pushing to `main` triggers
+  GitHub's built-in `pages build and deployment` pipeline; the live site updates
+  ~1–2 min later (confirm via Actions / the `303953999` workflow runs).
+- The `claude/serene-pasteur-9u10y6` branch is kept as a mirror of `main`.
+  Earlier work: `claude/happy-cori-cox92c`, `claude/hafeez-company-overview-57949s`.
+- GOTCHA: `deploy-pages.yml` (custom Action that publishes `./docs`) is
+  `workflow_dispatch`-only AND the integration token can't dispatch it (403).
+  Don't rely on it — the built-in branch pipeline is what actually deploys.
+- Still **mirror root → `/docs/` on every change** (`cp <page>.html docs/`); the
+  built-in pipeline serves `/docs` (the artifact path) — out-of-sync = stale live.
+
+## Latest update (2026-06-29, pass 2) — Kuwait-appropriate imagery + Summer page
+Owner review pass on the live site:
+- **Lift Down** — the two-up editorial banners used liftdown.com homepage images
+  "16"/"17" (a side-banded collage + a customer-REVIEW text graphic); swapped for
+  clean on-model cap lifestyle shots. Also fixed a 404'd banner.
+- **Harley-Davidson** — final "More than a machine" showcase cropped riders'
+  faces; added `object-position:center top` so faces stay in frame.
+- **Summer & Lifestyle (vacay.html)** — owner flagged "too many bikinis, not
+  Kuwait-appropriate." Removed ALL swimwear-model imagery; re-focused on men's
+  swim + pool + kids. Final banners:
+  - Hero: AI shot — Arab man on the real **Inflatable Lilo Chair**
+  - "Pool & beach" tile: AI shot — Arab man on the real **Luxe Twin Hammock Float**
+  - "For the kids" tile: left as-is (owner OK'd)
+  - "Make a day of it" band: people-free poolside kids/towel AI scene
+  - Removed the "Free beach tote" promo band; added a **summer-brands `.creds`
+    divider** (Vacay / SunnyLife / La Paz) in its place. og:image updated too.
+  - Product grids = real Hafeez Shopify CDN packshots throughout.
+
+### Imagery generation that WORKS here (Higgsfield) — reuse this pattern
+- Can't VIEW external images from this env (proxy blocks the CDNs), so **control
+  content via the prompt**: "no people / no human figures", or "a single Arab man,
+  modest knee-length swim shorts, sunglasses, no women, no other people".
+- **`soul_location`** model (~0.12 cr) → people-free environment/scene banners.
+- **`marketing_studio_image`** + a real product photo as a reference media
+  (`media_import_url` → pass the returned `media_id` in `medias[{value,role:image}]`)
+  → product-accurate lifestyle shot with a chosen model. Used for the 2 pool shots.
+- Outputs land on `d8j0ntlcm91z4.cloudfront.net/...` (load in-browser; still
+  hotlinked — re-host before production, same as the other Higgsfield images).
+- Firecrawl IS now connected (cloud MCP) — usable to read live brand sites.
 
 ## Latest update (2026-06-29) — brand pages rebuilt from real sites via Firecrawl
 All 6 brand pages were rebuilt to **mirror the layout + imagery/video of each
@@ -104,27 +142,30 @@ mockup for now (no live cart/checkout).
   25% summer / 15% Harley / 10% other.
 
 ## Open items / next steps
-1. **Connect Firecrawl (remote MCP)** to read brand sites for layout reference:
-   - Add a REMOTE connector in THIS environment's MCP settings:
-     `https://mcp.firecrawl.dev/{FIRECRAWL_API_KEY}/v2/mcp`
-     (keyless test URL: `https://mcp.firecrawl.dev/v2/mcp`).
-   - Put the `fc-` key ONLY in the connector field — never in chat/repo.
-   - Do NOT use local `npx firecrawl-mcp` here (it calls api.firecrawl.dev,
-     which is blocked by this env's proxy — confirmed 403).
-   - Once attached, `firecrawl_*` tools appear; then rebuild brand pages using
-     real layouts as REFERENCE (original builds, not copies).
-2. **Alternative already available:** Higgsfield Marketing Studio **brand-kit
-   URL fetch** crawls on Higgsfield's cloud (bypasses the block) — can pull each
-   brand's palette/fonts/imagery for theming.
-3. **Re-host the Higgsfield/CDN images** (download + commit, or push to Shopify CDN).
-4. **Right-shifted hero** (optional): owner wanted hero off-center right; the
-   edit attempt left a grey strip, so it was reverted to the clean centered
-   version. Redo via a fresh wide generation composed right, if desired.
-5. Add remaining pages: About, a true "Summer & Lifestyle" overview, Sale,
-   Privacy/Terms/Refund content pages (footer links are placeholders).
-6. Real bilingual EN/AR + RTL (currently decorative).
-7. Convert to a publishable **Shopify theme** (Liquid/sections) + zip-upload —
-   the eventual production step (owner is fine keeping Shopify backend).
+
+### Agreed roadmap (do in this order)
+1. **Add the remaining pages.** New In, Sale, About, a true "Summer & Lifestyle"
+   overview/landing, and the Privacy / Terms / Refund content pages (footer links
+   are placeholders today). Build on the shared `assets/site.css` components;
+   mirror to `/docs`.
+2. **Navigation pass.** Wire real links across every page — top nav (New In, Sale),
+   footer Support/Hafeez columns, account/search/bag, mobile menu, breadcrumbs —
+   and make nav/active-states consistent page-to-page.
+3. **Final small changes.** Copy, spacing, per-page polish, last tweaks.
+
+### Other open items
+- **Re-host the Higgsfield/CDN images** (download + commit, or push to Shopify CDN)
+  before production — includes the new Summer pool shots + scene.
+- Real bilingual **EN/AR + RTL** (currently decorative).
+- Convert to a publishable **Shopify theme** (Liquid/sections) + zip-upload — the
+  eventual production step (owner is fine keeping Shopify as backend).
+- Optional: **right-shifted hero** on the homepage (earlier attempt left a grey
+  strip and was reverted; redo via a fresh wide generation composed right).
+
+### Resolved (no longer open)
+- Firecrawl connected; brand pages rebuilt from real layouts.
+- Summer page imagery made Kuwait-appropriate (no swimwear models); Lift Down
+  banner + Harley crop fixed (see "Latest update, pass 2").
 
 ## Constraints (environment) — keep in mind
 - Outbound network is locked to an allowlist. CANNOT fetch external sites
@@ -137,7 +178,9 @@ mockup for now (no live cart/checkout).
 - Shopify is connected to the real store **Hafeez International** (hafeez.shop).
 
 ## How to resume
-1. `git pull origin claude/hafeez-company-overview-57949s`
-2. Read this file + DESIGN_PLAN.md.
-3. Edit pages at repo root; mirror to `/docs`; commit + push.
-4. Verify at the Pages URL (allow ~1 min to rebuild).
+1. `git pull origin main` (main is the source of truth + auto-deploys).
+2. Read this file + DESIGN_PLAN.md; start with the **Agreed roadmap** above
+   (next up: add the remaining pages).
+3. Edit pages at repo root; **mirror to `/docs`**; commit + push to `main`
+   (keep the `claude/serene-pasteur-9u10y6` mirror in sync if used).
+4. Verify at the Pages URL (allow ~1–2 min for the built-in pipeline to rebuild).
