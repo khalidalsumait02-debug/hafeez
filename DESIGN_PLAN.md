@@ -63,6 +63,23 @@ products perform inside it. PaddleSmash is the viral hook and gets its own world
 Per owner: do NOT start building. When given the go-ahead, first deliverable is a
 homepage design concept for sign-off, then build out the custom Shopify theme.
 
-### Inputs still helpful before build
-1. Image source for redesigned pages (reuse Shopify media vs. new hero/lifestyle shots)
-2. Target customer definition (riders / gifters / summer-beach / tourists)
+## Audience by world (owner-confirmed) → tone
+- **Harley-Davidson** = riders (older skew) → premium, rugged, heritage,
+  aspirational rider lifestyle.
+- **Vacay / La Paz** = summer & beach buyers → bright, sunny, vacation energy.
+- **PaddleSmash + Lift Down** = 20–30 year olds → energetic, social,
+  trend-forward, video-first, fun.
+Each world keeps the shared green/yellow frame but tunes imagery/tone to its buyer.
+
+## Image shot-list (owner has a large library to pull from)
+Priority hero/lifestyle:
+1. Homepage hero — landscape, high-res H-D rider lifestyle with text space (~2400px+)
+2. The booth inside Harley-Davidson Kuwait (storefront/team) — trust proof
+3. PaddleSmash in action (20–30s crowd) + a short video clip for the spotlight band
+4. Summer lifestyle — Vacay/La Paz beach/pool, bright
+5. One cover image per world tile: H-D, PaddleSmash, Summer & Lifestyle, Sale
+Product imagery:
+6. Packshots on clean neutral bg, consistent framing (square or 4:5)
+7. On-model / in-use shots for top sellers (apparel)
+Helpful: brand logos (H-D, Vacay, La Paz, SunnyLife, DOIY); seasonal/campaign photography.
+Format: send highest-res originals; landscape heroes, square/4:5 products; Claude optimizes for web/mobile.
