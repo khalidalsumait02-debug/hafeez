@@ -1,56 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SunnyLife — Beach & Pool | Hafeez Kuwait</title>
-<meta name="description" content="SunnyLife at Hafeez Kuwait — floats, loungers, beach speakers and games for the perfect Gulf summer day. Ships across the GCC." />
-<meta name="theme-color" content="#26d07c" />
-<link rel="icon" href="assets/hafeez-logo-green.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.shopify.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
-<style>:root{--accent:#ff6f91;--accent-ink:#fff}</style>
-</head>
-<body>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SunnyLife — Luxe Summer Essentials for Beach &amp; Pool | Hafeez Kuwait</title>
+<meta name="description" content="Sun-kissed since 2003. Shop SunnyLife luxe summer essentials — pool floats, beach umbrellas, cabanas, loungers and kids' favourites — at Hafeez Kuwait with fast GCC shipping."/>
+<meta name="theme-color" content="#26d07c"/>
+<link rel="icon" href="assets/hafeez-logo-green.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="SunnyLife — Luxe Summer Essentials | Hafeez Kuwait"/>
+<meta property="og:description" content="Luxe summer essentials inspired by life under the sun — pool floats, beach umbrellas, cabanas and more. Now at Hafeez Kuwait."/>
+<meta property="og:image" content="https://www.sunnylife.com.au/cdn/shop/files/S24_SocialSharing_Banner_1200x628_2.jpg?v=1740114610&width=2048"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://www.sunnylife.com.au"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+:root{--accent:#1990c6;--accent-ink:#ffffff;--sl-ink:#272d45;--sl-blue:#1990c6;--sl-blue-d:#136f99;--sl-sand:#f3efe6}
+.sl{font-family:"Karla","Inter",system-ui,sans-serif}
+.sl h1,.sl h2,.sl h3,.sl .sl-eyebrow{font-family:"Karla","Archivo",sans-serif;letter-spacing:.02em}
+
+/* announcement marquee under breadcrumb */
+.sl-promo{background:var(--sl-ink);color:#fff;text-align:center;font-family:"Karla",sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:11px 16px;font-weight:600}
+.sl-promo a{text-decoration:underline;text-underline-offset:3px}
+
+/* dual hero banners */
+.sl-heros{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.sl-hero{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--sl-sand)}
+.sl-hero img{transition:transform .7s ease}
+.sl-hero:hover img{transform:scale(1.04)}
+.sl-hero .sl-hero-c{position:absolute;left:0;right:0;bottom:46px;text-align:center;color:#fff;padding:0 24px;text-shadow:0 1px 14px rgba(0,0,0,.32)}
+.sl-hero h1,.sl-hero h2{font-size:clamp(26px,3vw,46px);font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.05;margin-bottom:18px;color:#fff}
+.sl-hero .btn{background:#fff;color:var(--sl-ink);border-color:#fff;border-radius:0;font-family:"Karla",sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;padding:14px 34px}
+.sl-hero .btn:hover{background:var(--sl-ink);color:#fff;border-color:var(--sl-ink)}
+
+/* section heading */
+.sl-sec{padding:64px 0 12px}
+.sl-sec-head{text-align:center;margin-bottom:34px}
+.sl-eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--sl-blue-d);font-weight:700;display:block;margin-bottom:10px}
+.sl-sec-head h2{font-size:clamp(24px,2.6vw,36px);font-weight:700;text-transform:uppercase;color:var(--sl-ink);letter-spacing:.05em}
+.sl-sec-head p{max-width:620px;margin:14px auto 0;color:#5c5c5c;font-size:16px}
+
+/* product grid */
+.sl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 22px}
+.sl-card{display:block;text-align:center}
+.sl-card .sl-ph{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--sl-sand);margin-bottom:14px}
+.sl-card .sl-ph img{transition:transform .6s ease}
+.sl-card:hover .sl-ph img{transform:scale(1.05)}
+.sl-tag{position:absolute;top:12px;left:12px;background:var(--sl-blue);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;z-index:2}
+.sl-card h3{font-family:"Karla",sans-serif;font-size:15px;font-weight:600;color:var(--sl-ink);text-transform:uppercase;letter-spacing:.04em;line-height:1.3}
+.sl-card .sl-price{display:block;margin-top:6px;color:#5c5c5c;font-size:15px;font-weight:500}
+.sl-card .sl-price s{color:#a6a6a6;margin-right:7px;font-weight:400}
+
+/* collection split tiles */
+.sl-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sl-col{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--sl-sand)}
+.sl-col img{transition:transform .6s ease}
+.sl-col:hover img{transform:scale(1.05)}
+.sl-col span{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:#fff;font-family:"Karla",sans-serif;font-weight:700;font-size:18px;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+
+/* full-bleed lifestyle band */
+.sl-band{position:relative;margin-top:64px;min-height:460px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.sl-band img{position:absolute;inset:0;z-index:0}
+.sl-band .sl-band-c{position:relative;z-index:2;color:#fff;padding:40px 24px;max-width:680px;text-shadow:0 1px 16px rgba(0,0,0,.4)}
+.sl-band:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))}
+.sl-band h2{font-size:clamp(28px,3.4vw,48px);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px;color:#fff}
+.sl-band p{font-size:18px;margin-bottom:26px}
+.sl-band .btn{background:#fff;color:var(--sl-ink);border-color:#fff;border-radius:0;font-family:"Karla";font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;padding:15px 38px}
+.sl-band .btn:hover{background:var(--sl-blue);color:#fff;border-color:var(--sl-blue)}
+
+/* value props */
+.sl-vps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;padding:54px 0}
+.sl-vp h3{font-family:"Karla";font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sl-ink);margin-bottom:8px}
+.sl-vp p{color:#5c5c5c;font-size:14px}
+.sl-vp .sl-vp-ic{font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--sl-blue);text-transform:uppercase;margin-bottom:12px;display:block}
+
+/* newsletter */
+.sl-news{background:var(--sl-ink);color:#fff;text-align:center;padding:64px 24px;margin-top:64px}
+.sl-news h2{font-family:"Karla";font-size:clamp(24px,2.6vw,34px);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px;color:#fff}
+.sl-news p{color:#c8ccda;margin-bottom:24px;font-size:16px}
+.sl-news form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.sl-news input{flex:1;min-width:220px;padding:14px 16px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-family:"Karla";font-size:15px}
+.sl-news input::placeholder{color:#aeb4c6}
+.sl-news .btn{background:var(--sl-blue);border-color:var(--sl-blue);color:#fff;border-radius:0;font-family:"Karla";font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.sl-news .btn:hover{background:#fff;color:var(--sl-ink);border-color:#fff}
+
+@media(max-width:1080px){
+  .sl-grid{grid-template-columns:repeat(3,1fr)}
+  .sl-cols{grid-template-columns:repeat(2,1fr)}
+  .sl-vps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .sl-heros{grid-template-columns:1fr}
+  .sl-hero{aspect-ratio:4/5}
+  .sl-grid{grid-template-columns:repeat(2,1fr);gap:6px 14px}
+  .sl-band{min-height:380px}
+}
+@media(max-width:430px){
+  .sl-vps{grid-template-columns:1fr}
+}
+</style>
+</head><body>
 <a href="#main" class="skip">Skip to content</a>
 <div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
 <header><div class="wrap nav">
   <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
-  <nav class="menu" aria-label="Primary"><a href="#">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html" class="active">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+  <nav class="menu" aria-label="Primary"><a href="index.html">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html" class="active">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
   <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
 </div></header>
 <div class="scrim" id="scrim"></div>
 <nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
 
-<main id="main">
-<section class="bhero"><div class="wrap">
-  <div class="txt">
-    <div class="eyebrow">Summer &amp; Lifestyle · Beach &amp; Pool</div>
-    <h1>SunnyLife</h1>
-    <p>Floats, loungers, beach speakers and lucite games — everything you need to turn a pool day into the best day of summer.</p>
-    <a href="#shop" class="btn btn--w">Shop SunnyLife</a>
-  </div>
-  <div class="pic"><div class="imgwrap"><img alt="SunnyLife luxe lie-on float" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41LXFSUN_L_5.jpg?v=1739703008"/></div></div>
-</div></section>
 <div class="bcrumb wrap"><a href="index.html">Home</a> / Summer &amp; Lifestyle / SunnyLife</div>
 
-<section class="sec wrap" id="shop">
-  <div class="head"><h2>Beach &amp; pool</h2><a href="#" class="lk">View all</a></div>
-  <div class="pgrid">
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Luxe Lie-On Float Ice Cream Sunday" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41LXFSUN_L_5.jpg?v=1739703008"/></div><span class="add">Quick add</span></div><h3>Luxe Lie-On Float</h3><div class="meta">SunnyLife</div><div class="pr">15.900 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Beach Sounds Candy Pink speaker" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S2ISOBCP_1.jpg?v=1739703009"/></div><span class="add">Quick add</span></div><h3>Beach Sounds Speaker</h3><div class="meta">SunnyLife</div><div class="pr">15.900 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="The Lounger Nouveau Bleu Indigo" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S11DECNB_S10PTOXW_S10LCBNB.jpg?v=1739703011"/></div><span class="add">Quick add</span></div><h3>The Lounger — Nouveau Bleu</h3><div class="meta">SunnyLife</div><div class="pr">48.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Terry Travel Lounger Chair Rio Sun Pastel Lilac" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S41TLPSL_IA.jpg?v=1739703011"/></div><span class="add">Quick add</span></div><h3>Terry Travel Lounger</h3><div class="meta">SunnyLife</div><div class="pr">24.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Mini Lucite Backgammon Neon" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/S25LTBKX_1.jpg?v=1739703006"/></div><span class="add">Quick add</span></div><h3>Mini Lucite Backgammon</h3><div class="meta">SunnyLife</div><div class="pr">33.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Ombre Lucite Chess & Checkers Sherbert" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SCLCHCHE_4.jpg?v=1739703005"/></div><span class="add">Quick add</span></div><h3>Ombre Lucite Chess &amp; Checkers</h3><div class="meta">SunnyLife</div><div class="pr">54.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Ombre Lucite Backgammon Sherbert" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SCLBASHE_3.jpg?v=1739703004"/></div><span class="add">Quick add</span></div><h3>Ombre Lucite Backgammon</h3><div class="meta">SunnyLife</div><div class="pr">45.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Cork Roll-Up Game Majorelle" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/SunnyLife-Cork-Roll-Up-Game-Majorelle-3.jpg?v=1739703003"/></div><span class="add">Quick add</span></div><h3>Cork Roll-Up Game</h3><div class="meta">SunnyLife</div><div class="pr">15.600 KWD</div></a>
-  </div>
-</section>
+<main id="main" class="sl">
 
-<section class="story"><h2>Make summer count</h2><p>SunnyLife turns a pool day into an occasion — playful floats, comfy loungers, Bluetooth beach speakers and beautiful lucite games. Bright, fun and built to last the Gulf summer, available now at Hafeez.</p></section>
+  <!-- announcement bar (mirrors SunnyLife's rotating promo) -->
+  <div class="sl-promo">$15 off your first order &nbsp;•&nbsp; Free GCC express shipping over 25 KWD &nbsp;•&nbsp; <a href="#">Join the SunnyLife family</a></div>
+
+  <!-- DUAL HERO BANNERS (matches homepage: two side-by-side full-bleed promos) -->
+  <section class="sl-heros" aria-label="Featured collections">
+    <a class="sl-hero" href="#">
+      <img src="https://www.sunnylife.com.au/cdn/shop/files/160426_AU_Banners.jpg?v=1776739017&width=3333" alt="SunnyLife beach and poolside lifestyle — striped cabana and loungers on the sand" fetchpriority="high" width="1600" height="2133"/>
+      <div class="sl-hero-c"><h1>Beach &amp; Poolside</h1><span class="btn">Shop Now</span></div>
+    </a>
+    <a class="sl-hero" href="#">
+      <img src="https://www.sunnylife.com.au/cdn/shop/files/160426_AU_Banners2_6b85793a-886d-4388-b05a-709fc3262b55.jpg?v=1776739016&width=3333" alt="SunnyLife kids and baby summer range — playful floats and swim essentials" loading="lazy" width="1600" height="2133"/>
+      <div class="sl-hero-c"><h2>Kids &amp; Baby</h2><span class="btn">Shop Now</span></div>
+    </a>
+  </section>
+
+  <!-- BEST SELLERS PRODUCT GRID -->
+  <section class="sl-sec wrap">
+    <div class="sl-sec-head">
+      <span class="sl-eyebrow">Sun-kissed since 2003</span>
+      <h2>Best Sellers</h2>
+      <p>Luxe summer essentials inspired by life under the sun — the floats, chairs and umbrellas everyone's after this season.</p>
+    </div>
+    <div class="sl-grid">
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><span class="sl-tag">Bestseller</span><img src="https://www.sunnylife.com.au/cdn/shop/files/S5LDLICR_L_23_mariamtopp.jpg?v=1765166231&width=1200" alt="SunnyLife Luxe Lie-On Lounger in Casa Cream floating in a pool" loading="lazy" width="800" height="800"/></div>
+        <h3>Luxe Lie-On Lounger — Casa</h3><span class="sl-price">29.500 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51DYBCR_L_16_b374e167-798c-444e-9cdc-65d48edfe567.jpg?v=1769738947&width=1200" alt="SunnyLife Luxe Floating Chair in Casa Cream on the water" loading="lazy" width="800" height="800"/></div>
+        <h3>Luxe Floating Chair — Casa</h3><span class="sl-price">22.000 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51BHMAR_L_2.jpg?v=1759880568&width=1200" alt="SunnyLife Floating Hammock in Marine stripe" loading="lazy" width="800" height="800"/></div>
+        <h3>Floating Hammock — Marine</h3><span class="sl-price">26.500 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><span class="sl-tag">New</span><img src="https://www.sunnylife.com.au/cdn/shop/files/S51FSSES_L_19.jpg?v=1758177034&width=1200" alt="SunnyLife Take Anywhere Folding Chair in Sea Sage on the beach" loading="lazy" width="800" height="800"/></div>
+        <h3>Take Anywhere Folding Chair — Sea Sage</h3><span class="sl-price">18.000 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51BCMAS_L_3.jpg?v=1758176981&width=1200" alt="SunnyLife Beach Cabana in Marine stripe set up on the sand" loading="lazy" width="800" height="800"/></div>
+        <h3>Beach Cabana — Marine</h3><span class="sl-price">62.000 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51LBUBS_L_1.jpg?v=1758176980&width=1200" alt="SunnyLife Luxe Beach Umbrella in Butternut" loading="lazy" width="800" height="800"/></div>
+        <h3>Luxe Beach Umbrella — Butternut</h3><span class="sl-price">45.000 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S3EXLLGR_L_1.jpg?v=1758177205&width=1200" alt="SunnyLife Luxe Lilo inflatable in green" loading="lazy" width="800" height="800"/></div>
+        <h3>Luxe Lilo — Green</h3><span class="sl-price"><s>34.000 KWD</s>27.000 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S41BTNAT_L_1_1.jpg?v=1758177146&width=500" alt="SunnyLife Le Weekend portable picnic table in natural" loading="lazy" width="800" height="800"/></div>
+        <h3>Portable Picnic Table — Le Weekend</h3><span class="sl-price">36.000 KWD</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE FULL-BLEED BAND -->
+  <section class="sl-band" aria-label="Curated for you">
+    <img src="https://www.sunnylife.com.au/cdn/shop/files/S51DHNAV_L_12.jpg?v=1759882487&width=2048" alt="SunnyLife twin hammock float in a sunlit pool — life under the sun" loading="lazy" width="1600" height="900"/>
+    <div class="sl-band-c">
+      <h2>Curated For You</h2>
+      <p>From the pool to the picnic rug — shop the colourways defining the season.</p>
+      <span class="btn">Shop The Edit</span>
+    </div>
+  </section>
+
+  <!-- SHOP BY COLOURWAY TILES (mirrors "Curated For You" colourways) -->
+  <section class="sl-sec wrap">
+    <div class="sl-sec-head">
+      <span class="sl-eyebrow">Shop By Colourway</span>
+      <h2>Find Your Palette</h2>
+    </div>
+    <div class="sl-cols">
+      <a class="sl-col" href="#"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51LBUBS_L_1.jpg?v=1758176980&width=1200" alt="SunnyLife Butternut colourway products" loading="lazy" width="600" height="750"/><span>Butternut</span></a>
+      <a class="sl-col" href="#"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51FSSES_L_19.jpg?v=1758177034&width=1200" alt="SunnyLife Sea Sage colourway products" loading="lazy" width="600" height="750"/><span>Sea Sage</span></a>
+      <a class="sl-col" href="#"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51BCMAS_L_3.jpg?v=1758176981&width=1200" alt="SunnyLife Resort colourway products" loading="lazy" width="600" height="750"/><span>Resort</span></a>
+      <a class="sl-col" href="#"><img src="https://www.sunnylife.com.au/cdn/shop/files/S61LLTCL_L_4C.jpg?v=1768273383&width=2048" alt="SunnyLife Lazy Days colourway products" loading="lazy" width="600" height="750"/><span>Lazy Days</span></a>
+    </div>
+  </section>
+
+  <!-- KIDS & BABY PRODUCT GRID -->
+  <section class="sl-sec wrap">
+    <div class="sl-sec-head">
+      <span class="sl-eyebrow">For The Little Ones</span>
+      <h2>Kids &amp; Baby</h2>
+      <p>Splash-ready swim vests, floats and friends to make every summer day an adventure.</p>
+    </div>
+    <div class="sl-grid">
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51VVPK1_L_13__cammtayyy.jpg?v=1758177073&width=1200" alt="SunnyLife Kids Swim Vest in Cotton Candy" loading="lazy" width="800" height="800"/></div>
+        <h3>Kids Swim Vest — Cotton Candy</h3><span class="sl-price">12.500 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><span class="sl-tag">New</span><img src="https://www.sunnylife.com.au/cdn/shop/files/S51FBSSTS_L_1_0fc4f717-77aa-432f-8d5e-be6ce6b6accd.jpg?v=1758177034&width=1200" alt="SunnyLife Float Together Baby Seat in Strawberry Sunshine" loading="lazy" width="800" height="800"/></div>
+        <h3>Float Together Baby Seat — Strawberry</h3><span class="sl-price">15.000 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S41FSRES_L_52.jpg?v=1776384712&width=1200" alt="SunnyLife folding seat in Resort stripe" loading="lazy" width="800" height="800"/></div>
+        <h3>Take Anywhere Folding Chair — Resort</h3><span class="sl-price">17.500 KWD</span>
+      </a>
+      <a class="sl-card" href="#">
+        <div class="sl-ph"><img src="https://www.sunnylife.com.au/cdn/shop/files/S51DBCCR_L_4.jpg?v=1759880976&width=1200" alt="SunnyLife Deluxe Beach Chair in Casa Cream" loading="lazy" width="800" height="800"/></div>
+        <h3>Deluxe Beach Chair — Casa</h3><span class="sl-price">19.500 KWD</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="wrap">
+    <div class="sl-vps">
+      <div class="sl-vp"><span class="sl-vp-ic">Sun-Kissed</span><h3>Since 2003</h3><p>Luxe summer essentials designed in Australia, loved worldwide.</p></div>
+      <div class="sl-vp"><span class="sl-vp-ic">Fast</span><h3>GCC Shipping</h3><p>Free express delivery across the GCC on orders over 25 KWD.</p></div>
+      <div class="sl-vp"><span class="sl-vp-ic">Easy</span><h3>30-Day Returns</h3><p>Changed your mind? Return unused items within 30 days.</p></div>
+      <div class="sl-vp"><span class="sl-vp-ic">Secure</span><h3>KNET &amp; Cards</h3><p>Pay your way with KNET, Visa, Mastercard or Apple Pay.</p></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="sl-news">
+    <h2>Join The SunnyLife Family</h2>
+    <p>Sign up for $15 off your first order, plus first access to new drops and summer edits.</p>
+    <form onsubmit="return false">
+      <label class="sr-only" for="sl-email">Email address</label>
+      <input id="sl-email" type="email" placeholder="Enter your email" autocomplete="email"/>
+      <button class="btn" type="submit">Sign Up</button>
+    </form>
+  </section>
+
 </main>
 
 <footer><div class="wrap">
@@ -63,5 +256,4 @@
   <div class="fbot"><div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div><div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="returns.html#refund">Refund Policy</a></div><div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div></div>
 </div></footer>
 <script src="assets/site.js"></script>
-</body>
-</html>
+</body></html>

@@ -3,54 +3,211 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vacay Swimwear — Summer & Lifestyle | Hafeez Kuwait</title>
-<meta name="description" content="Vacay Swimwear at Hafeez Kuwait — tailored swim shorts and resort wear made for the Gulf summer. Ships across the GCC." />
+<title>Vacay Swimwear — Retro Resort Swim &amp; Lifestyle | Hafeez Kuwait</title>
+<meta name="description" content="Vacay Swimwear at Hafeez Kuwait — retro-inspired swim shorts, bikinis and resort linen for men and women. Shop best sellers and the summer sale. Free express shipping across the GCC." />
 <meta name="theme-color" content="#26d07c" />
 <link rel="icon" href="assets/hafeez-logo-green.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Vacay Swimwear — Retro Resort Swim &amp; Lifestyle | Hafeez Kuwait" />
+<meta property="og:description" content="Retro-inspired swim and resortwear for the whole holiday. In stock at Hafeez Kuwait and shipped across the GCC." />
+<meta property="og:image" content="https://www.vacayswimwear.com/cdn/shop/files/desktop_usa_1.jpg?v=1776814300" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" /><link rel="preconnect" href="https://cdn.shopify.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://www.vacayswimwear.com" /><link rel="preconnect" href="https://cdn.shopify.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
-<style>:root{--accent:#0fa6b8;--accent-ink:#fff}</style>
+<style>
+:root{--accent:#721c24;--accent-ink:#ffffff}
+
+/* Vacay bespoke: retro resort — deep burgundy, serif display, polka energy */
+.vc-disp{font-family:"Bodoni Moda",Georgia,serif}
+
+/* countdown / sale strip in brand burgundy */
+.vc-promo{background:var(--accent);color:#fff;text-align:center;font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;padding:9px 18px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap}
+.vc-promo .cd{font-variant-numeric:tabular-nums;letter-spacing:.06em}
+.vc-promo b{font-weight:900}
+
+/* scrolling marquee */
+.vc-marquee{background:#f3d9c9;color:var(--accent);overflow:hidden;white-space:nowrap;border-top:1px solid rgba(114,28,36,.15);border-bottom:1px solid rgba(114,28,36,.15)}
+.vc-marquee .track{display:inline-flex;gap:48px;padding:11px 24px;animation:vc-scroll 22s linear infinite;font-family:"Archivo",sans-serif;font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:12.5px}
+.vc-marquee span{display:inline-flex;align-items:center;gap:48px}
+@keyframes vc-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.vc-marquee .track{animation:none}}
+
+/* hero — split panel mirroring real Vacay homepage: photo left, cream sale panel right */
+.vc-hero{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:78vh;max-height:900px;overflow:hidden;background:#f6eee9}
+.vc-hero .ph{position:relative;overflow:hidden;background:#2a1416}
+.vc-hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vc-hero .ph .lbl{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:8vh;color:#fff;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.vc-hero .ph .lbl .pre{font-family:"Inter",sans-serif;font-weight:500;letter-spacing:.04em;font-size:clamp(16px,1.8vw,22px)}
+.vc-hero .ph .lbl .scr{font-family:"Bodoni Moda",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(40px,5.5vw,84px);line-height:.95;margin-top:2px}
+.vc-hero .panel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6vh 5%;color:#1a1110}
+.vc-hero .panel .sgs{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(22px,2.6vw,40px);font-weight:500;margin-bottom:4px}
+.vc-hero .panel .sgs i{font-style:italic}
+.vc-hero .panel .min{font-family:"Archivo",sans-serif;font-weight:600;font-size:clamp(20px,2.4vw,40px);letter-spacing:-.01em;line-height:1}
+.vc-hero .panel h1{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(58px,10vw,168px);line-height:.86;letter-spacing:-.02em;margin:0 0 4px}
+.vc-hero .panel p{font-size:15px;max-width:42ch;margin:14px auto 22px;color:#4a3b38}
+.vc-hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn--vacay{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.btn--vacay:hover{filter:brightness(1.12)}
+.btn--cream{background:#fff;border-color:#fff;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.btn--cream:hover{background:#f3d9c9;border-color:#f3d9c9}
+
+/* section heads */
+.vc-sec{padding:58px 0}
+.vc-h{font-family:"Bodoni Moda",Georgia,serif;font-weight:700;font-size:clamp(26px,4vw,44px);letter-spacing:-.01em;line-height:1;text-align:center}
+.vc-sec .sub{text-align:center;color:var(--grey);margin-top:8px;font-size:15px}
+.vc-seehead{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.vc-seehead .vc-h{text-align:left}
+.vc-link{font-family:"Archivo",sans-serif;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:3px;white-space:nowrap}
+
+/* product grid */
+.vc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.vc-grid .card .im{aspect-ratio:3/4}
+.vc-grid .card .tag{background:var(--accent);color:#fff}
+.vc-grid .card .tag.nw{background:#1f5e4a;color:#fff;left:auto;right:14px}
+.vc-grid .card .add{background:var(--accent)}
+.vc-grid .card h3{font-weight:600;font-size:15px;margin:14px 0 3px}
+.vc-grid .card .pr{font-size:15px;font-weight:700;color:var(--accent)}
+.vc-grid .card .pr s{color:var(--grey);font-weight:500;margin-left:8px}
+
+/* three-up sale banners */
+.vc-banners{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.vc-banner{position:relative;aspect-ratio:4/5;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;background:#2a1416}
+.vc-banner img{position:absolute;inset:0;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.vc-banner:hover img{transform:scale(1.05)}
+.vc-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,8,9,.6),rgba(20,8,9,0) 55%)}
+.vc-banner .bc{position:relative;z-index:2;text-align:center;color:#fff;padding:0 18px 34px}
+.vc-banner .bc h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:700;font-size:clamp(22px,2.6vw,34px);margin-bottom:14px}
+.vc-banner .bc .btn{padding:11px 22px}
+
+/* join the family */
+.vc-join{background:var(--accent);color:#fff;text-align:center;padding:70px 0}
+.vc-join h2{font-family:"Bodoni Moda",Georgia,serif;font-weight:700;font-size:clamp(28px,4vw,46px)}
+.vc-join p{max-width:48ch;margin:14px auto 26px;color:rgba(255,255,255,.9);font-size:16px}
+.vc-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.vc-form input{flex:1;min-width:220px;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.08);color:#fff;border-radius:30px;padding:14px 22px;font-family:"Inter";font-size:15px}
+.vc-form input::placeholder{color:rgba(255,255,255,.7)}
+.vc-form input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+@media (max-width:1080px){
+  .vc-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .vc-hero{grid-template-columns:1fr;max-height:none}
+  .vc-hero .ph{min-height:60vh}
+  .vc-hero .panel{padding:46px 22px 54px}
+}
+@media (max-width:680px){
+  .vc-hero .ph{min-height:54vh}
+  .vc-banners{grid-template-columns:1fr;gap:14px}
+  .vc-banner{aspect-ratio:16/9}
+  .vc-grid{gap:14px}
+}
+</style>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
 <div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
 <header><div class="wrap nav">
   <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
-  <nav class="menu" aria-label="Primary"><a href="#">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html" class="active">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+  <nav class="menu" aria-label="Primary"><a href="index.html">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html" class="active">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
   <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
 </div></header>
 <div class="scrim" id="scrim"></div>
 <nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
 
+<div class="vc-promo"><span><b>30% OFF SITEWIDE</b></span><span class="cd">SALE ENDS IN 00:10:54:09</span><span>LIMITED TIME ONLY</span></div>
+<div class="vc-marquee" aria-hidden="true"><div class="track"><span>30% Off Sitewide&nbsp;·&nbsp;Limited Time Only&nbsp;·&nbsp;Retro Resort Swim&nbsp;·&nbsp;GCC Express Shipping&nbsp;·&nbsp;30% Off Sitewide&nbsp;·&nbsp;Limited Time Only&nbsp;·&nbsp;Retro Resort Swim&nbsp;·&nbsp;GCC Express Shipping&nbsp;·&nbsp;</span><span>30% Off Sitewide&nbsp;·&nbsp;Limited Time Only&nbsp;·&nbsp;Retro Resort Swim&nbsp;·&nbsp;GCC Express Shipping&nbsp;·&nbsp;30% Off Sitewide&nbsp;·&nbsp;Limited Time Only&nbsp;·&nbsp;Retro Resort Swim&nbsp;·&nbsp;GCC Express Shipping&nbsp;·&nbsp;</span></div></div>
+
+<div class="bcrumb wrap"><a href="index.html">Home</a> / Summer &amp; Lifestyle / Vacay Swimwear</div>
+
 <main id="main">
-<section class="bhero"><div class="wrap">
-  <div class="txt">
-    <div class="eyebrow">Summer &amp; Lifestyle · Swimwear</div>
-    <h1>Vacay</h1>
-    <p>Tailored swim shorts in prints made for the Gulf summer — quick-dry, comfortable, and built for the beach, the pool and the chalet.</p>
-    <a href="#shop" class="btn btn--w">Shop swimwear</a>
-  </div>
-  <div class="pic"><div class="imgwrap"><img alt="Vacay swimwear lifestyle" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/collections/1-2_1_1802x_fcbd334b-4868-4b91-b7d9-78607a0158ce.webp?v=1686476323"/></div></div>
-</div></section>
-<div class="bcrumb wrap"><a href="index.html">Home</a> / Summer &amp; Lifestyle / Vacay</div>
 
-<section class="sec wrap" id="shop">
-  <div class="head"><h2>Swim shorts</h2><a href="#" class="lk">View all</a></div>
-  <div class="pgrid">
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Doha Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/vacay_feb_92423.jpg?v=1739703269"/></div><span class="add">Quick add</span></div><h3>Doha Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Phoenix Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/vacay_feb_92451_c8e22a99-f214-4eca-92b6-158ab2f0b77b.jpg?v=1739703268"/></div><span class="add">Quick add</span></div><h3>Phoenix Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Como Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3122_69838eba-03a0-48cb-9a05-b07b9b296999.jpg?v=1739703267"/></div><span class="add">Quick add</span></div><h3>Como Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Lyon Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_March_3065_e6e1d5b0-4c29-4063-9f63-6dcd3ad809f3.jpg?v=1739703265"/></div><span class="add">Quick add</span></div><h3>Lyon Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Cancun Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vaycay_Nov_40186less.jpg?v=1739703264"/></div><span class="add">Quick add</span></div><h3>Cancun Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Korcula Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Vacay_May_97231.jpg?v=1739703262"/></div><span class="add">Quick add</span></div><h3>Korcula Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Capri Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/VacayApril2020-103.jpg?v=1739703261"/></div><span class="add">Quick add</span></div><h3>Capri Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Miami Swim Short" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/VacayApril2020-115.jpg?v=1739703259"/></div><span class="add">Quick add</span></div><h3>Miami Swim Short</h3><div class="meta">Vacay Swimwear</div><div class="pr">14.400 KWD</div></a>
-  </div>
-</section>
+  <!-- HERO — split panel: photo left, Summer Getaway Sale right -->
+  <section class="vc-hero">
+    <div class="ph">
+      <img src="https://www.vacayswimwear.com/cdn/shop/files/desktop_usa_1.jpg?v=1776814300" alt="Vacay Swimwear models in the pool wearing retro resort swimwear" fetchpriority="high" width="960" height="900" />
+      <div class="lbl"><span class="pre">Just Landed</span><span class="scr">Bella Donna</span></div>
+    </div>
+    <div class="panel">
+      <p class="sgs vc-disp">Summer <i>Getaway</i> Sale</p>
+      <p class="min">Minimum</p>
+      <h1>30% Off<br/>Sitewide</h1>
+      <p>Retro resort swim, polka bikinis and breezy linen — now at Hafeez Kuwait, shipped across the GCC. Up to <b>30% off</b> in KWD.</p>
+      <div class="ctas">
+        <a href="#mens" class="btn btn--vacay">Shop Men</a>
+        <a href="#womens" class="btn btn--vacay">Shop Women</a>
+      </div>
+    </div>
+  </section>
 
-<section class="story"><h2>Made for the Gulf summer</h2><p>Vacay's tailored swim shorts pair bold resort prints with a quick-dry, comfortable fit — equally at home poolside, on the beach, or at the chalet. Part of Hafeez's Summer &amp; Lifestyle edit alongside La Paz, SunnyLife and DOIY.</p></section>
+  <!-- WOMEN'S BEST SELLERS -->
+  <section class="vc-sec wrap" id="womens">
+    <div class="vc-seehead">
+      <h2 class="vc-h">Women's Best Sellers</h2>
+      <a href="#" class="vc-link">See All</a>
+    </div>
+    <div class="vc-grid">
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B51-2025.09.29-VACAY-SWIMWEAR_107.jpg?v=1763422123" alt="Rhodes Top Blue Polka bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rhodes Top Blue Polka</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B21-2024.01.31-VACAY-SWIMWEAR_805.jpg?v=1738037322" alt="Rhodes Top Chocolate bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rhodes Top Chocolate</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B52-2025.10.24-VACAY-SWIMWEAR_189_1.jpg?v=1767934575" alt="Rio Top Chilli Polka bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rio Top Chilli Polka</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B40-2025.02.07-VACAY-SWIMWEAR_1475.jpg?v=1739321563" alt="Rhodes Top Chocolate Polka bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rhodes Top Chocolate Polka</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><span class="tag nw">New</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B56-2025.12.16-VACAY-SWIMWEAR_337.jpg?v=1776734681" alt="Rhodes Top Plum bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rhodes Top Plum</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B51-2025.09.29-VACAY-SWIMWEAR_096.jpg?v=1763422122" alt="Rio Top Blue Polka bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rio Top Blue Polka</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/B21-2024.01.31-VACAY-SWIMWEAR_813.jpg?v=1738037100" alt="Rhodes Top Cincinnati Red bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rhodes Top Cincinnati Red</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/white_rhodes_top.jpg?v=1738881777" alt="Rhodes Top White bikini top" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Rhodes Top White</h3><div class="pr">18.500 KWD <s>26.500 KWD</s></div></a></article>
+    </div>
+  </section>
+
+  <!-- MEN'S BEST SELLERS -->
+  <section class="vc-sec wrap" id="mens" style="padding-top:0">
+    <div class="vc-seehead">
+      <h2 class="vc-h">Men's Best Sellers</h2>
+      <a href="#" class="vc-link">See All</a>
+    </div>
+    <div class="vc-grid">
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/1c478278-d954-4031-ba34-9838eb3c0fec.jpg?v=1738039204" alt="Capri retro swim short for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Capri Swim Short</h3><div class="pr">20.000 KWD <s>28.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/VacayApril2020-2.jpg?v=1738036866" alt="Mykonos retro swim short for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Mykonos Swim Short</h3><div class="pr">20.000 KWD <s>28.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/Vacay_June_37929.jpg?v=1738115543" alt="Oslo retro swim short for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Oslo Swim Short</h3><div class="pr">20.000 KWD <s>28.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><span class="tag nw">New</span><img src="https://www.vacayswimwear.com/cdn/shop/files/Vacay_Sep_101978.jpg?v=1738119015" alt="Bari stretch swim short for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Bari Stretch Swim Short</h3><div class="pr">20.000 KWD <s>28.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/Vacay_Sep_102054.jpg?v=1738106381" alt="Monte Carlo stretch swim short for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Monte Carlo Stretch Swim Short</h3><div class="pr">20.000 KWD <s>28.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/VacayApril2020-10_2.jpg?v=1738115392" alt="The Hamptons swim short for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>The Hamptons Swim Short</h3><div class="pr">20.000 KWD <s>28.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/Vacay5669.jpg?v=1738060821" alt="White linen resort shirt for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Linen Shirt White</h3><div class="pr">23.000 KWD <s>32.500 KWD</s></div></a></article>
+      <article class="card"><a href="#"><div class="im"><span class="tag">30% Off</span><img src="https://www.vacayswimwear.com/cdn/shop/files/e5c32b0d-6448-4dc6-bfbc-ecfe36fb0862.jpg?v=1738118742" alt="Blue stripe linen resort shirt for men" loading="lazy" width="600" height="800" /><span class="add">Quick add</span></div><h3>Linen Shirt Blue Stripe</h3><div class="pr">25.500 KWD <s>36.500 KWD</s></div></a></article>
+    </div>
+  </section>
+
+  <!-- THREE SALE BANNERS -->
+  <section class="vc-sec wrap" style="padding-top:0">
+    <div class="vc-banners">
+      <a class="vc-banner" href="#">
+        <img src="https://www.vacayswimwear.com/cdn/shop/files/usa_sale_web_things.jpg?v=1774915634" alt="Women's swim and resort sale" loading="lazy" width="800" height="1000" />
+        <div class="bc"><h3 class="vc-disp">Women's Sale</h3><span class="btn btn--cream">Shop Now</span></div>
+      </a>
+      <a class="vc-banner" href="#">
+        <img src="https://www.vacayswimwear.com/cdn/shop/files/usa_sale_web_things2.jpg?v=1774915634" alt="Men's swim and resort sale" loading="lazy" width="800" height="1000" />
+        <div class="bc"><h3 class="vc-disp">Men's Sale</h3><span class="btn btn--cream">Shop Now</span></div>
+      </a>
+      <a class="vc-banner" href="#">
+        <img src="https://www.vacayswimwear.com/cdn/shop/files/usa_sale_web_things3.jpg?v=1774915634" alt="Resort accessories sale" loading="lazy" width="800" height="1000" />
+        <div class="bc"><h3 class="vc-disp">Accessories Sale</h3><span class="btn btn--cream">Shop Now</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- JOIN THE VACAY FAMILY -->
+  <section class="vc-join">
+    <div class="wrap">
+      <h2 class="vc-disp">Join The Vacay Family</h2>
+      <p>Sign up for early access to drops, restocks and members-only offers — delivered across the GCC.</p>
+      <form class="vc-form" onsubmit="return false">
+        <label class="sr-only" for="vc-email">Email address</label>
+        <input id="vc-email" type="email" placeholder="Enter your email" autocomplete="email" />
+        <button class="btn btn--cream" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </section>
+
 </main>
 
 <footer><div class="wrap">
@@ -63,5 +220,4 @@
   <div class="fbot"><div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div><div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="returns.html#refund">Refund Policy</a></div><div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div></div>
 </div></footer>
 <script src="assets/site.js"></script>
-</body>
-</html>
+</body></html>

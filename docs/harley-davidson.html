@@ -3,63 +3,238 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Harley-Davidson® — Official Merchandise in Kuwait | Hafeez</title>
-<meta name="description" content="Authentic, officially licensed Harley-Davidson® apparel and gear at Hafeez Kuwait — the official reseller. Leather jackets, hoodies, tees and more. Ships across the GCC." />
-<meta name="theme-color" content="#0a0c0b" />
+<title>Harley-Davidson® — Riding Gear, Apparel &amp; Goods | Hafeez Kuwait</title>
+<meta name="description" content="Shop authentic Harley-Davidson® apparel, riding gear and goods at Hafeez — Kuwait's official H-D merchandise reseller. Men's & women's clothing, caps, swimwear and gifts shipped across the GCC. Pay with KNET." />
+<meta name="theme-color" content="#26d07c" />
 <link rel="icon" href="assets/hafeez-logo-green.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" /><link rel="preconnect" href="https://cdn.shopify.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Harley-Davidson® Apparel & Gear — Hafeez Kuwait" />
+<meta property="og:description" content="Your ride. Your rules. Official Harley-Davidson® clothing and goods, shipped across the GCC by Hafeez." />
+<meta property="og:image" content="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/7t89CaLzIS4EvGRSxOYNl4/6a16767f45f7d67cc7c07285c0088405/3-riders-smiling-in-front-of-sturgis-sign-ls.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://www.harley-davidson.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/7t89CaLzIS4EvGRSxOYNl4/6a16767f45f7d67cc7c07285c0088405/3-riders-smiling-in-front-of-sturgis-sign-ls.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="assets/site.css" />
-<style>:root{--accent:#ff6900;--accent-ink:#0a0c0b}</style>
+<style>
+/* ===== Harley-Davidson brand override ===== */
+:root{--accent:#FA6600;--accent-ink:#ffffff;--hd-orange:#FA6600;--hd-red:#D5331A;--hd-navy:#1c1c1c;--hd-band:#111111}
+.hd h1,.hd h2,.hd h3,.hd .hd-headline{font-family:"Oswald","Archivo",sans-serif;text-transform:uppercase;letter-spacing:.005em}
+
+/* HERO — full-bleed lifestyle, dark overlay, oversized condensed headline */
+.hd-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#111}
+.hd-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hd-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.25) 45%,rgba(0,0,0,.15) 100%)}
+.hd-hero .in{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:0 24px 64px}
+.hd-hero .eyebrow{color:var(--hd-orange);font-weight:700;letter-spacing:.18em}
+.hd-hero h1{font-size:clamp(44px,8vw,108px);line-height:.92;font-weight:700;margin:10px 0 16px;max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.hd-hero p{font-family:"Inter";font-size:clamp(16px,1.6vw,20px);max-width:54ch;margin-bottom:26px;color:#f0f0f0}
+.hd-hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn--hd{background:var(--hd-orange);border-color:var(--hd-orange);color:#fff}
+.btn--hd:hover{background:#e25c00;border-color:#e25c00}
+.btn--hdline{background:transparent;border-color:#fff;color:#fff}
+.btn--hdline:hover{background:#fff;color:#111;border-color:#fff}
+
+/* CATEGORY — 3-up lifestyle shop-by-category cards */
+.hd-cat{padding:64px 0 24px}
+.hd-cat .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hd-cat .c{position:relative;display:block;overflow:hidden;background:#eee}
+.hd-cat .c .imgwrap{aspect-ratio:3/4;overflow:hidden}
+.hd-cat .c img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.hd-cat .c:hover img{transform:scale(1.05)}
+.hd-cat .c .lbl{position:absolute;left:0;right:0;bottom:0;padding:22px 20px;color:#fff;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;font-size:20px;letter-spacing:.02em;background:linear-gradient(to top,rgba(0,0,0,.8),transparent)}
+.hd-cat .c .lbl span{display:block;font-family:"Inter";text-transform:none;font-weight:600;font-size:13px;color:var(--hd-orange);letter-spacing:0;margin-top:4px}
+
+/* PRODUCT GRID — best sellers */
+.hd-prods{padding:48px 0 64px}
+.hd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.hd-card{display:block;color:inherit}
+.hd-card .im{position:relative;background:#f5f4ef;aspect-ratio:1/1;overflow:hidden;margin-bottom:12px}
+.hd-card .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.hd-card:hover .im img{transform:scale(1.04)}
+.hd-card .tag{position:absolute;top:10px;left:10px;z-index:2;background:var(--hd-orange);color:#fff;font-family:"Inter";font-weight:700;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:3px}
+.hd-card h3{font-family:"Inter";font-weight:600;text-transform:none;letter-spacing:0;font-size:15px;line-height:1.3;margin-bottom:4px}
+.hd-card .meta{font-size:12px;color:var(--grey);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.hd-card .pr{font-family:"Oswald",sans-serif;font-weight:600;font-size:18px;color:var(--hd-navy)}
+
+/* FULL-BLEED LIFESTYLE BAND */
+.hd-band{position:relative;min-height:58vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:#111}
+.hd-band img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hd-band::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.15))}
+.hd-band .in{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;padding:48px 24px}
+.hd-band .eyebrow{color:var(--hd-orange);font-weight:700;letter-spacing:.18em}
+.hd-band h2{font-size:clamp(30px,5vw,60px);line-height:.95;font-weight:700;margin:8px 0 14px;max-width:18ch}
+.hd-band p{font-family:"Inter";max-width:48ch;font-size:17px;margin-bottom:24px;color:#eee}
+
+/* BRAND STATEMENT band (orange) */
+.hd-statement{background:var(--hd-orange);color:#fff;padding:72px 0}
+.hd-statement .wrap{max-width:880px;text-align:center}
+.hd-statement h2{font-size:clamp(28px,4.4vw,52px);line-height:1;font-weight:700;margin-bottom:18px}
+.hd-statement p{font-family:"Inter";font-size:17px;line-height:1.6;margin-bottom:26px;color:#fff}
+
+/* VALUE PROPS */
+.hd-vp{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;background:var(--bg2)}
+.hd-vp .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.hd-vp .v{display:flex;gap:12px;align-items:center;font-family:"Inter";font-size:14px}
+.hd-vp .v b{display:block;font-weight:700}
+.hd-vp .v svg{flex:none}
+
+.hd .head h2{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:700}
+
+@media(max-width:980px){
+  .hd-cat .grid{grid-template-columns:1fr 1fr}
+  .hd-grid{grid-template-columns:1fr 1fr}
+  .hd-vp .wrap{grid-template-columns:1fr 1fr;gap:18px}
+}
+@media(max-width:560px){
+  .hd-cat .grid{grid-template-columns:1fr}
+  .hd-vp .wrap{grid-template-columns:1fr}
+  .hd-hero{min-height:70vh}
+}
+</style>
 </head>
-<body>
+<body class="hd">
 <a href="#main" class="skip">Skip to content</a>
+
 <div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
 <header><div class="wrap nav">
   <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
-  <nav class="menu" aria-label="Primary"><a href="#">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html" class="active">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+  <nav class="menu" aria-label="Primary"><a href="index.html">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html" class="active">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
   <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
 </div></header>
 <div class="scrim" id="scrim"></div>
 <nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
 
+<div class="bcrumb wrap"><a href="index.html">Home</a> / Harley-Davidson / Harley-Davidson</div>
+
 <main id="main">
-<section class="bhero dark" style="background:#0a0c0b"><div class="wrap">
-  <div class="txt">
-    <div class="eyebrow" style="color:#ff6900;opacity:1">Official reseller · Kuwait</div>
-    <h1>Harley-Davidson®</h1>
-    <p>Authentic, officially licensed Harley-Davidson® apparel and gear — sourced through our booth inside Harley-Davidson Kuwait. The real thing, nothing less.</p>
-    <a href="#shop" class="btn btn--accent">Shop the collection</a>
-  </div>
-  <div class="pic"><div class="imgwrap"><img alt="Harley-Davidson leather jacket detail" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_083621_2e500c90-e3f3-40db-af98-a0edecc0130b.png"/></div></div>
-</div></section>
-<div class="bcrumb wrap"><a href="index.html">Home</a> / Harley-Davidson</div>
 
-<section class="sec wrap" id="shop">
-  <div class="head"><h2>Men's apparel</h2><a href="#" class="lk">View all</a></div>
-  <div class="pgrid">
-    <a href="#" class="card"><div class="im"><span class="tag sale">Icon</span><div class="imgwrap"><img alt="Men's Timeless Leather Jacket" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/296192db267d10a4fbcb8144b7aa59f464242799.jpg?v=1739703594"/></div><span class="add">Quick add</span></div><h3>Men's Timeless Leather Jacket</h3><div class="meta">Harley-Davidson®</div><div class="pr">99.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Maverick Leather Biker Jacket" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/299ea58ad2a47c99264dd9c9d2ed22541734c9be.jpg?v=1739703551"/></div><span class="add">Quick add</span></div><h3>Men's Maverick Leather Biker Jacket</h3><div class="meta">Harley-Davidson®</div><div class="pr">122.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Enodia Leather Riding Jacket" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/4d7ad408168e1126e306961c7a7297c372f3ad5e.jpg?v=1739703520"/></div><span class="add">Quick add</span></div><h3>Men's Enodia Leather Riding Jacket</h3><div class="meta">Harley-Davidson®</div><div class="pr">122.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Copperblock Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/99084-20VM.jpg?v=1739703566"/></div><span class="add">Quick add</span></div><h3>Men's Copperblock Hoodie</h3><div class="meta">Harley-Davidson®</div><div class="pr">44.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Transcendent Corduroy Jacket" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/e9a2eef18f5abcbe3ab7ac5b30f8fc52d9dd719f.jpg?v=1739703563"/></div><span class="add">Quick add</span></div><h3>Men's Transcendent Corduroy Jacket</h3><div class="meta">Harley-Davidson®</div><div class="pr">37.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Idyll Windproof Soft Shell Jacket" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/98163-21VM.jpg?v=1739703549"/></div><span class="add">Quick add</span></div><h3>Men's Idyll Soft Shell Jacket</h3><div class="meta">Harley-Davidson®</div><div class="pr">67.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Staple 1/4 Zip Pullover" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/5b145b3320c5faade4d0bf5b8ec82be0cf0dd3c7.jpg?v=1739703602"/></div><span class="add">Quick add</span></div><h3>Men's Staple 1/4 Zip Pullover</h3><div class="meta">Harley-Davidson®</div><div class="pr">20.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Men's Staple Striped Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/1e76a9baa0c4443d6ab8d57b025b5fc07197c0c4.jpg?v=1739703586"/></div><span class="add">Quick add</span></div><h3>Men's Staple Striped Tee</h3><div class="meta">Harley-Davidson®</div><div class="pr">24.400 KWD</div></a>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hd-hero" id="hdhero">
+    <img class="bg" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/7t89CaLzIS4EvGRSxOYNl4/6a16767f45f7d67cc7c07285c0088405/3-riders-smiling-in-front-of-sturgis-sign-ls.jpg" alt="Harley-Davidson riders smiling together on the open road" fetchpriority="high" onerror="this.style.display='none'"/>
+    <div class="in">
+      <div class="eyebrow">Hafeez · Official Harley-Davidson® reseller in Kuwait</div>
+      <h1>Your Ride.<br/>Your Rules.</h1>
+      <p>Authentic Harley-Davidson® apparel, riding gear and goods — curated for the rider who lives life wide open. Now shipping across the GCC.</p>
+      <div class="cta"><a href="#" class="btn btn--hd">Shop Apparel &amp; Gear</a><a href="#bestsellers" class="btn btn--hdline">View Best Sellers</a></div>
+    </div>
+  </section>
 
-<section class="split darkgreen">
-  <div class="img"><div class="imgwrap"><img alt="Hafeez store inside Harley-Davidson Kuwait" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/collections/Hafeez_Store_Photo.jpg?v=1699860086"/></div></div>
-  <div class="copy">
-    <div class="eyebrow">The official home</div>
-    <h2>Genuine H-D, sourced in Kuwait</h2>
-    <p>Hafeez is the official Harley-Davidson® merchandise reseller in Kuwait — a subsidiary of Harley-Davidson Kuwait. Every piece is 100% authentic and officially licensed, available online and at our showroom booth.</p>
-    <ul class="pts"><li><b>01</b><span>1,200+ authentic Harley-Davidson® styles.</span></li><li><b>02</b><span>Apparel, leather, headwear, accessories &amp; collectibles.</span></li><li><b>03</b><span>Fast, tracked delivery across the GCC.</span></li></ul>
-    <div><a href="index.html#booth" class="btn btn--green">Visit our booth</a></div>
-  </div>
-</section>
+  <!-- VALUE PROPS -->
+  <div class="hd-vp"><div class="wrap">
+    <div class="v"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FA6600" stroke-width="2" aria-hidden="true"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span><b>Free GCC shipping</b> over 25 KWD</span></div>
+    <div class="v"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FA6600" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span><b>100% authentic</b> · official H-D® reseller</span></div>
+    <div class="v"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FA6600" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>KNET</b> &amp; Apple Pay</span></div>
+    <div class="v"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FA6600" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 1 3 6.7L3 16"/><path d="M3 21v-5h5"/></svg><span><b>Easy returns</b> across Kuwait</span></div>
+  </div></div>
+
+  <!-- SHOP BY CATEGORY -->
+  <section class="hd-cat sec wrap">
+    <div class="head"><h2>Shop By Category</h2><a href="#" class="lk">View all</a></div>
+    <div class="grid">
+      <a href="#" class="c">
+        <div class="imgwrap"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/1Rtzk30qTWS2Ubr8pRRVwz/6d55469f9f0404bb06b3ad02769db8e3/mens-blue-cream-striped-button-up-ls.jpg" alt="Man in a blue and cream striped Harley-Davidson button-up shirt beside a motorcycle"/></div>
+        <span class="lbl">Men's Riding Gear &amp; Apparel<span>Shop the collection</span></span>
+      </a>
+      <a href="#" class="c">
+        <div class="imgwrap"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/3pnFzSLQhDqpjTa1Mqpo6s/0f02474d4bf7c06dc3571528decf5c10/womens-blue-tie-front-top-ls.jpg" alt="Woman in a blue denim sleeveless Harley-Davidson tie-front top"/></div>
+        <span class="lbl">Women's Riding Gear &amp; Apparel<span>Shop the collection</span></span>
+      </a>
+      <a href="#" class="c">
+        <div class="imgwrap"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/1t3jRLbWOc4W0ly0T3RhHU/eeebf26c069f72e9d95128d65e254810/mens-racing-replica-jacket-ls.jpg" alt="Man wearing a Harley-Davidson Factory Racing replica jacket"/></div>
+        <span class="lbl">H-D Factory Racing Collection<span>Shop the collection</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="hd-prods sec wrap" id="bestsellers">
+    <div class="head"><h2>Best Sellers</h2><a href="#" class="lk">Shop all apparel</a></div>
+    <div class="hd-grid">
+      <a href="#" class="hd-card">
+        <div class="im"><span class="tag">Best Seller</span><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/65mgtrKieKEdOES1ep7Ihp/c1aa9b6410b38a9eebdd7d758a0423ee/96185-26VM_F.jpg" alt="Men's H-D Essential Pinstripe Baseball Jersey, front view"/></div>
+        <h3>Men's H-D Essential Pinstripe Baseball Jersey</h3><div class="meta">Harley-Davidson®</div><div class="pr">26.000 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/4L8f8TFPqqqpkHlOGIz5NM/0f9704f761925e6a4bdb85d75f275450/96742-26VM_F.jpg" alt="Men's 250th Chrome Eagle Short Sleeve Tee, front view"/></div>
+        <h3>Men's 250th Chrome Eagle Short Sleeve Tee</h3><div class="meta">Harley-Davidson®</div><div class="pr">12.500 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><span class="tag">New</span><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/aqcXogjvE9rIVPikmR1VP/7cc4c9195e32ee325ca0d031aff7efe0/96369-26RX_F.jpg" alt="Factory Racing Fanwear Hoodie, front view"/></div>
+        <h3>Factory Racing Fanwear Hoodie</h3><div class="meta">Harley-Davidson®</div><div class="pr">38.000 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/3C5lbmZ5Q5sqEg3KMpc7Zo/be92b95908b25f23de0fdfe4e6f2b4df/96741-26VM_F.jpg" alt="Men's 250th Short Sleeve Tee, front view"/></div>
+        <h3>Men's 250th Short Sleeve Tee</h3><div class="meta">Harley-Davidson®</div><div class="pr">12.500 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><span class="tag">Summer</span><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/7MHHkLsoQOjWABcQ5R8wIC/b5b12380e4a213ef47a46b8ee176f3be/96150-26VM_F.jpg" alt="Men's 1980 FX Flames Swim Trunk, front view"/></div>
+        <h3>Men's 1980 FX Flames Swim Trunk</h3><div class="meta">Harley-Davidson®</div><div class="pr">17.000 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/4isY4wzIrOMwtNMj7w5dUH/1262d259f82db43f65a373ee4bea35c1/96173-26VM_F.jpg" alt="Men's Stars & Stripes Eagle Tee, front view"/></div>
+        <h3>Men's Stars &amp; Stripes Eagle Tee</h3><div class="meta">Harley-Davidson®</div><div class="pr">11.000 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/vnDoNISyyBpX0let5cmFR/40508a254973ac8f61a5f66edcd82ca8/96151-26VM_F.jpg" alt="Men's H-D Color Blocked Swim Trunks, front view"/></div>
+        <h3>Men's H-D Color Blocked Swim Trunks</h3><div class="meta">Harley-Davidson®</div><div class="pr">17.000 KWD</div>
+      </a>
+      <a href="#" class="hd-card">
+        <div class="im"><span class="tag">Cap</span><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/6vtDjFScavc8QqtppJUsjG/9dc114383a505d61c6e5d1b02c394438/97634-26VM_F.jpg" alt="Stars & Stripes Switchback Adjustable Cap, front view"/></div>
+        <h3>Stars &amp; Stripes Switchback Adjustable Cap</h3><div class="meta">Harley-Davidson®</div><div class="pr">11.000 KWD</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE BAND -->
+  <section class="hd-band">
+    <img class="bg" loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/2eqltonV7ICXDIo3bX7H0A/0e946cffe022218aca1cc323140ed288/2025-breakout-riding-ls.jpg" alt="Harley-Davidson rider on the open road"/>
+    <div class="in">
+      <div class="eyebrow">Stories From The Road</div>
+      <h2>Goods Built To Go The Distance</h2>
+      <p>Travel bags, gloves and luggage made for the long haul — the gear that rides with you, wherever Kuwait's roads lead.</p>
+      <a href="#" class="btn btn--hd">Shop Goods &amp; Gifts</a>
+    </div>
+  </section>
+
+  <!-- SECOND CATEGORY ROW -->
+  <section class="hd-cat sec wrap" style="padding-bottom:48px">
+    <div class="head"><h2>More To Explore</h2><a href="#" class="lk">View all</a></div>
+    <div class="grid">
+      <a href="#" class="c">
+        <div class="imgwrap"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/5qOcfOjRQIpPKpKPb34ViA/c2fd5ab23ed79fbde66a6630f85718d9/p-a-travel-bag-ls.jpg" alt="Harley-Davidson travel bag and luggage"/></div>
+        <span class="lbl">Luggage &amp; Travel<span>Shop the collection</span></span>
+      </a>
+      <a href="#" class="c">
+        <div class="imgwrap"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/5nUr7vXktdMXHhJpsVaadh/4188715a72f4303d5dfea3306465fb64/96183-26VM_F.jpg" alt="Harley-Davidson men's gift set"/></div>
+        <span class="lbl">Goods &amp; Gifts<span>Shop the collection</span></span>
+      </a>
+      <a href="#" class="c">
+        <div class="imgwrap"><img loading="lazy" src="https://www.harley-davidson.com/ctfasset/5vy1mse9fkav/40Ss58ZCVNjidvfns2zAF2/9a0e5adccb2215b0a21ba722a69e937c/96743-26VM_F.jpg" alt="Men's 250th Liberty Eagle Short Sleeve Tee"/></div>
+        <span class="lbl">Tees &amp; Tops<span>Shop the collection</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BRAND STATEMENT -->
+  <section class="hd-statement">
+    <div class="wrap">
+      <h2>Built To Lead</h2>
+      <p>Harley-Davidson® gear is made for those who live life wide open. From the unmistakable bar &amp; shield to detail crafted with intention, every piece is built for freedom, performance and individuality. As Kuwait's official H-D® merchandise reseller, Hafeez brings it all to your door across the GCC.</p>
+      <a href="#" class="btn btn--w">Shop the full range</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news"><div class="wrap">
+    <div class="eyebrow">Newsletter sign-up</div>
+    <h2 class="hd-headline">Stay In The Know</h2>
+    <p>New arrivals, restocks and members-only drops — straight to your inbox. Ships across the GCC.</p>
+    <form onsubmit="return false"><input type="email" placeholder="Your email address" aria-label="Email address"/><button class="btn btn--hd" type="submit">Sign up for email</button></form>
+  </div></section>
+
 </main>
 
 <footer><div class="wrap">

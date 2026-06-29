@@ -3,61 +3,286 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PaddleSmash — The Viral Game | Hafeez Kuwait</title>
-<meta name="description" content="PaddleSmash at Hafeez Kuwait — part pickleball, part spikeball, all addictive. Shop the Complete Set, paddles and balls. Ships across the GCC." />
+<title>PaddleSmash — The Next Great Backyard Game | Hafeez Kuwait</title>
+<meta name="description" content="PaddleSmash at Hafeez Kuwait — part pickleball, part roundnet, all addictive. The viral 360° backyard game, as seen on Shark Tank. Shop the set, paddles and balls. Ships across the GCC." />
 <meta name="theme-color" content="#26d07c" />
 <link rel="icon" href="assets/hafeez-logo-green.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="PaddleSmash — The Next Great Backyard Game | Hafeez Kuwait" />
+<meta property="og:description" content="The viral 360° backyard game where pickleball meets roundnet. In stock at Hafeez Kuwait and shipped across the GCC." />
+<meta property="og:image" content="https://paddlesmash.com/cdn/shop/files/paddlesmash_photo_socialshare_2000.jpg?v=1657312374" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" /><link rel="preconnect" href="https://cdn.shopify.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://paddlesmash.com" /><link rel="preconnect" href="https://media-dynamic.okendo.io" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Epilogue:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
-<style>:root{--accent:#26d07c;--accent-ink:#0a0c0b}</style>
+<style>
+:root{--accent:#cde310;--accent-ink:#1c2200}
+
+/* PaddleSmash bespoke: playful, high-energy, lime accent */
+.ps-disp{font-family:"Epilogue","Archivo",sans-serif}
+
+/* top promo strip in brand lime */
+.ps-promo{background:var(--accent);color:var(--accent-ink);text-align:center;font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;padding:10px 18px}
+
+/* hero */
+.ps-hero{position:relative;min-height:84vh;max-height:920px;overflow:hidden;background:#111;display:flex;align-items:flex-end}
+.ps-hero .bg{position:absolute;inset:0}
+.ps-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,12,4,.78),rgba(8,12,4,.15) 55%,rgba(8,12,4,.32))}
+.ps-hero .in{position:relative;z-index:2;max-width:1600px;margin:0 auto;width:100%;padding:0 42px 8vh;color:#fff}
+.ps-hero .eyebrow{color:var(--accent);display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+.ps-hero .eyebrow::before{content:"";width:40px;height:3px;background:var(--accent)}
+.ps-hero h1{font-family:"Epilogue",sans-serif;font-weight:900;font-size:clamp(40px,6.6vw,96px);line-height:.92;letter-spacing:-.03em;max-width:18ch}
+.ps-hero p{font-size:18px;max-width:50ch;margin:20px 0 28px;color:rgba(255,255,255,.9)}
+.btn--lime{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.btn--lime:hover{filter:brightness(.93)}
+
+/* press / as-seen-on strip */
+.ps-press{background:#fff;border-bottom:1px solid var(--line);padding:26px 0}
+.ps-press .wrap{display:flex;align-items:center;justify-content:center;gap:42px;flex-wrap:wrap}
+.ps-press .lab{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--grey);width:100%;text-align:center;margin-bottom:6px}
+.ps-press img{height:30px;width:auto;object-fit:contain;opacity:.62;filter:grayscale(1);transition:.2s}
+.ps-press img:hover{opacity:1;filter:none}
+
+/* section heads (playful, centered option) */
+.ps-sec{padding:64px 0}
+.ps-h{font-family:"Epilogue",sans-serif;font-weight:900;font-size:clamp(28px,4vw,46px);letter-spacing:-.02em;line-height:1}
+.ps-center{text-align:center}
+.ps-center .ps-h{margin-bottom:8px}
+.ps-lk{font-family:"Inter";font-weight:700;font-size:15px;border-bottom:3px solid var(--accent);padding-bottom:3px;display:inline-block}
+
+/* best sellers — 2-up big product cards */
+.ps-bs{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+.ps-bs .card .im{aspect-ratio:4/3}
+.ps-bs .card .tag{background:var(--accent);color:var(--accent-ink)}
+.ps-bs .card .add{background:var(--accent-ink)}
+.ps-bs .card h3{font-family:"Epilogue",sans-serif;font-weight:800;font-size:20px}
+.ps-bs .card .pr{font-size:17px}
+.ps-bs .card .pr s{color:var(--grey);font-weight:500;margin-left:8px}
+
+/* what-is text blocks */
+.ps-whatis{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:6px}
+.ps-whatis .blk{background:var(--bg2);border:1px solid var(--line);padding:38px;border-radius:14px}
+.ps-whatis h3{font-family:"Epilogue",sans-serif;font-weight:800;font-size:24px;margin-bottom:12px}
+.ps-whatis p{font-size:16px;color:#33372a;line-height:1.65;margin-bottom:20px}
+
+/* limited-time offer band */
+.ps-offer{background:var(--accent);color:var(--accent-ink);text-align:center;padding:56px 24px}
+.ps-offer h2{font-family:"Epilogue",sans-serif;font-weight:900;font-size:clamp(26px,3.6vw,42px);letter-spacing:-.02em}
+.ps-offer p{font-size:17px;margin:12px auto 24px;max-width:50ch}
+.ps-offer .btn{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
+
+/* full-bleed image feature rows */
+.ps-feat{position:relative;min-height:78vh;overflow:hidden;background:#111;display:flex;align-items:center}
+.ps-feat .bg{position:absolute;inset:0}
+.ps-feat .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,4,.7),rgba(8,12,4,.15) 60%,transparent)}
+.ps-feat.right .bg::after{background:linear-gradient(270deg,rgba(8,12,4,.7),rgba(8,12,4,.15) 60%,transparent)}
+.ps-feat .in{position:relative;z-index:2;max-width:1600px;margin:0 auto;width:100%;padding:60px 42px;color:#fff}
+.ps-feat.right .in{text-align:right}
+.ps-feat h2{font-family:"Epilogue",sans-serif;font-weight:900;font-size:clamp(28px,4.4vw,56px);line-height:.96;letter-spacing:-.02em;max-width:16ch}
+.ps-feat.right h2{margin-left:auto}
+.ps-feat p{font-size:18px;margin:18px 0 26px;max-width:46ch;color:rgba(255,255,255,.9)}
+.ps-feat.right p{margin-left:auto}
+
+/* marquee */
+.ps-marquee{background:var(--accent-ink);color:var(--accent);overflow:hidden;padding:18px 0;white-space:nowrap}
+.ps-marquee .track{display:inline-block;animation:ps-scroll 32s linear infinite;font-family:"Epilogue",sans-serif;font-weight:800;text-transform:uppercase;font-size:20px;letter-spacing:.01em}
+.ps-marquee .track span{margin:0 22px}
+.ps-marquee .track .dot{color:var(--accent);opacity:.6}
+@keyframes ps-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ps-marquee .track{animation:none}}
+
+/* retailers / availability strip */
+.ps-retail{background:var(--bg2);padding:54px 0;text-align:center}
+.ps-retail .lab{font-family:"Archivo",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--grey);margin-bottom:22px}
+.ps-retail .row{display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:0 24px}
+.ps-retail img{height:38px;width:auto;object-fit:contain;opacity:.7;filter:grayscale(1);transition:.2s}
+.ps-retail img:hover{opacity:1;filter:none}
+
+/* reviews */
+.ps-rev .stars{color:#f5a623}
+.ps-rev .card{background:#fff;border:1px solid var(--line);padding:26px;border-radius:14px}
+.ps-rev .card .stars{font-size:15px;letter-spacing:2px;margin-bottom:12px}
+.ps-rev .card h4{font-family:"Epilogue",sans-serif;font-weight:800;font-size:16px;margin-bottom:8px}
+.ps-rev .card p{font-size:15px;color:#3a3a3a;line-height:1.6;margin-bottom:14px}
+.ps-rev .card .who{font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey)}
+.ps-rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+
+/* newsletter (lime) */
+.ps-news{background:var(--accent);color:var(--accent-ink);text-align:center;padding:72px 0}
+.ps-news h2{font-family:"Epilogue",sans-serif;font-weight:900;font-size:clamp(28px,4vw,50px);letter-spacing:-.02em}
+.ps-news p{margin:12px auto 24px;max-width:46ch;font-size:17px}
+.ps-news form{display:flex;max-width:480px;margin:0 auto;gap:10px}
+.ps-news input{flex:1;background:#fff;border:2px solid var(--accent-ink);border-radius:30px;padding:14px 22px;font:inherit;font-size:15px;outline:none}
+.ps-news .btn{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff}
+
+@media(max-width:1080px){
+  .ps-bs,.ps-whatis{grid-template-columns:1fr}
+  .ps-rgrid{grid-template-columns:1fr}
+  .ps-feat .in,.ps-feat.right .in{text-align:left}
+  .ps-feat.right h2,.ps-feat.right p{margin-left:0}
+}
+@media(max-width:760px){
+  .ps-hero .in{padding-left:20px;padding-right:20px}
+  .ps-feat .in{padding-left:20px;padding-right:20px}
+  .ps-news form{flex-direction:column}
+  .ps-whatis .blk{padding:28px}
+}
+</style>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
 <div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
 <header><div class="wrap nav">
   <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
-  <nav class="menu" aria-label="Primary"><a href="#">New In</a><a href="paddlesmash.html" class="active">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+  <nav class="menu" aria-label="Primary"><a href="index.html">New In</a><a href="paddlesmash.html" class="active">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
   <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
 </div></header>
 <div class="scrim" id="scrim"></div>
 <nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
 
+<div class="bcrumb wrap"><a href="index.html">Home</a> / PaddleSmash / PaddleSmash</div>
+
 <main id="main">
-<section class="bhero"><div class="wrap">
-  <div class="txt">
-    <div class="eyebrow">The viral one · In stock in Kuwait</div>
-    <h1>PaddleSmash</h1>
-    <p>Part pickleball, part spikeball, all addictive. The 360° paddle game taking over Kuwait's chalets, beaches and backyards.</p>
-    <a href="#shop" class="btn btn--w">Shop the set</a>
+
+<!-- brand promo strip (mirrors PaddleSmash top banner) -->
+<div class="ps-promo">Use code SUMMER20 for 20% off + free GCC shipping on all orders</div>
+
+<!-- HERO -->
+<section class="ps-hero">
+  <div class="bg"><img src="https://paddlesmash.com/cdn/shop/files/beach-set.jpg?v=1702937589&width=1400" alt="Friends playing PaddleSmash around the 360° net at the beach" fetchpriority="high"/></div>
+  <div class="in">
+    <span class="eyebrow">As seen on Shark Tank · In stock in Kuwait</span>
+    <h1>Backyard maxxing season is starting now.</h1>
+    <p>You saw it on Shark Tank, The View and Good Morning America. Now see it in your backyard, chalet and beach across Kuwait.</p>
+    <a href="#shop" class="btn btn--lime">Shop Now</a>
   </div>
-  <div class="pic"><div class="imgwrap"><img alt="Friends playing PaddleSmash" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260629_100207_05bbb6b8-edbc-4a04-8b83-9ce2c249ab29.png"/></div></div>
+</section>
+
+<!-- PRESS / AS SEEN ON -->
+<section class="ps-press"><div class="wrap">
+  <span class="lab">As featured on</span>
+  <img src="https://paddlesmash.com/cdn/shop/files/Shark-Tank-Logo-1536x864_5d61f951-7220-4769-bfb4-9cd19ad86667.png?v=1732383152" alt="Shark Tank" loading="lazy"/>
+  <img src="https://paddlesmash.com/cdn/shop/files/CBS_Mornings.png?v=1730233248" alt="CBS Mornings" loading="lazy"/>
+  <img src="https://paddlesmash.com/cdn/shop/files/good-morning-america-logo-C164DB7EFB-seeklogo.com.png?v=1692041734" alt="Good Morning America" loading="lazy"/>
+  <img src="https://paddlesmash.com/cdn/shop/files/the-view.png?v=1781025543" alt="The View" loading="lazy"/>
+  <img src="https://paddlesmash.com/cdn/shop/files/Today_Show.png?v=1678881319" alt="Today Show" loading="lazy"/>
+  <img src="https://paddlesmash.com/cdn/shop/files/The-Wall-Street-Journal-emblem.png?v=1732383094" alt="The Wall Street Journal" loading="lazy"/>
 </div></section>
-<div class="bcrumb wrap"><a href="index.html">Home</a> / PaddleSmash</div>
 
-<section class="split green flip">
-  <div class="img"><div class="imgwrap"><img alt="PaddleSmash complete set" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Image1.jpg?v=1739702944"/></div></div>
-  <div class="copy">
-    <div class="eyebrow">How it plays</div>
-    <h2>2 minutes to learn. All summer to master.</h2>
-    <p>Set up the net in seconds, grab a paddle, and rally around the 360° net. Two to four players, endless rematches.</p>
-    <div class="stats"><div><div class="n">2 min</div><div class="l">To learn</div></div><div><div class="n">2–4</div><div class="l">Players</div></div><div><div class="n">∞</div><div class="l">Rematches</div></div></div>
-    <div><a href="#shop" class="btn">Shop PaddleSmash</a></div>
+<!-- BEST SELLING BACKYARD GAMES -->
+<section class="ps-sec wrap" id="shop">
+  <div class="head"><h2 class="ps-h">Best Selling Backyard Games</h2><a href="#shop" class="ps-lk">Shop All</a></div>
+  <div class="ps-bs">
+    <a href="#" class="card"><div class="im"><span class="tag">Best Seller</span><div class="imgwrap"><img alt="PaddleSmash complete backyard game set" loading="lazy" src="https://paddlesmash.com/cdn/shop/files/Main.png?v=1732387387&width=900"/></div><span class="add">Quick add</span></div><h3>PaddleSmash</h3><div class="meta">Net, paddles &amp; balls — the complete set</div><div class="pr">49.000 KWD <s>79.000 KWD</s></div></a>
+    <a href="#" class="card"><div class="im"><span class="tag">New</span><div class="imgwrap"><img alt="TowerToss 360° backyard tossing game" loading="lazy" src="https://paddlesmash.com/cdn/shop/files/unnamed.jpg?v=1771884867&width=900"/></div><span class="add">Quick add</span></div><h3>TowerToss</h3><div class="meta">The 360° cornhole-style party game</div><div class="pr">22.000 KWD <s>25.000 KWD</s></div></a>
   </div>
 </section>
 
-<section class="sec wrap" id="shop">
-  <div class="head"><h2>Shop PaddleSmash</h2></div>
-  <div class="pgrid">
-    <a href="#" class="card"><div class="im"><span class="tag">Best Seller</span><div class="imgwrap"><img alt="PaddleSmash Complete Set" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Image1.jpg?v=1739702944"/></div><span class="add">Quick add</span></div><h3>PaddleSmash Complete Set</h3><div class="meta">Net, paddles &amp; balls</div><div class="pr">68.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="PaddleSmash Paddle" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/paddlesmash_paddle_lifestyle_small_74e43f55-d1bd-492b-abea-6da77214bfb1.png?v=1739702896"/></div><span class="add">Quick add</span></div><h3>PaddleSmash Paddle</h3><div class="meta">Spare / extra player</div><div class="pr">3.500 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="PaddleSmash Balls 2-Pack" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/paddlesmash_balls_lifestyle_small_62a4e213-72d7-4e8e-a1dc-66288fb8730e.png?v=1739702895"/></div><span class="add">Quick add</span></div><h3>PaddleSmash Balls 2-Pack</h3><div class="meta">Replacement balls</div><div class="pr">2.500 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Pole Insert Replacement" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/paddlesmash_insert_2pack.png?v=1739702894"/></div><span class="add">Quick add</span></div><h3>Pole Insert Replacement</h3><div class="meta">Spare parts</div><div class="pr">1.000 KWD</div></a>
+<!-- WHAT IS … text blocks -->
+<section class="ps-sec wrap" style="padding-top:0">
+  <div class="ps-whatis">
+    <div class="blk">
+      <h3>What is PaddleSmash?</h3>
+      <p>PaddleSmash is a new outdoor game that combines the best elements of pickleball and roundnet into a fun, easy-to-learn game. Perfect for playing in your backyard or at the beach with your most competitive family and friends.</p>
+      <a href="#shop" class="btn btn--lime">Shop Now</a>
+    </div>
+    <div class="blk">
+      <h3>What is TowerToss?</h3>
+      <p>TowerToss cranks up the classic backyard tossing game with a tower target players attack from all sides. Be first to conquer every side, then land a final shot through the top to win. Perfect for chalet parties, beach days and game nights that spill outside.</p>
+      <a href="#shop" class="btn btn--lime">Shop Now</a>
+    </div>
   </div>
 </section>
 
-<section class="story"><h2>The game everyone's talking about</h2><p>PaddleSmash combines the best of pickleball and spikeball into one fast, social game you can set up anywhere. It went viral worldwide — and Hafeez brings the real thing to Kuwait, in stock and shipped across the GCC.</p></section>
+<!-- LIMITED TIME OFFER BAND -->
+<section class="ps-offer">
+  <h2>Limited Time Offer</h2>
+  <p>Get 15% off + free GCC shipping on your first order. Just enter your email at the bottom of this page.</p>
+  <a href="#newsletter" class="btn">Shop Now</a>
+</section>
+
+<!-- FEATURE: pickleball fix -->
+<section class="ps-feat">
+  <div class="bg"><img src="https://paddlesmash.com/cdn/shop/files/beach-set.jpg?v=1702937589&width=1400" alt="PaddleSmash set up on the beach for a rally" loading="lazy"/></div>
+  <div class="in">
+    <h2>Get your pickleball fix right in your backyard</h2>
+    <p>Beach, backyard, chalet or tailgate — PaddleSmash is your go-to game. Its portability means you can enjoy this outdoor game for adults and families absolutely anywhere.</p>
+    <a href="#shop" class="btn btn--lime">Shop Now</a>
+  </div>
+</section>
+
+<!-- FEATURE: buy paddlesmash -->
+<section class="ps-feat right">
+  <div class="bg"><img src="https://paddlesmash.com/cdn/shop/files/Screenshot_2026-06-08_at_2.18.59_PM.png?v=1780942754&width=1400" alt="PaddleSmash players mid-game in the backyard" loading="lazy"/></div>
+  <div class="in">
+    <h2>Buy PaddleSmash</h2>
+    <p>You saw it on Shark Tank, TikTok and the Today Show. Now see it in your backyard. In stock at Hafeez and shipped across the GCC.</p>
+    <a href="#shop" class="btn btn--lime">Shop Now</a>
+  </div>
+</section>
+
+<!-- FEATURE: buy towertoss -->
+<section class="ps-feat">
+  <div class="bg"><img src="https://paddlesmash.com/cdn/shop/files/how-to-play_4866b782-cf6c-4b20-9bb9-c3e367a19d3b.jpg?v=1702937406&width=1400" alt="TowerToss 360° game in play outdoors" loading="lazy"/></div>
+  <div class="in">
+    <h2>Buy TowerToss</h2>
+    <p>Meet TowerToss, the 360° cornhole-style game that turns any backyard into a party.</p>
+    <a href="#shop" class="btn btn--lime">Shop Now</a>
+  </div>
+</section>
+
+<!-- FEATURE: paddles & balls -->
+<section class="ps-feat right">
+  <div class="bg"><img src="https://paddlesmash.com/cdn/shop/files/replacement.jpg?v=1702937752&width=1400" alt="Official PaddleSmash replacement paddles and balls" loading="lazy"/></div>
+  <div class="in">
+    <h2>Paddles &amp; Balls</h2>
+    <p>Looking for paddles and balls? Grab official replacement parts for PaddleSmash to keep the rallies going.</p>
+    <a href="#shop" class="btn btn--lime">Shop Now</a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="ps-marquee" aria-hidden="true"><div class="track">
+  <span>Fun for the whole family</span><span class="dot">•</span><span>The Next Great Backyard Game</span><span class="dot">•</span><span>Pickleball Meets Roundnet</span><span class="dot">•</span><span>Easy to Learn</span><span class="dot">•</span><span>As Seen on Shark Tank</span><span class="dot">•</span><span>Fun for the whole family</span><span class="dot">•</span><span>The Next Great Backyard Game</span><span class="dot">•</span><span>Pickleball Meets Roundnet</span><span class="dot">•</span><span>Easy to Learn</span><span class="dot">•</span><span>As Seen on Shark Tank</span><span class="dot">•</span>
+</div></div>
+
+<!-- RETAILERS / AVAILABILITY -->
+<section class="ps-retail">
+  <div class="lab">Now available at major retailers</div>
+  <div class="row">
+    <img src="https://paddlesmash.com/cdn/shop/files/dicks-sporting-goods-logo.jpg?v=1663356912" alt="Dick's Sporting Goods" loading="lazy"/>
+    <img src="https://paddlesmash.com/cdn/shop/files/2560px-Academy_Sports___Outdoors_Logo.png?v=1667513437" alt="Academy Sports + Outdoors" loading="lazy"/>
+    <img src="https://paddlesmash.com/cdn/shop/files/Scheels-Logo_03dbdf55-18b8-43c6-9086-2321e04016d9.png?v=1732640704" alt="Scheels" loading="lazy"/>
+    <img src="https://paddlesmash.com/cdn/shop/files/uncommongood_Logo_green.png?v=1732383057" alt="Uncommon Goods" loading="lazy"/>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="ps-sec wrap ps-rev">
+  <div class="ps-center"><h2 class="ps-h">Hear from our happy customers</h2></div>
+  <div class="ps-rgrid">
+    <div class="card"><div class="stars" aria-label="Rated 5 out of 5">★★★★★</div><h4>Best yard game for the summer!</h4><p>My kids were pumped when it arrived and we've had so many fun nights playing in the yard as a family. It's like spikeball and pickleball had a baby. Easy to set up and take down.</p><div class="who">Ben W. — Verified Buyer</div></div>
+    <div class="card"><div class="stars" aria-label="Rated 5 out of 5">★★★★★</div><h4>Fun times 10!</h4><p>One fun and energetic game! Doesn't take hardly any time to set up and break down. Compact and portable. One of the best games I've played in a loonnnggg time.</p><div class="who">Dustin G. — Verified Buyer</div></div>
+    <div class="card"><div class="stars" aria-label="Rated 5 out of 5">★★★★★</div><h4>It's like Pickleball-to-go</h4><p>I brought it to our local pickleball courts so we could play while waiting for a spot. Everyone loved it — some folks ended up just playing PaddleSmash instead.</p><div class="who">Dylan — Verified Reviewer</div></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="ps-news" id="newsletter">
+  <h2>Save 15% on your first order</h2>
+  <p>Join our community and save 15%. Free express shipping across the GCC on qualifying orders.</p>
+  <form onsubmit="return false">
+    <input type="email" placeholder="Enter your email" aria-label="Email address" required/>
+    <button type="submit" class="btn">Subscribe</button>
+  </form>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <h2>The game everyone's talking about</h2>
+  <p>PaddleSmash combines the best of pickleball and roundnet into one fast, social game you can set up anywhere. It went viral worldwide and landed on Shark Tank — and Hafeez brings the real thing to Kuwait, in stock and shipped across the GCC.</p>
+</section>
+
 </main>
 
 <footer><div class="wrap">

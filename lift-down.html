@@ -1,55 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lift Down — Everyday Headwear | Hafeez Kuwait</title>
-<meta name="description" content="Lift Down caps and beanies at Hafeez Kuwait — modern, everyday headwear. Classic caps, bucket hats, beanies and more. Ships across the GCC." />
-<meta name="theme-color" content="#26d07c" />
-<link rel="icon" href="assets/hafeez-logo-green.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" /><link rel="preconnect" href="https://cdn.shopify.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
-<style>:root{--accent:#e08a3c;--accent-ink:#1c1206}</style>
-</head>
-<body>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lift Down — Unbranded Caps in Real Sizes | Hafeez Kuwait</title>
+<meta name="description" content="Lift Down at Hafeez Kuwait — timeless, unbranded cotton and wool caps with a classic fit, finally in real sizes (S, Regular, XL). Made to last. Ships across the GCC."/>
+<meta name="theme-color" content="#26d07c"/>
+<link rel="icon" href="assets/hafeez-logo-green.png"/>
+<meta property="og:title" content="Lift Down — Unbranded Caps in Real Sizes | Hafeez Kuwait"/>
+<meta property="og:description" content="Timeless headwear with a classic fit, finally in real sizes. Plain, unbranded cotton and wool caps. Made to last, year over year. Now at Hafeez Kuwait."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://liftdown.com/cdn/shop/files/Homepage_Desktop_3_dfe806cd-915b-4a6c-9cb6-1577252e0395.png?v=1771868664&width=2000"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://liftdown.com"/><link rel="preconnect" href="https://cdn.shopify.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+<style>
+:root{--accent:#304130;--accent-ink:#fff;--ld-cream:#f7f5f4;--ld-green:#304130;--ld-red:#c8324a}
+
+/* promo marquee */
+.ld-marquee{background:var(--ld-green);color:#fff;overflow:hidden;white-space:nowrap;font-family:"Archivo";font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+.ld-marquee .track{display:inline-flex;gap:48px;padding:11px 24px;animation:ld-scroll 22s linear infinite}
+.ld-marquee span{display:inline-block}
+@keyframes ld-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* full-bleed hero banner */
+.ld-hero{position:relative;background:#d9d3cb}
+.ld-hero .imgwrap{position:relative;aspect-ratio:2000/900}
+.ld-hero img{object-position:center}
+.ld-hero .over{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 24px 46px;text-align:center}
+.ld-hero .cta{display:flex;gap:13px;flex-wrap:wrap;justify-content:center}
+@media(max-width:760px){.ld-hero .imgwrap{aspect-ratio:3/4}}
+
+/* feature section (product showcase) */
+.ld-feat{background:var(--ld-cream)}
+.ld-feat .wrap{padding-top:70px;padding-bottom:70px}
+.ld-feat .lead{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ld-feat.flip .lead{grid-template-columns:.95fr 1.05fr}
+.ld-feat.flip .shot{order:2}
+.ld-feat .shot{position:relative;aspect-ratio:3/2;overflow:hidden;background:#e7e2da}
+.ld-feat .shot img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ld-feat .shot:hover img{transform:scale(1.04)}
+.ld-feat .copy .kick{font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ld-red)}
+.ld-feat .copy h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,68px);line-height:.9;letter-spacing:-.02em;margin:12px 0 12px;color:var(--ld-green)}
+.ld-feat .copy .sub{font-size:19px;color:#444;max-width:34ch;margin-bottom:22px}
+.ld-feat .copy .price{font-family:"Archivo";font-weight:700;font-size:16px;margin-bottom:22px}
+.ld-feat .copy .price s{color:#999;font-weight:600;margin-right:8px}
+
+/* swatch rail */
+.swatches{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.swatches a{width:46px;height:46px;border-radius:50%;overflow:hidden;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);position:relative;background:#eee}
+.swatches a img{transition:.2s}
+.swatches a:hover{box-shadow:0 0 0 2px var(--ld-green)}
+.swatches .more{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:46px;height:46px;padding:0 14px;border-radius:24px;border:1.5px solid var(--ld-green);box-shadow:none;background:#fff;font-family:"Archivo";font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--ld-green)}
+.swatches .more:hover{background:var(--ld-green);color:#fff}
+
+/* product grid inside feature */
+.ld-pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:42px}
+.ld-pcard .im{position:relative;aspect-ratio:1/1;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.ld-pcard .im img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.ld-pcard:hover .im img{transform:scale(1.05)}
+.ld-pcard h3{font-weight:600;font-size:14px;margin:11px 0 2px}
+.ld-pcard .pr{font-weight:700;font-size:14px}
+.ld-pcard.view{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--ld-green);color:#fff;border:1px solid var(--ld-green);aspect-ratio:1/1;font-family:"Archivo";font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.02em;padding:14px}
+.ld-pcard.view:hover{filter:brightness(1.1)}
+
+/* dual lifestyle banners */
+.ld-twoban{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--ld-cream)}
+.ld-twoban .ban{position:relative;aspect-ratio:1200/760;overflow:hidden;background:#ddd6cc}
+.ld-twoban img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.ld-twoban .ban:hover img{transform:scale(1.04)}
+
+/* manifesto / story */
+.ld-story{background:var(--ld-green);color:#fff;text-align:center}
+.ld-story .wrap{max-width:840px;padding:80px 42px}
+.ld-story .eyebrow{color:#cdb9bd;justify-content:center;display:flex}
+.ld-story h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,48px);line-height:.95;letter-spacing:-.02em;margin:16px 0 24px}
+.ld-story p{font-size:18px;line-height:1.7;color:rgba(255,255,255,.86);margin-bottom:18px}
+.ld-story .sig{font-family:"Archivo";font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:14px;margin-top:8px}
+
+@media(max-width:1080px){
+  .ld-feat .lead,.ld-feat.flip .lead{grid-template-columns:1fr;gap:30px}
+  .ld-feat.flip .shot{order:-1}
+  .ld-pgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .ld-twoban{grid-template-columns:1fr}
+  .ld-pgrid{grid-template-columns:repeat(2,1fr)}
+  .swatches a{width:40px;height:40px}
+}
+</style>
+</head><body>
 <a href="#main" class="skip">Skip to content</a>
 <div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
 <header><div class="wrap nav">
   <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
-  <nav class="menu" aria-label="Primary"><a href="#">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html" class="active">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+  <nav class="menu" aria-label="Primary"><a href="index.html">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html" class="active">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
   <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
 </div></header>
 <div class="scrim" id="scrim"></div>
 <nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
 
+<div class="bcrumb wrap"><a href="index.html">Home</a> / Lift Down / Lift Down</div>
+
 <main id="main">
-<section class="bhero"><div class="wrap">
-  <div class="txt">
-    <div class="eyebrow">Headwear · Everyday essentials</div>
-    <h1>Lift Down</h1>
-    <p>Clean, modern caps and beanies built for daily wear — from breathable summer caps to soft-knit winter beanies.</p>
-    <a href="#shop" class="btn btn--w">Shop headwear</a>
-  </div>
-  <div class="pic"><div class="imgwrap"><img alt="Lift Down cap lifestyle" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DhUQOI0cKHsjFRWVsfUugUH3NG/hf_20260515_133511_c14d77a4-f909-47c9-94d1-9de5a0a97619.png"/></div></div>
-</div></section>
-<div class="bcrumb wrap"><a href="index.html">Home</a> / Lift Down</div>
+  <h1 class="sr-only">Lift Down — unbranded cotton and wool caps in real sizes, at Hafeez Kuwait</h1>
 
-<section class="sec wrap" id="shop">
-  <div class="head"><h2>Caps &amp; beanies</h2><a href="#" class="lk">View all</a></div>
-  <div class="pgrid">
-    <a href="#" class="card"><div class="im"><span class="tag">Best Seller</span><div class="imgwrap"><img alt="Classic Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/ClassicCapAmberOrangeHero-0072.png?v=1739703292"/></div><span class="add">Quick add</span></div><h3>Classic Cap</h3><div class="meta">Lift Down</div><div class="pr">6.400 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Breeze Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/BreezeGrayHero-4048.jpg?v=1739703289"/></div><span class="add">Quick add</span></div><h3>Breeze Cap</h3><div class="meta">Lift Down</div><div class="pr">9.600 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Bucket Hat" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Bucket-darkbeige-0015.jpg?v=1739703176"/></div><span class="add">Quick add</span></div><h3>Bucket Hat</h3><div class="meta">Lift Down</div><div class="pr">8.000 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Cruise Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/lift-down-cruise-cap-tarmac-754803.webp?v=1751451476"/></div><span class="add">Quick add</span></div><h3>Cruise Cap</h3><div class="meta">Lift Down</div><div class="pr">9.500 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Wool Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/Woolcap-Black-Hero.png?v=1739703101"/></div><span class="add">Quick add</span></div><h3>Wool Cap</h3><div class="meta">Lift Down</div><div class="pr">12.800 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Ultrasoft Beanie" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/products/ForestGreenBeanieOverhead-1931.jpg?v=1739703286"/></div><span class="add">Quick add</span></div><h3>Ultrasoft Beanie</h3><div class="meta">Lift Down</div><div class="pr">7.200 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="Knitted Beanie" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/BlackBeanieOverheadLooseKnit-1918_58c504cb-ce93-4604-b4bf-ff91e1fe2992.jpg?v=1739703169"/></div><span class="add">Quick add</span></div><h3>Knitted Beanie</h3><div class="meta">Lift Down</div><div class="pr">7.200 KWD</div></a>
+  <!-- promo marquee -->
+  <div class="ld-marquee" aria-label="Promotion">
+    <div class="track" aria-hidden="true">
+      <span>Buy 3 Get 1 Free</span><span>•</span><span>Unbranded Caps in Real Sizes</span><span>•</span><span>Free GCC Shipping over 25 KWD</span><span>•</span><span>Buy 3 Get 1 Free</span><span>•</span><span>Unbranded Caps in Real Sizes</span><span>•</span><span>Free GCC Shipping over 25 KWD</span><span>•</span>
+    </div>
   </div>
-</section>
 
-<section class="story"><h2>Headwear for every day</h2><p>Lift Down makes simple, well-made caps and beanies that go with everything — light and breathable for Kuwait summers, soft and warm when the temperature finally drops. Shop the range at Hafeez with fast GCC delivery.</p></section>
+  <!-- full-bleed hero -->
+  <section class="ld-hero" aria-label="Lift Down headwear">
+    <div class="imgwrap">
+      <img src="https://liftdown.com/cdn/shop/files/Homepage_Desktop_3_dfe806cd-915b-4a6c-9cb6-1577252e0395.png?v=1771868664&width=2000" alt="Lift Down caps in a range of colours laid out on a clean background" fetchpriority="high" width="2000" height="900"/>
+      <div class="over">
+        <a href="#classic" class="btn btn--w">Shop Caps</a>
+        <a href="size-guide.html" class="btn btn--glass">Find your fit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Classic Cap feature -->
+  <section class="ld-feat" id="classic" aria-labelledby="classic-h">
+    <div class="wrap">
+      <div class="lead">
+        <div class="shot"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/LDH01255_2.png?v=1777166927&width=1800" alt="Person wearing the Lift Down Classic Cap" loading="lazy"/></div></div>
+        <div class="copy">
+          <div class="kick">4,500+ five-star reviews</div>
+          <h2 id="classic-h">The Classic Cap</h2>
+          <p class="sub">Well made. In your size. In every colour.</p>
+          <p class="price">8.700 KWD</p>
+          <div class="swatches" aria-label="Available colours">
+            <a href="#" aria-label="Bluestone Green"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Bluestone-Green2.png?v=1766698554&width=200" alt="Bluestone Green" loading="lazy"/></div></a>
+            <a href="#" aria-label="Rustic Brown"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Rustic-Brown_97c2a9bb-ec66-4ce8-b845-996c64152606.png?v=1766698554&width=200" alt="Rustic Brown" loading="lazy"/></div></a>
+            <a href="#" aria-label="Amber Orange"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Classic_Cap_-_Amber_Orange_-_Hero.png?v=1766698554&width=200" alt="Amber Orange" loading="lazy"/></div></a>
+            <a href="#" aria-label="Onyx Black"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Onyx-Black_5c248352-4221-4cda-9cdc-59143fbbbee9.png?v=1763495740&width=200" alt="Onyx Black" loading="lazy"/></div></a>
+            <a href="#" aria-label="Emerald Green"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Classic_Cap_-_Emerald_Green_-_Hero.png?v=1761835468&width=200" alt="Emerald Green" loading="lazy"/></div></a>
+            <a href="#" aria-label="Navy Blue"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Classic_Cap_-_Navy_Blue_-_Hero.png?v=1763495740&width=200" alt="Navy Blue" loading="lazy"/></div></a>
+            <a href="#" aria-label="Khaki Beige"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Classic_Cap_-_Khaki_Beige_-_Hero.png?v=1761637340&width=200" alt="Khaki Beige" loading="lazy"/></div></a>
+            <a href="#classic-grid" class="more">Shop 23 colours →</a>
+          </div>
+          <a href="#classic-grid" class="btn btn--accent">Shop the Classic Cap</a>
+        </div>
+      </div>
+
+      <div class="ld-pgrid" id="classic-grid">
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Bluestone-Green2.png?v=1766698554&width=800" alt="Classic Cap in Bluestone Green" loading="lazy"/></div></div><h3>Bluestone Green</h3><div class="pr">8.700 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Rustic-Brown_97c2a9bb-ec66-4ce8-b845-996c64152606.png?v=1766698554&width=800" alt="Classic Cap in Rustic Brown" loading="lazy"/></div></div><h3>Rustic Brown</h3><div class="pr">8.700 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Classic_Cap_-_Amber_Orange_-_Hero.png?v=1766698554&width=800" alt="Classic Cap in Amber Orange" loading="lazy"/></div></div><h3>Amber Orange</h3><div class="pr">8.700 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Onyx-Black_5c248352-4221-4cda-9cdc-59143fbbbee9.png?v=1763495740&width=800" alt="Classic Cap in Onyx Black" loading="lazy"/></div></div><h3>Onyx Black</h3><div class="pr">8.700 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Classic_Cap_-_Emerald_Green_-_Hero.png?v=1761835468&width=800" alt="Classic Cap in Emerald Green" loading="lazy"/></div></div><h3>Emerald Green</h3><div class="pr">8.700 KWD</div></a>
+        <a href="#" class="ld-pcard view">View all 23 colours →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- dual lifestyle banners -->
+  <section class="ld-twoban" aria-label="Lift Down lifestyle">
+    <a href="#classic" class="ban"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/16_771fa9e2-662a-4f84-a746-fbca8d94314b.png?v=1778723216&width=1200" alt="Lift Down cap worn outdoors, lifestyle shot" loading="lazy"/></div></a>
+    <a href="#wool" class="ban"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/17_4baae7f9-4c68-408c-9730-267b5d829804.png?v=1778723299&width=1200" alt="Lift Down cap detail, lifestyle shot" loading="lazy"/></div></a>
+  </section>
+
+  <!-- The Wool Cap feature -->
+  <section class="ld-feat flip" id="wool" aria-labelledby="wool-h">
+    <div class="wrap">
+      <div class="lead">
+        <div class="copy">
+          <div class="kick">The Cold-Weather Classic</div>
+          <h2 id="wool-h">The Wool Cap</h2>
+          <p class="sub">Your favourite cap, made for the cold months.</p>
+          <p class="price">11.400 KWD</p>
+          <div class="swatches" aria-label="Available colours">
+            <a href="#" aria-label="Deep Onyx"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Wool_Cap_-_Black_-_Main_-_3_4_angle_cf77f9c1-8024-489d-869e-d14051678054.png?v=1770147890&width=200" alt="Deep Onyx" loading="lazy"/></div></a>
+            <a href="#" aria-label="Silvestre Grey"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/lift-down-wool-cap-silvestre-grey-102161.png?v=1770147890&width=200" alt="Silvestre Grey" loading="lazy"/></div></a>
+            <a href="#" aria-label="Heritage Olive"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Wool_Cap_-_Green_-_Main_-_3_4_angle_d9e9bacd-6b02-45e8-a52b-65e26af6ab28.png?v=1770147890&width=200" alt="Heritage Olive" loading="lazy"/></div></a>
+            <a href="#" aria-label="Mahogany Brown"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/lift-down-wool-cap-mahogany-brown-971867.png?v=1770147890&width=200" alt="Mahogany Brown" loading="lazy"/></div></a>
+            <a href="#" aria-label="Pine Green"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/lift-down-wool-cap-pine-green-808796.png?v=1770147890&width=200" alt="Pine Green" loading="lazy"/></div></a>
+            <a href="#" aria-label="Oat"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Woolcap-Cream-Hero.png?v=1770147890&width=200" alt="Oat" loading="lazy"/></div></a>
+            <a href="#wool-grid" class="more">Shop 12 colours →</a>
+          </div>
+          <a href="#wool-grid" class="btn btn--accent">Shop the Wool Cap</a>
+        </div>
+        <div class="shot"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/DSC08690_a5421382-cb65-41ff-be32-08f9d7b7819a.png?v=1777167079&width=1800" alt="Person wearing the Lift Down Wool Cap in the cold" loading="lazy"/></div></div>
+      </div>
+
+      <div class="ld-pgrid" id="wool-grid">
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Wool_Cap_-_Black_-_Main_-_3_4_angle_cf77f9c1-8024-489d-869e-d14051678054.png?v=1770147890&width=800" alt="Wool Cap in Deep Onyx" loading="lazy"/></div></div><h3>Deep Onyx</h3><div class="pr">11.400 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/lift-down-wool-cap-silvestre-grey-102161.png?v=1770147890&width=800" alt="Wool Cap in Silvestre Grey" loading="lazy"/></div></div><h3>Silvestre Grey</h3><div class="pr">11.400 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Wool_Cap_-_Green_-_Main_-_3_4_angle_d9e9bacd-6b02-45e8-a52b-65e26af6ab28.png?v=1770147890&width=800" alt="Wool Cap in Heritage Olive" loading="lazy"/></div></div><h3>Heritage Olive</h3><div class="pr">11.400 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/lift-down-wool-cap-mahogany-brown-971867.png?v=1770147890&width=800" alt="Wool Cap in Mahogany Brown" loading="lazy"/></div></div><h3>Mahogany Brown</h3><div class="pr">11.400 KWD</div></a>
+        <a href="#" class="ld-pcard"><div class="im"><div class="imgwrap"><img src="https://liftdown.com/cdn/shop/files/Woolcap-Cream-Hero.png?v=1770147890&width=800" alt="Wool Cap in Oat" loading="lazy"/></div></div><h3>Oat</h3><div class="pr">11.400 KWD</div></a>
+        <a href="#" class="ld-pcard view">View all 12 colours →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- brand manifesto -->
+  <section class="ld-story" aria-labelledby="story-h">
+    <div class="wrap">
+      <div class="eyebrow">Since 2019</div>
+      <h2 id="story-h">The humble cap, treated like it matters.</h2>
+      <p>The cap is the most-worn piece in most wardrobes, and usually the least considered. Sized as if every head were the same. Logos plastered front and centre. Treated as something to give away.</p>
+      <p>Lift Down started in 2019 because we thought it deserved better. Comfortable enough to forget you're wearing it. In a colour worth picking. In a size that actually fits.</p>
+      <div class="sig">Lift Down — now at Hafeez Kuwait</div>
+    </div>
+  </section>
+
 </main>
 
 <footer><div class="wrap">
@@ -62,5 +220,4 @@
   <div class="fbot"><div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div><div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="returns.html#refund">Refund Policy</a></div><div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div></div>
 </div></footer>
 <script src="assets/site.js"></script>
-</body>
-</html>
+</body></html>

@@ -1,67 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>La Paz — Portuguese Casualwear | Hafeez Kuwait</title>
-<meta name="description" content="La Paz at Hafeez Kuwait — Portuguese-made casualwear and graphic tees with a nautical, heritage feel. Ships across the GCC." />
-<meta name="theme-color" content="#26d07c" />
-<link rel="icon" href="assets/hafeez-logo-green.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.shopify.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
-<style>:root{--accent:#16324d;--accent-ink:#fff}</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Paz — Spring / Summer 26 | Hafeez Kuwait</title>
+  <meta name="description" content="La Paz Spring / Summer 26 at Hafeez Kuwait — Portuguese nautical-heritage casualwear inspired by the Atlantic coast. Elegant, timeless and functional pieces, with free express GCC shipping over 25 KWD."/>
+  <meta name="theme-color" content="#26d07c"/>
+  <link rel="icon" href="assets/hafeez-logo-green.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="La Paz — Spring / Summer 26 | Hafeez Kuwait"/>
+  <meta property="og:description" content="La Paz Spring / Summer 26 — Portuguese nautical-heritage casualwear, shaped by land, sea and sky. Now at Hafeez Kuwait with GCC shipping."/>
+  <meta property="og:image" content="https://lapaz.pt/cdn/shop/files/R0002293.jpg?v=1780478878&width=1600"/>
+  <meta property="og:url" content="https://khalidalsumait02-debug.github.io/hafeez/la-paz.html"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://lapaz.pt"/>
+  <link rel="dns-prefetch" href="https://lapaz.pt"/>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="assets/site.css"/>
+  <style>
+    /* ---- La Paz brand override (real palette) ---- */
+    :root{
+      --accent:#136F99;          /* La Paz deep ocean blue */
+      --accent-ink:#ffffff;      /* readable ink on accent */
+      --lp-primary:#1990C6;
+      --lp-deep:#136F99;
+      --lp-paper:#F1F2ED;        /* warm off-white background */
+      --lp-ink:#2b2b29;
+      --lp-muted:#676765;
+      --lp-line:#dcdcd5;
+      --lp-serif:'Nunito',system-ui,sans-serif;
+    }
+
+    /* page base */
+    main#main{background:var(--lp-paper);color:var(--lp-ink);font-family:var(--lp-serif);}
+    .lp-wrap{max-width:1440px;margin:0 auto;padding:0 24px;}
+    @media(max-width:640px){.lp-wrap{padding:0 16px;}}
+
+    /* ===== HERO (full-bleed lifestyle) ===== */
+    .lp-hero{position:relative;height:92vh;min-height:560px;max-height:1000px;overflow:hidden;background:#cfc9bb;}
+    .lp-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .lp-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.32),rgba(0,0,0,0) 42%);}
+    .lp-hero-inner{position:absolute;left:0;bottom:0;z-index:2;padding:0 48px 56px;color:#fff;}
+    .lp-hero-inner h1{font-family:var(--lp-serif);font-weight:300;letter-spacing:.06em;text-transform:uppercase;
+      font-size:clamp(2rem,5.5vw,4.4rem);line-height:1;margin:0 0 22px;color:#eaf3f7;}
+    .lp-hero .lp-btn{margin-top:4px;}
+    @media(max-width:640px){.lp-hero-inner{padding:0 18px 34px;}}
+
+    /* outlined button (La Paz style) */
+    .lp-btn{display:inline-block;font-family:var(--lp-serif);font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+      font-size:.78rem;padding:14px 30px;border:1px solid currentColor;background:transparent;color:#fff;text-decoration:none;
+      transition:background .2s,color .2s;}
+    .lp-btn:hover{background:#fff;color:var(--lp-deep);}
+    .lp-btn--ink{color:var(--lp-deep);}
+    .lp-btn--ink:hover{background:var(--lp-deep);color:#fff;}
+    .lp-btn--solid{background:var(--lp-deep);color:#fff;border-color:var(--lp-deep);}
+    .lp-btn--solid:hover{background:#0e5572;border-color:#0e5572;color:#fff;}
+
+    /* ===== Section titles ===== */
+    .lp-secttl{text-align:center;font-family:var(--lp-serif);font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+      font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--lp-ink);margin:0;padding:64px 0 8px;}
+
+    /* ===== SHOP THE LOOK — lookbook rows ===== */
+    .lp-look{padding:14px 0 60px;}
+    .lp-look-row{display:grid;grid-template-columns:1.05fr 1.6fr;gap:28px;align-items:stretch;margin-top:40px;}
+    .lp-look-row:nth-child(even){grid-template-columns:1.6fr 1.05fr;}
+    .lp-look-row:nth-child(even) .lp-mood{order:2;}
+    .lp-mood{position:relative;overflow:hidden;background:#e7e3d8;min-height:420px;}
+    .lp-mood img{width:100%;height:100%;object-fit:cover;display:block;}
+    .lp-mood-tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.9);color:var(--lp-deep);
+      font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;font-weight:600;}
+    .lp-prodgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    @media(max-width:980px){
+      .lp-look-row,.lp-look-row:nth-child(even){grid-template-columns:1fr;}
+      .lp-look-row:nth-child(even) .lp-mood{order:0;}
+      .lp-mood{min-height:340px;}
+    }
+    @media(max-width:560px){.lp-prodgrid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+
+    /* product card */
+    .lp-card{display:flex;flex-direction:column;}
+    .lp-card-media{position:relative;overflow:hidden;background:#ece8dd;aspect-ratio:3/4;}
+    .lp-card-media a.lp-card-link{display:block;width:100%;height:100%;}
+    .lp-card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease;}
+    .lp-card-media .img-alt{position:absolute;inset:0;opacity:0;}
+    .lp-card-media:hover .img-alt{opacity:1;}
+    .lp-card-opts{position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.94);color:var(--lp-deep);
+      text-align:center;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:10px;
+      transform:translateY(100%);transition:transform .25s ease;text-decoration:none;}
+    .lp-card-media:hover .lp-card-opts,.lp-card-media:focus-within .lp-card-opts{transform:translateY(0);}
+    .lp-card-info{padding:12px 2px 0;}
+    .lp-card-info .nm{display:block;color:var(--lp-ink);text-decoration:none;font-weight:500;font-size:.92rem;line-height:1.3;}
+    .lp-card-info .nm:hover{text-decoration:underline;}
+    .lp-card-info .pr{display:block;color:var(--lp-muted);font-size:.86rem;margin-top:4px;}
+    .lp-look-cta{text-align:center;margin-top:44px;}
+
+    /* ===== Editorial split (campaign) ===== */
+    .lp-edit{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:var(--lp-paper);
+      border-top:1px solid var(--lp-line);}
+    .lp-edit-media{display:grid;grid-template-columns:1fr 1fr;gap:0;height:100%;}
+    .lp-edit-media img{width:100%;height:100%;object-fit:cover;display:block;background:#e7e3d8;min-height:340px;}
+    .lp-edit-copy{padding:clamp(40px,6vw,96px);}
+    .lp-edit-copy h2{font-family:var(--lp-serif);font-weight:400;letter-spacing:.04em;text-transform:uppercase;
+      font-size:clamp(1.5rem,3vw,2.2rem);margin:0 0 20px;color:var(--lp-ink);}
+    .lp-edit-copy p{font-family:'Inter',sans-serif;color:var(--lp-muted);font-size:1.02rem;line-height:1.7;margin:0 0 28px;max-width:42ch;}
+    @media(max-width:900px){
+      .lp-edit{grid-template-columns:1fr;}
+      .lp-edit-media{order:0;}
+    }
+
+    /* ===== Value-prop band (full-bleed colour) ===== */
+    .lp-band{background:var(--lp-deep);color:#fff;text-align:center;padding:clamp(56px,9vw,120px) 24px;}
+    .lp-band h2{font-family:var(--lp-serif);font-weight:300;letter-spacing:.04em;
+      font-size:clamp(1.5rem,3.6vw,2.6rem);line-height:1.25;margin:0 auto 34px;max-width:18ch;color:#fff;}
+    .lp-band .lp-band-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .lp-band .lp-btn{color:#fff;}
+    .lp-band .lp-btn:hover{background:#fff;color:var(--lp-deep);}
+
+    /* ===== Shipping / newsletter strip ===== */
+    .lp-strip{background:var(--lp-paper);border-top:1px solid var(--lp-line);text-align:center;padding:54px 24px;}
+    .lp-strip h3{font-family:var(--lp-serif);font-weight:500;letter-spacing:.16em;text-transform:uppercase;font-size:1rem;margin:0 0 8px;color:var(--lp-ink);}
+    .lp-strip p{font-family:'Inter',sans-serif;color:var(--lp-muted);margin:0 0 22px;font-size:.98rem;}
+    .lp-news{display:flex;max-width:440px;margin:0 auto;border-bottom:1px solid var(--lp-ink);}
+    .lp-news input{flex:1;border:0;background:transparent;padding:12px 6px;font-size:.95rem;color:var(--lp-ink);font-family:inherit;}
+    .lp-news input:focus{outline:2px solid var(--lp-deep);outline-offset:2px;}
+    .lp-news button{border:0;background:transparent;color:var(--lp-deep);font-weight:600;letter-spacing:.12em;
+      text-transform:uppercase;font-size:.78rem;padding:0 8px;cursor:pointer;font-family:var(--lp-serif);}
+  </style>
 </head>
 <body>
-<a href="#main" class="skip">Skip to content</a>
-<div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
-<header><div class="wrap nav">
-  <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
-  <nav class="menu" aria-label="Primary"><a href="#">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html" class="active">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
-  <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
-</div></header>
-<div class="scrim" id="scrim"></div>
-<nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+  <a href="#main" class="skip">Skip to content</a>
 
-<main id="main">
-<section class="bhero dark"><div class="wrap">
-  <div class="txt">
-    <div class="eyebrow">Summer &amp; Lifestyle · Made in Portugal</div>
-    <h1>La Paz</h1>
-    <p>Portuguese casualwear with a quiet, nautical heritage — washed cottons, clean graphics and an easy European-meets-Gulf feel.</p>
-    <a href="#shop" class="btn btn--w">Shop La Paz</a>
-  </div>
-  <div class="pic"><div class="imgwrap"><img alt="La Paz DANTAS tee" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_PALM_BLUE_2.jpg?v=1739702988"/></div></div>
-</div></section>
-<div class="bcrumb wrap"><a href="index.html">Home</a> / Summer &amp; Lifestyle / La Paz</div>
+  <div class="util"><div class="wrap"><div class="promo">Free express shipping across the GCC over <b>25 KWD</b></div><div class="u-right"><a href="index.html#booth">Find our booth</a><a href="faq.html">Help</a><a href="#" class="lang"><b>EN</b> / ع</a></div></div></div>
+  <header><div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Hafeez home"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="42"/></a>
+    <nav class="menu" aria-label="Primary"><a href="index.html">New In</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html" class="active">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
+    <div class="icons"><label class="search"><span class="sr-only">Search</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6f6f6f" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input placeholder="Search" aria-label="Search products"/></label><button class="icon-btn" aria-label="Account">Account</button><button class="icon-btn" aria-label="Shopping bag, 2 items">Bag <span class="cc">2</span></button><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu"><span></span><span></span><span></span></button></div>
+  </div></header>
+  <div class="scrim" id="scrim"></div>
+  <nav class="mobilemenu" id="mobilemenu" aria-label="Mobile"><button class="mm-close" aria-label="Close menu">×</button><a href="index.html">Home</a><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html" class="sale">Sale</a></nav>
 
-<section class="sec wrap" id="shop">
-  <div class="head"><h2>DANTAS tees</h2><a href="#" class="lk">View all</a></div>
-  <div class="pgrid">
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Blue Ecru Logo T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_BLUE_LOGO_1.jpg?v=1739702989"/></div><span class="add">Quick add</span></div><h3>DANTAS Blue Ecru Logo Tee</h3><div class="meta">La Paz</div><div class="pr">10.200 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Soul Sea Moss T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_SOUL_SEAMOSS_1.jpg?v=1739702989"/></div><span class="add">Quick add</span></div><h3>DANTAS Soul Sea Moss Tee</h3><div class="meta">La Paz</div><div class="pr">11.100 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Palm Blue T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_PALM_BLUE_2.jpg?v=1739702988"/></div><span class="add">Quick add</span></div><h3>DANTAS Palm Blue Tee</h3><div class="meta">La Paz</div><div class="pr">11.100 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Boat Ecru T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_BOAT_ECRU_1.jpg?v=1739702987"/></div><span class="add">Quick add</span></div><h3>DANTAS Boat Ecru Tee</h3><div class="meta">La Paz</div><div class="pr">11.100 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Off White T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_OFFWHITE_1.jpg?v=1739702986"/></div><span class="add">Quick add</span></div><h3>DANTAS Off White Tee</h3><div class="meta">La Paz</div><div class="pr">10.200 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Green Bay T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_GREEN_BAY_1.jpg?v=1739702986"/></div><span class="add">Quick add</span></div><h3>DANTAS Green Bay Tee</h3><div class="meta">La Paz</div><div class="pr">10.200 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Heather Yellow Logo T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_HEATHER_YELLOW_LOGO_1_843bf376-595e-4bb2-8937-25dd9132ee3b.jpg?v=1739702985"/></div><span class="add">Quick add</span></div><h3>DANTAS Heather Yellow Tee</h3><div class="meta">La Paz</div><div class="pr">10.200 KWD</div></a>
-    <a href="#" class="card"><div class="im"><div class="imgwrap"><img alt="DANTAS Green Bay Fiesta Logo T-Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/0735/5315/0234/files/LAPAZ_SS24_DANTAS_GREEN_BAY_FIESTA_LOGO_1_22ff657c-ab6e-4938-8564-4d4eabdfa9b1.jpg?v=1739702984"/></div><span class="add">Quick add</span></div><h3>DANTAS Fiesta Logo Tee</h3><div class="meta">La Paz</div><div class="pr">10.200 KWD</div></a>
-  </div>
-</section>
+  <div class="bcrumb wrap"><a href="index.html">Home</a> / Summer &amp; Lifestyle / La Paz</div>
 
-<section class="story"><h2>Quiet Portuguese heritage</h2><p>La Paz draws on Portugal's maritime roots — understated graphics, soft washed cottons and a relaxed cut that wears well in the heat. A refined counterpoint in Hafeez's Summer &amp; Lifestyle edit.</p></section>
-</main>
+  <main id="main">
 
-<footer><div class="wrap">
-  <div class="fmain">
-    <div class="fbrand"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="46"/><p>Kuwait's official Harley-Davidson® merchandise reseller — a subsidiary of Harley-Davidson Kuwait. Plus the lifestyle brands that define the season.</p></div>
-    <div class="fcol"><h4>Shop</h4><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html">Sale</a></div>
-    <div class="fcol"><h4>Support</h4><a href="shipping.html">GCC Shipping</a><a href="returns.html">Returns</a><a href="shipping.html#track">Track Order</a><a href="size-guide.html">Size Guides</a><a href="contact.html">Contact</a></div>
-    <div class="fcol"><h4>Hafeez</h4><a href="index.html#booth">Our Booth</a><a href="about.html">About</a><a href="#">Instagram</a><a href="#">العربية</a></div>
-  </div>
-  <div class="fbot"><div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div><div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="returns.html#refund">Refund Policy</a></div><div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div></div>
-</div></footer>
-<script src="assets/site.js"></script>
+    <!-- ===== HERO ===== -->
+    <section class="lp-hero" aria-label="La Paz Spring / Summer 26">
+      <img src="https://lapaz.pt/cdn/shop/files/R0002293.jpg?v=1780478878&width=2000" alt="Two men in La Paz Spring / Summer 26 casualwear on a sunlit Atlantic beach" fetchpriority="high" width="2000" height="1125"/>
+      <div class="lp-hero-inner">
+        <h1>Spring / Summer 26</h1>
+        <a href="#shop-the-look" class="lp-btn">Explore</a>
+      </div>
+    </section>
+
+    <!-- ===== SHOP THE LOOK ===== -->
+    <section id="shop-the-look" class="lp-look">
+      <div class="lp-wrap">
+        <h2 class="lp-secttl">Shop the Look</h2>
+
+        <!-- Row 1 -->
+        <div class="lp-look-row">
+          <div class="lp-mood">
+            <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_AZTEC_BROWN_STRIPES_MOOD.jpg?v=1777979305&width=1440" alt="La Paz model wearing the Roque Aztec Brown Stripes shirt by the sea" loading="lazy"/>
+            <span class="lp-mood-tag">Shop the look</span>
+          </div>
+          <div class="lp-prodgrid">
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Roque Aztec Brown Stripes">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_AZTEC_BROWN_STRIPES_1.jpg?v=1769706936&width=900" alt="Roque Aztec Brown Stripes shirt, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_AZTEC_BROWN_STRIPES_3.jpg?v=1774532482&width=900" alt="Roque Aztec Brown Stripes shirt, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Roque Aztec Brown Stripes</a><span class="pr">42.000 KWD</span></div>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Carona Desert Canvas">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_CARONA_DESERT_CANVAS_1.jpg?v=1769790058&width=900" alt="Carona Desert Canvas trousers, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_CARONA_DESERT_CANVAS_3.jpg?v=1774530391&width=900" alt="Carona Desert Canvas trousers, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Carona Desert Canvas</a><span class="pr">40.500 KWD</span></div>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Dantas Off White (No Logo)">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_DANTAS_OFF_WHITE_WIND_BLUE_NO_LOGO_1.jpg?v=1773753313&width=900" alt="Dantas Off White t-shirt, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_DANTAS_OFF_WHITE_WIND_BLUE_NO_LOGO_2.jpg?v=1774552046&width=900" alt="Dantas Off White t-shirt, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Dantas Off White (No Logo)</a><span class="pr">16.500 KWD</span></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="lp-look-row">
+          <div class="lp-mood">
+            <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_WIND_BLUE_MOOD.jpg?v=1777978182&width=1440" alt="La Paz model wearing the Roque Wind Blue ringer tee on the shore" loading="lazy"/>
+            <span class="lp-mood-tag">Shop the look</span>
+          </div>
+          <div class="lp-prodgrid">
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Roque Wind Blue">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_WIND_BLUE_1.jpg?v=1769706598&width=900" alt="Roque Wind Blue ringer tee, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_WIND_BLUE_3.jpg?v=1774532877&width=900" alt="Roque Wind Blue ringer tee, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Roque Wind Blue</a><span class="pr">30.500 KWD</span></div>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Ponte Dark Navy Linen">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_PONTE_DARK_NAVY_LINEN_1.jpg?v=1769790560&width=900" alt="Ponte Dark Navy Linen overshirt, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_PONTE_DARK_NAVY_LINEN_3.jpg?v=1774530291&width=900" alt="Ponte Dark Navy Linen overshirt, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Ponte Dark Navy Linen</a><span class="pr">51.500 KWD</span></div>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Brito Grey Mesc">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_BRITO_GREY_MESC_1.jpg?v=1769785772&width=900" alt="Brito Grey Mesc shirt, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_BRITO_GREY_MESC_2.jpg?v=1774534172&width=900" alt="Brito Grey Mesc shirt, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Brito Grey Mesc</a><span class="pr">30.000 KWD</span></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="lp-look-row">
+          <div class="lp-mood">
+            <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_BRITO_GREY_MESC_MOOD.jpg?v=1777978651&width=1440" alt="La Paz model in the Brito Grey Mesc shirt against a weathered seaside wall" loading="lazy"/>
+            <span class="lp-mood-tag">Shop the look</span>
+          </div>
+          <div class="lp-prodgrid">
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Pestana Off-White">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_PESTANA_OFF_WHITE_1.jpg?v=1769790544&width=900" alt="Pestana Off-White shirt, front view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_PESTANA_OFF_WHITE_3.jpg?v=1774531186&width=900" alt="Pestana Off-White shirt, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Pestana Off-White</a><span class="pr">32.000 KWD</span></div>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Carona Desert Canvas">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_CARONA_DESERT_CANVAS_1.jpg?v=1769790058&width=900" alt="Carona Desert Canvas trousers, alternate view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_CARONA_DESERT_CANVAS_3.jpg?v=1774530391&width=900" alt="Carona Desert Canvas trousers, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Carona Desert Canvas</a><span class="pr">40.500 KWD</span></div>
+            </article>
+            <article class="lp-card">
+              <div class="lp-card-media">
+                <a href="#" class="lp-card-link" aria-label="Roque Wind Blue">
+                  <img src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_WIND_BLUE_1.jpg?v=1769706598&width=900" alt="Roque Wind Blue ringer tee, alternate view" loading="lazy"/>
+                  <img class="img-alt" src="https://lapaz.pt/cdn/shop/files/LAPAZ_SS26_ROQUE_WIND_BLUE_3.jpg?v=1774532877&width=900" alt="Roque Wind Blue ringer tee, detail view" loading="lazy"/>
+                </a>
+                <a href="#" class="lp-card-opts">Choose options</a>
+              </div>
+              <div class="lp-card-info"><a href="#" class="nm">Roque Wind Blue</a><span class="pr">30.500 KWD</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="lp-look-cta"><a href="#" class="lp-btn lp-btn--ink">View products</a></div>
+      </div>
+    </section>
+
+    <!-- ===== EDITORIAL SPLIT / CAMPAIGN ===== -->
+    <section class="lp-edit" aria-label="Spring / Summer 2026 campaign">
+      <div class="lp-edit-media">
+        <img src="https://lapaz.pt/cdn/shop/files/tumblr_ntssxpbpwT1ud2nd7o1_540_copy.jpg?v=1771423044&width=1080" alt="Archival La Paz nautical mood image" loading="lazy"/>
+        <a href="#"><img src="https://lapaz.pt/cdn/shop/files/R0001202.jpg?v=1771423147&width=1080" alt="La Paz Feijo Aztec Brown Stripes campaign shot" loading="lazy"/></a>
+      </div>
+      <div class="lp-edit-copy">
+        <h2>Spring / Summer 2026</h2>
+        <p>Capturing the quiet strength of nature, blending sun-washed neutrals with ocean-inspired blues and earthy browns. A palette shaped by land, sea, and sky — effortless and grounded.</p>
+        <a href="#" class="lp-btn lp-btn--solid">Explore the Campaign</a>
+      </div>
+    </section>
+
+    <!-- ===== VALUE-PROP BAND ===== -->
+    <section class="lp-band" aria-label="Our aim">
+      <h2>Our aim: offer elegant, timeless &amp; functional products</h2>
+      <div class="lp-band-links">
+        <a href="about.html" class="lp-btn">Our story</a>
+        <a href="#" class="lp-btn">News</a>
+      </div>
+    </section>
+
+    <!-- ===== SHIPPING / NEWSLETTER STRIP ===== -->
+    <section class="lp-strip" aria-label="Newsletter and shipping">
+      <h3>Be the First to Know</h3>
+      <p>Sign up and enjoy 10% off your first order. Free express GCC shipping on orders over 25 KWD.</p>
+      <form class="lp-news" onsubmit="return false">
+        <label for="lp-email" class="sr-only">E-mail</label>
+        <input id="lp-email" type="email" name="email" placeholder="E-mail" autocomplete="email"/>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer><div class="wrap">
+    <div class="fmain">
+      <div class="fbrand"><img src="assets/hafeez-logo-green.png" alt="Hafeez" width="120" height="46"/><p>Kuwait's official Harley-Davidson® merchandise reseller — a subsidiary of Harley-Davidson Kuwait. Plus the lifestyle brands that define the season.</p></div>
+      <div class="fcol"><h4>Shop</h4><a href="paddlesmash.html">PaddleSmash</a><a href="lift-down.html">Lift Down</a><a href="vacay.html">Summer &amp; Lifestyle</a><a href="harley-davidson.html">Harley-Davidson</a><a href="sale.html">Sale</a></div>
+      <div class="fcol"><h4>Support</h4><a href="shipping.html">GCC Shipping</a><a href="returns.html">Returns</a><a href="shipping.html#track">Track Order</a><a href="size-guide.html">Size Guides</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h4>Hafeez</h4><a href="index.html#booth">Our Booth</a><a href="about.html">About</a><a href="#">Instagram</a><a href="#">العربية</a></div>
+    </div>
+    <div class="fbot"><div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div><div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="returns.html#refund">Refund Policy</a></div><div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div></div>
+  </div></footer>
+  <script src="assets/site.js"></script>
 </body>
 </html>
