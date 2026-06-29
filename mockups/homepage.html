@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hafeez — Homepage Concept</title>
+<!--
+  HAFEEZ homepage design concept (static mockup).
+  Static HTML/CSS only — no real cart/checkout. Built to demonstrate layout,
+  type, colour and tone. Imagery uses topical placeholders (loremflickr) with
+  branded duotone overlays; real photography from Hafeez's library will replace
+  them 1:1. Design intentionally avoids rounded corners, drop-shadow cards,
+  pill buttons and stock gradients.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --green:#26d07c;
+    --green-dark:#005844;
+    --yellow:#fff19f;
+    --mint:#b5e3d8;
+    --orange:#ff6900;
+    --ink:#0d1411;
+    --ink-2:#172420;
+    --paper:#f4f2ec;
+    --paper-2:#eae7dd;
+    --line:#d7d3c7;
+    --line-dark:rgba(255,255,255,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1480px;margin:0 auto;padding:0 40px}
+  .display{font-family:"Archivo",sans-serif;font-weight:900;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+  .eyebrow{font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+  .serif{font-family:"Fraunces",serif;font-style:italic;font-weight:400}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:12px;font-family:"Archivo",sans-serif;font-weight:700;
+       font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:18px 30px;border:1.5px solid var(--ink);
+       background:var(--ink);color:#fff;transition:.25s ease}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn .arw{transition:transform .25s ease}
+  .btn:hover .arw{transform:translateX(5px)}
+  .btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn--ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+  .btn--green{background:var(--green);border-color:var(--green);color:var(--ink)}
+  .btn--green:hover{background:transparent;color:var(--ink)}
+
+  /* ---------- top bar / ticker ---------- */
+  .topbar{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.06em}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px}
+  .topbar .ann{font-family:"Archivo",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.14em;font-size:11px;opacity:.92}
+  .topbar .util{display:flex;gap:22px;align-items:center;font-family:"Archivo",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+  .topbar .util a{opacity:.8}.topbar .util a:hover{opacity:1}
+  .lang b{color:var(--green)}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{font-family:"Archivo",sans-serif;font-weight:900;font-size:26px;letter-spacing:.02em;text-transform:uppercase;display:flex;align-items:center;gap:11px}
+  .logo .mk{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:var(--green);color:var(--ink);font-size:18px;font-weight:900;font-family:"Archivo"}
+  .menu{display:flex;gap:34px;align-items:center}
+  .menu a{font-family:"Archivo",sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;position:relative;padding:6px 0}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--ink);transition:width .25s ease}
+  .menu a:hover::after{width:100%}
+  .menu a.sale{color:var(--orange)}
+  .icons{display:flex;gap:20px;align-items:center}
+  .icons button{background:none;border:none;cursor:pointer;font-family:"Archivo";font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:7px}
+  .cartcount{background:var(--ink);color:#fff;font-size:11px;width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center}
+  .burger{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;height:88vh;min-height:620px;max-height:880px;background:var(--ink-2);overflow:hidden;color:#fff}
+  .hero .bg{position:absolute;inset:0}
+  .hero .bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(8,16,13,.86) 0%,rgba(8,16,13,.55) 42%,rgba(8,16,13,.15) 100%),
+               linear-gradient(0deg,rgba(0,88,68,.45),transparent 55%)}
+  .hero.noimg .bg{background:radial-gradient(120% 120% at 0% 100%,var(--green-dark),var(--ink) 60%)}
+  .hero .inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:74px}
+  .hero .eyebrow{color:var(--green);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+  .hero .eyebrow::before{content:"";width:46px;height:2px;background:var(--green)}
+  .hero h1{font-size:clamp(48px,8.2vw,128px);max-width:14ch}
+  .hero h1 .em{color:var(--green)}
+  .hero p.sub{font-size:18px;max-width:48ch;margin:26px 0 36px;color:rgba(255,255,255,.82)}
+  .hero .cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero .scroll{position:absolute;right:40px;bottom:40px;z-index:3;writing-mode:vertical-rl;font-family:"Archivo";font-weight:600;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+  /* ---------- marquee ---------- */
+  .marquee{background:var(--green);color:var(--ink);overflow:hidden;border-bottom:1px solid var(--ink)}
+  .marquee .track{display:flex;gap:0;white-space:nowrap;animation:scroll 32s linear infinite}
+  .marquee span{font-family:"Archivo";font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:15px;padding:14px 28px;display:flex;align-items:center;gap:28px}
+  .marquee span::after{content:"✦";font-size:11px}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- section heads ---------- */
+  .sec{padding:96px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:42px;gap:24px;flex-wrap:wrap}
+  .sec-head .eyebrow{color:var(--green-dark)}
+  .sec-head h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(30px,4vw,52px);line-height:.96;letter-spacing:-.02em;margin-top:14px}
+  .sec-head .link{font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding-bottom:5px}
+
+  /* ---------- worlds mosaic ---------- */
+  .worlds{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:300px;gap:14px}
+  .tile{position:relative;overflow:hidden;background:var(--ink);color:#fff;display:block}
+  .tile .ph{position:absolute;inset:0}
+  .tile .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,14,11,.82),rgba(7,14,11,.05) 62%)}
+  .tile.noimg .ph{background:linear-gradient(150deg,var(--green-dark),var(--ink))}
+  .tile img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .tile:hover img{transform:scale(1.06)}
+  .tile .c{position:absolute;left:0;bottom:0;z-index:2;padding:30px}
+  .tile .idx{font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--green);margin-bottom:10px}
+  .tile h3{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:30px;line-height:.95;letter-spacing:-.01em}
+  .tile .go{font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-top:14px;display:inline-flex;gap:9px;opacity:0;transform:translateY(6px);transition:.3s ease}
+  .tile:hover .go{opacity:1;transform:none}
+  .t-hd{grid-column:span 8;grid-row:span 2}
+  .t-ps{grid-column:span 4;grid-row:span 2;background:var(--orange)}
+  .t-ps .ph{display:none}
+  .t-ps .badge{position:absolute;top:26px;left:26px;z-index:2;font-family:"Archivo";font-weight:800;font-size:11px;letter-spacing:.18em;background:var(--ink);color:#fff;padding:7px 12px}
+  .t-sum{grid-column:span 5}
+  .t-sale{grid-column:span 7;background:var(--yellow);color:var(--ink)}
+  .t-sale .ph{display:none}
+  .t-sale .idx{color:var(--orange)}
+  .t-sale .pct{position:absolute;right:28px;top:24px;font-family:"Archivo";font-weight:900;font-size:84px;line-height:.8;letter-spacing:-.04em;color:rgba(13,20,17,.12)}
+
+  /* ---------- products ---------- */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .card{display:block;background:transparent}
+  .card .im{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--paper-2)}
+  .card .im img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .im img{transform:scale(1.05)}
+  .card.noimg .im{background:linear-gradient(150deg,var(--mint),var(--paper-2))}
+  .card .tag{position:absolute;top:0;left:0;background:var(--ink);color:#fff;font-family:"Archivo";font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 11px;z-index:2}
+  .card .tag.sale{background:var(--orange)}
+  .card .add{position:absolute;left:14px;right:14px;bottom:14px;background:var(--paper);color:var(--ink);font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:13px;transform:translateY(calc(100% + 16px));transition:.3s ease;z-index:2}
+  .card:hover .add{transform:none}
+  .card .meta{padding:16px 2px 0}
+  .card .cat{font-family:"Archivo";font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a8576}
+  .card h4{font-family:"Inter";font-weight:600;font-size:15px;margin:7px 0 9px;line-height:1.3}
+  .card .price{font-family:"Archivo";font-weight:700;font-size:15px}
+  .card .price s{color:#a59f8e;font-weight:500;margin-left:8px}
+
+  /* ---------- paddlesmash band ---------- */
+  .ps{background:var(--ink);color:#fff;overflow:hidden}
+  .ps .grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
+  .ps .copy{padding:104px 64px}
+  .ps .eyebrow{color:var(--green);display:flex;align-items:center;gap:13px;margin-bottom:22px}
+  .ps .eyebrow::before{content:"";width:40px;height:2px;background:var(--green)}
+  .ps h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(38px,5vw,72px);line-height:.92;letter-spacing:-.02em}
+  .ps h2 .y{color:var(--yellow)}
+  .ps p{color:rgba(255,255,255,.78);max-width:42ch;margin:24px 0 34px;font-size:17px}
+  .ps .img{position:relative;min-height:460px;background:var(--ink-2)}
+  .ps .img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink),transparent 30%),linear-gradient(0deg,rgba(255,105,0,.28),transparent 60%)}
+  .ps .img.noimg{background:linear-gradient(150deg,var(--orange),var(--ink))}
+  .ps .stats{display:flex;gap:46px;margin-top:30px}
+  .ps .stats .n{font-family:"Archivo";font-weight:900;font-size:34px;color:var(--green)}
+  .ps .stats .l{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:4px}
+
+  /* ---------- booth / trust ---------- */
+  .booth .grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+  .booth .img{position:relative;min-height:560px;background:var(--ink-2)}
+  .booth .img.noimg{background:linear-gradient(150deg,var(--green-dark),var(--ink))}
+  .booth .img .stamp{position:absolute;left:30px;bottom:30px;z-index:2;color:#fff;font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:11px}
+  .booth .img .stamp::before{content:"";width:34px;height:2px;background:var(--green)}
+  .booth .copy{background:var(--green-dark);color:#fff;padding:96px 72px;display:flex;flex-direction:column;justify-content:center}
+  .booth .eyebrow{color:var(--mint);margin-bottom:22px}
+  .booth h2{font-family:"Fraunces";font-style:italic;font-weight:400;font-size:clamp(30px,3.6vw,48px);line-height:1.08;letter-spacing:-.01em}
+  .booth p{color:rgba(255,255,255,.82);font-size:17px;margin:26px 0;max-width:46ch}
+  .booth .pts{list-style:none;display:grid;gap:14px;margin-bottom:36px}
+  .booth .pts li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:rgba(255,255,255,.9)}
+  .booth .pts li b{color:var(--green);font-family:"Archivo";font-weight:800;font-size:13px;letter-spacing:.1em}
+
+  /* ---------- summer band ---------- */
+  .summer{position:relative;background:var(--mint);overflow:hidden}
+  .summer .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  .summer .lead{padding:30px 0}
+  .summer .eyebrow{color:var(--green-dark);margin-bottom:18px}
+  .summer h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(34px,4.4vw,60px);line-height:.92;letter-spacing:-.02em;color:var(--ink)}
+  .summer p{margin:20px 0 28px;max-width:34ch;color:#33453d}
+  .summer .stile{position:relative;min-height:340px;overflow:hidden;background:var(--ink)}
+  .summer .stile.noimg{background:linear-gradient(150deg,var(--green),var(--green-dark))}
+  .summer .stile .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,14,11,.6),transparent 60%)}
+  .summer .stile .lab{position:absolute;left:0;bottom:0;z-index:2;padding:24px;color:#fff;font-family:"Archivo";font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:21px}
+
+  /* ---------- newsletter ---------- */
+  .news{background:var(--ink);color:#fff;text-align:center;padding:104px 0}
+  .news .eyebrow{color:var(--green);margin-bottom:20px}
+  .news h2{font-family:"Archivo";font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,68px);line-height:.94;letter-spacing:-.02em}
+  .news p{color:rgba(255,255,255,.7);margin:20px auto 34px;max-width:46ch}
+  .news form{display:flex;max-width:520px;margin:0 auto;border:1.5px solid rgba(255,255,255,.35)}
+  .news input{flex:1;background:transparent;border:none;outline:none;color:#fff;padding:18px 20px;font-family:"Inter";font-size:15px}
+  .news input::placeholder{color:rgba(255,255,255,.45)}
+  .news button{background:var(--green);color:var(--ink);border:none;font-family:"Archivo";font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px;padding:0 28px;cursor:pointer}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink-2);color:#fff}
+  .fmain{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:74px 0 54px}
+  .fbrand .logo{color:#fff;margin-bottom:18px}
+  .fbrand p{color:rgba(255,255,255,.6);max-width:34ch;font-size:14px}
+  .fcol h5{font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:18px}
+  .fcol a{display:block;color:rgba(255,255,255,.72);font-size:14px;margin-bottom:11px}
+  .fcol a:hover{color:#fff}
+  .fbot{border-top:1px solid var(--line-dark);padding:22px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .fbot .cr{font-size:12.5px;color:rgba(255,255,255,.5);letter-spacing:.04em}
+  .pays{display:flex;gap:9px}
+  .pays span{font-family:"Archivo";font-weight:700;font-size:10px;letter-spacing:.06em;border:1px solid rgba(255,255,255,.28);padding:6px 9px;color:rgba(255,255,255,.8)}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:1080px){
+    .menu,.topbar .util .hidem{display:none}
+    .burger{display:flex}
+    .worlds{grid-auto-rows:240px}
+    .ps .grid,.booth .grid{grid-template-columns:1fr}
+    .ps .copy{padding:72px 40px}
+    .ps .img,.booth .img{min-height:360px;order:-1}
+    .grid4{grid-template-columns:repeat(2,1fr)}
+    .summer .grid{grid-template-columns:1fr 1fr}
+    .summer .lead{grid-column:span 2}
+    .fmain{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:760px){
+    .wrap{padding:0 22px}
+    .hero{height:auto;min-height:0;padding-top:0}
+    .hero .inner{padding:120px 0 56px}
+    .worlds{grid-template-columns:1fr;grid-auto-rows:260px}
+    .t-hd,.t-ps,.t-sum,.t-sale{grid-column:span 1;grid-row:span 1}
+    .grid4{grid-template-columns:1fr 1fr;gap:12px}
+    .summer .grid{grid-template-columns:1fr}.summer .lead{grid-column:span 1}
+    .fmain{grid-template-columns:1fr}
+    .news form{flex-direction:column}
+  }
+  .imgwrap{position:absolute;inset:0}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="ann">Free express shipping across the GCC over 25 KWD</div>
+    <div class="util">
+      <a href="#" class="hidem">Track Order</a>
+      <a href="#" class="hidem">Stores</a>
+      <a href="#" class="lang"><b>EN</b> / ع</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="mk">ح</span>HAFEEZ</a>
+    <nav class="menu">
+      <a href="#">Harley-Davidson</a>
+      <a href="#">PaddleSmash</a>
+      <a href="#">Summer &amp; Lifestyle</a>
+      <a href="#" class="sale">Sale</a>
+      <a href="#">Our Booth</a>
+    </nav>
+    <div class="icons">
+      <button>Search</button>
+      <button class="hidem">Account</button>
+      <button>Cart <span class="cartcount">2</span></button>
+      <button class="burger">Menu</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="bg"><div class="imgwrap"><img alt="Harley-Davidson rider at dusk" src="https://loremflickr.com/2000/1100/harley,motorcycle,rider" onerror="document.getElementById('hero').classList.add('noimg');this.style.display='none'"/></div></div>
+  <div class="wrap inner">
+    <div class="eyebrow">Kuwait's Official Harley-Davidson® Reseller</div>
+    <h1 class="display">Own every <span class="em">mile.</span></h1>
+    <p class="sub">Authentic Harley-Davidson® apparel, gear and collectibles — alongside the brands that make Kuwait's summers. Shipped across the GCC, straight from our booth inside Harley-Davidson Kuwait.</p>
+    <div class="cta">
+      <a href="#" class="btn btn--green">Shop Harley-Davidson <span class="arw">→</span></a>
+      <a href="#" class="btn btn--ghost">Discover PaddleSmash <span class="arw">→</span></a>
+    </div>
+  </div>
+  <div class="scroll">Scroll ↓</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Harley-Davidson</span><span>PaddleSmash</span><span>SunnyLife</span><span>Vacay Swimwear</span><span>La Paz</span><span>DOIY</span><span>Lift Down</span>
+    <span>Harley-Davidson</span><span>PaddleSmash</span><span>SunnyLife</span><span>Vacay Swimwear</span><span>La Paz</span><span>DOIY</span><span>Lift Down</span>
+  </div>
+</div>
+
+<!-- WORLDS -->
+<section class="sec wrap">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Shop the worlds of Hafeez</div>
+      <h2>Four worlds.<br/>One store.</h2>
+    </div>
+    <a href="#" class="link">View all collections →</a>
+  </div>
+  <div class="worlds">
+    <a href="#" class="tile t-hd" id="t1">
+      <div class="ph"><div class="imgwrap"><img alt="Harley-Davidson leather jacket detail" src="https://loremflickr.com/1200/900/harley,leather,jacket" onerror="document.getElementById('t1').classList.add('noimg');this.style.display='none'"/></div></div>
+      <div class="c"><div class="idx">01 — The Originals</div><h3>Harley-Davidson®</h3><span class="go">Shop the collection →</span></div>
+    </a>
+    <a href="#" class="tile t-ps">
+      <div class="badge">Viral</div>
+      <div class="c"><div class="idx" style="color:#fff">02 — The Game</div><h3>PaddleSmash</h3><span class="go">Play it this summer →</span></div>
+    </a>
+    <a href="#" class="tile t-sum" id="t3">
+      <div class="ph"><div class="imgwrap"><img alt="Beach summer lifestyle" src="https://loremflickr.com/900/600/beach,summer,pool" onerror="document.getElementById('t3').classList.add('noimg');this.style.display='none'"/></div></div>
+      <div class="c"><div class="idx">03 — The Season</div><h3>Summer &amp; Lifestyle</h3><span class="go">Vacay · La Paz · SunnyLife →</span></div>
+    </a>
+    <a href="#" class="tile t-sale">
+      <div class="pct">-50%</div>
+      <div class="c"><div class="idx">04 — Last Chance</div><h3>The Sale</h3><span class="go" style="opacity:1;transform:none">Up to 50% off →</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="sec wrap" style="padding-top:0">
+  <div class="sec-head">
+    <div>
+      <div class="eyebrow">Most wanted this week</div>
+      <h2>Best sellers</h2>
+    </div>
+    <a href="#" class="link">Shop all best sellers →</a>
+  </div>
+  <div class="grid4">
+    <a href="#" class="card" id="p1">
+      <div class="im"><span class="tag">Icon</span><div class="imgwrap"><img alt="Leather jacket" src="https://loremflickr.com/700/880/leather,jacket,black" onerror="document.getElementById('p1').classList.add('noimg');this.style.display='none'"/></div><div class="add">+ Quick add</div></div>
+      <div class="meta"><div class="cat">Men · Leather</div><h4>Men's Timeless Leather Jacket</h4><div class="price">99.000 KWD</div></div>
+    </a>
+    <a href="#" class="card" id="p2">
+      <div class="im"><span class="tag">Headwear</span><div class="imgwrap"><img alt="Cap" src="https://loremflickr.com/700/880/cap,hat,camo" onerror="document.getElementById('p2').classList.add('noimg');this.style.display='none'"/></div><div class="add">+ Quick add</div></div>
+      <div class="meta"><div class="cat">59FIFTY</div><h4>Camouflage 59FIFTY Flat Brim Cap</h4><div class="price">15.000 KWD</div></div>
+    </a>
+    <a href="#" class="card" id="p3">
+      <div class="im"><span class="tag sale">Sale</span><div class="imgwrap"><img alt="Striped tee" src="https://loremflickr.com/700/880/tshirt,stripe,men" onerror="document.getElementById('p3').classList.add('noimg');this.style.display='none'"/></div><div class="add">+ Quick add</div></div>
+      <div class="meta"><div class="cat">Men · Tops</div><h4>Men's Staple Striped Tee</h4><div class="price">19.500 KWD <s>24.400</s></div></div>
+    </a>
+    <a href="#" class="card" id="p4">
+      <div class="im"><span class="tag">New</span><div class="imgwrap"><img alt="Coverall" src="https://loremflickr.com/700/880/coverall,denim,women" onerror="document.getElementById('p4').classList.add('noimg');this.style.display='none'"/></div><div class="add">+ Quick add</div></div>
+      <div class="meta"><div class="cat">Women · 120th Anniversary</div><h4>Women's Speedbird Coverall</h4><div class="price">35.000 KWD</div></div>
+    </a>
+  </div>
+</section>
+
+<!-- PADDLESMASH -->
+<section class="ps" id="psband">
+  <div class="grid">
+    <div class="copy">
+      <div class="eyebrow">The game everyone's talking about</div>
+      <h2>This summer,<br/>everyone's playing <span class="y">PaddleSmash.</span></h2>
+      <p>Part pickleball, part spikeball, all addictive. The viral backyard-and-beach game that's taking over Kuwait — now in stock and ready to ship across the GCC.</p>
+      <div class="ps-cta"><a href="#" class="btn btn--green">Shop PaddleSmash <span class="arw">→</span></a></div>
+      <div class="stats">
+        <div><div class="n">2&nbsp;min</div><div class="l">To learn</div></div>
+        <div><div class="n">2–4</div><div class="l">Players</div></div>
+        <div><div class="n">∞</div><div class="l">Rematches</div></div>
+      </div>
+    </div>
+    <div class="img" id="psimg"><div class="imgwrap"><img alt="People playing PaddleSmash on the beach" src="https://loremflickr.com/1100/900/beach,game,friends" onerror="document.getElementById('psimg').classList.add('noimg');this.style.display='none'"/></div></div>
+  </div>
+</section>
+
+<!-- BOOTH / TRUST -->
+<section class="booth">
+  <div class="grid">
+    <div class="img" id="boothimg">
+      <div class="imgwrap"><img alt="Harley-Davidson Kuwait showroom" src="https://loremflickr.com/1100/900/harley,showroom,store" onerror="document.getElementById('boothimg').classList.add('noimg');this.style.display='none'"/></div>
+      <div class="stamp">Inside Harley-Davidson Kuwait</div>
+    </div>
+    <div class="copy">
+      <div class="eyebrow">Not a reseller. The reseller.</div>
+      <h2>We're the official Harley-Davidson® merchandise reseller in Kuwait.</h2>
+      <p>Hafeez isn't a drop-shipper. Every piece is genuine, sourced through our dedicated booth inside the Harley-Davidson Kuwait showroom — the real thing, backed by the real brand.</p>
+      <ul class="pts">
+        <li><b>01</b><span>100% authentic, officially licensed Harley-Davidson® merchandise.</span></li>
+        <li><b>02</b><span>Visit us in person at the H-D Kuwait showroom, or shop online.</span></li>
+        <li><b>03</b><span>Fast, tracked delivery across Kuwait and the wider GCC.</span></li>
+      </ul>
+      <div><a href="#" class="btn btn--green">Visit our booth <span class="arw">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMER -->
+<section class="summer sec">
+  <div class="wrap">
+    <div class="grid">
+      <div class="lead">
+        <div class="eyebrow">When the heat hits</div>
+        <h2>Built for<br/>Kuwait summers.</h2>
+        <p>Swimwear, beach gear and sun-ready lifestyle pieces from Vacay, La Paz and SunnyLife.</p>
+        <a href="#" class="btn">Shop summer <span class="arw">→</span></a>
+      </div>
+      <a href="#" class="stile" id="s1"><div class="ph"><div class="imgwrap"><img alt="Vacay swimwear" src="https://loremflickr.com/700/700/swimwear,pool" onerror="document.getElementById('s1').classList.add('noimg');this.style.display='none'"/></div></div><div class="lab">Vacay Swimwear</div></a>
+      <a href="#" class="stile" id="s2"><div class="ph"><div class="imgwrap"><img alt="Beach accessories" src="https://loremflickr.com/700/700/beach,accessories,towel" onerror="document.getElementById('s2').classList.add('noimg');this.style.display='none'"/></div></div><div class="lab">SunnyLife · La Paz</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news">
+  <div class="wrap">
+    <div class="eyebrow">Join the list</div>
+    <h2>First to ride.<br/>First to know.</h2>
+    <p>New arrivals, restocks and members-only drops — straight to your inbox. Ships across the GCC.</p>
+    <form onsubmit="return false">
+      <input type="email" placeholder="Your email address" />
+      <button>Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fmain">
+      <div class="fbrand">
+        <div class="logo"><span class="mk">ح</span>HAFEEZ</div>
+        <p>Kuwait's official Harley-Davidson® merchandise reseller, plus the lifestyle brands that define the season. Online and inside the H-D Kuwait showroom.</p>
+      </div>
+      <div class="fcol">
+        <h5>Shop</h5>
+        <a href="#">Harley-Davidson</a><a href="#">PaddleSmash</a><a href="#">Summer &amp; Lifestyle</a><a href="#">Headwear</a><a href="#">Sale</a>
+      </div>
+      <div class="fcol">
+        <h5>Support</h5>
+        <a href="#">Shipping &amp; GCC Delivery</a><a href="#">Returns</a><a href="#">Track Order</a><a href="#">Size Guides</a><a href="#">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Hafeez</h5>
+        <a href="#">Our Booth</a><a href="#">About</a><a href="#">Instagram</a><a href="#">العربية</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <div class="cr">© 2026 Hafeez International — Kuwait. All rights reserved.</div>
+      <div class="pays"><span>KNET</span><span>VISA</span><span>MASTERCARD</span><span>APPLE&nbsp;PAY</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
