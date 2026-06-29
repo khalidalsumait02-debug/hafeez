@@ -5,7 +5,44 @@ wired, and what's left. Supporting context lives in `BRAND.md`, `DESIGN_PLAN.md`
 `ASSETS.md`, and `AD_GALLERY.md`.
 
 ## Branch
-- Work branch: `claude/hafeez-company-overview-57949s` (develop + push here only).
+- Current work branch: `claude/happy-cori-cox92c` (develop + push here only).
+- Earlier work was on `claude/hafeez-company-overview-57949s`.
+
+## Latest update (2026-06-29) — brand pages rebuilt from real sites via Firecrawl
+All 6 brand pages were rebuilt to **mirror the layout + imagery/video of each
+real brand site**, dressed in Hafeez chrome (shared nav/footer, green/yellow
+frame, Archivo+Inter, per-brand `--accent`). Layouts came from a Firecrawl
+research pass over the live brand sites (paddlesmash.com, liftdown.com,
+vacayswimwear.com, lapaz.pt, sunnylife.com, harley-davidson.com).
+- **PaddleSmash** — full-bleed **autoplay video hero** (real paddlesmash.com MP4),
+  "as seen on" strip, lime marquee, Complete-Set bundle, 2-min steps, lifestyle
+  showcase bands, lookbook, reviews. Accent lime `#cde310`.
+- **Lift Down** — image hero + dual CTAs, Classic Cap feature w/ inline swatch
+  row, swatch-as-product grid, stacked lifestyle banners, Wool Cap feature,
+  text-only manifesto. Accent forest `#304130` / cream.
+- **Vacay** — slow-zoom lifestyle hero + stacked CTAs, free-tote band, shop-by
+  tiles, best-seller carousel w/ strikethrough→sale, 3 stacked sale bands,
+  "Join the Vacay family". Accent sand/gold `#c8a97e`.
+- **La Paz** — full-bleed seasonal hero w/ corner lockup + outlined Explore,
+  "Shop the Look" pinned-mood blocks, editorial campaign band, brand-aim strip;
+  square (0-radius) UI on a sand canvas. Accent sea-blue `#1990c6`.
+- **SunnyLife** — stacked split-hero tiles (Beach & Poolside / Kids & Baby),
+  New-Arrivals carousels w/ badges + swatches + star ratings, lookbook. Accent
+  coral `#ff8a5c`.
+- **Harley-Davidson** — cinematic hero, authenticity ribbon, "Your ride. Your
+  rules." category tiles, men's grid, leather showcase, booth split, "Stories
+  from the Road". Accent orange `#ff6900` / near-black.
+- New shared CSS components in `assets/site.css`: `.mhero` (media/video hero),
+  `.marquee`, `.creds`, `.showcase`, `.steps`, `.lookbook`, `.props`,
+  `.ctaband`, `.bundle`, plus card hover-swap/swatches/rating/sale helpers.
+- Verified: balanced tags, **no horizontal overflow**, no JS errors (headless
+  Chromium render of all 6).
+- IMAGERY NOTE: product grids use the real **Hafeez Shopify CDN** images (stable).
+  Hero/lifestyle/feature sections **hotlink the real brand CDNs** (paddlesmash /
+  liftdown / vacayswimwear / lapaz / sunnylife = Shopify CDN; harley = Contentful)
+  and PaddleSmash/Vacay hero/feature **videos**. Approved to use; **re-host before
+  production** (download+commit or push to Shopify CDN). Critical heroes have
+  `onerror` fallbacks to Shopify/Higgsfield images.
 
 ## What this is
 A new front-end for **Hafeez International** — Kuwait's official Harley-Davidson®
